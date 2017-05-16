@@ -63,17 +63,56 @@
 <body class="home-template nav-closed">
 
     <div class="nav">
-    <h3 class="nav-title">Menu</h3>
+    <h3 class="nav-title"><a href="/">HOME</a></h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
+    <!-- 
+        To do list : 
+        내가 이거 반드시 수정한다. 
+
+        햐 이 족같은 ㅡㅡ 아니 포스트에다가 tag 를 달아놓았으면 그거에 맞춰서 
+        자동으로 생성되게 해놔야지 하드코딩하고있어 ㅡㅡ 하.... jasper 너 마음에 안들라고 한다?
+    -->
     <ul>
-        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
-        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
-        <li class="nav-fables " role="presentation"><a href="/tag/fables">Fables</a></li>
-        <li class="nav-speeches " role="presentation"><a href="/tag/speeches">Speeches</a></li>
-        <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li>
+        <h4 class="page-title">프롤로그</h4>
+        <li class="nav-about " 
+            role="presentation">
+            <a href="/about">
+                블로그소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <a href="/me">
+                자기소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <!-- <a href="/project"> -->
+            <a href="https://github.com/drake-jin" >
+                프로젝트
+            </a>
+        </li>
+    </ul>
+
+
+
+    <ul style="padding-top:0px;">
+        <h4 class="page-title"> 포스팅 </h4>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/hadoop">
+                Hadoop
+            </a>
+        </li>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/docker">
+                Docker
+            </a>
+        </li>
     </ul>
     <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
 </div>
@@ -95,7 +134,9 @@
 
 <header class="main-header post-head no-cover">
     <nav class="main-nav  clearfix">
-        
+        <a class="blog-logo" href="/">
+            <img src="/assets/images/logo.png" alt="Blog Logo" />
+        </a>
         
     </nav>
 </header>
@@ -351,7 +392,7 @@
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev no-cover" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/post/2017-04-02/docker.png)" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro">
             <section class="post">
                 <h2>(스터디) 도커.araboza - Intro</h2>
                 <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 도커에 대해...</p>

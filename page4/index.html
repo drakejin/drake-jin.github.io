@@ -63,17 +63,56 @@
 <body class="paged archive-template nav-closed">
 
     <div class="nav">
-    <h3 class="nav-title">Menu</h3>
+    <h3 class="nav-title"><a href="/">HOME</a></h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
+    <!-- 
+        To do list : 
+        내가 이거 반드시 수정한다. 
+
+        햐 이 족같은 ㅡㅡ 아니 포스트에다가 tag 를 달아놓았으면 그거에 맞춰서 
+        자동으로 생성되게 해놔야지 하드코딩하고있어 ㅡㅡ 하.... jasper 너 마음에 안들라고 한다?
+    -->
     <ul>
-        <li class="nav-home  nav-current" role="presentation"><a href="/">Home</a></li>
-        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
-        <li class="nav-fables " role="presentation"><a href="/tag/fables">Fables</a></li>
-        <li class="nav-speeches " role="presentation"><a href="/tag/speeches">Speeches</a></li>
-        <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li>
+        <h4 class="page-title">프롤로그</h4>
+        <li class="nav-about " 
+            role="presentation">
+            <a href="/about">
+                블로그소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <a href="/me">
+                자기소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <!-- <a href="/project"> -->
+            <a href="https://github.com/drake-jin" >
+                프로젝트
+            </a>
+        </li>
+    </ul>
+
+
+
+    <ul style="padding-top:0px;">
+        <h4 class="page-title"> 포스팅 </h4>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/hadoop">
+                Hadoop
+            </a>
+        </li>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/docker">
+                Docker
+            </a>
+        </li>
     </ul>
     <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
 </div>
@@ -88,9 +127,11 @@
 
 <!-- The big featured header  -->
 <header class="main-header "
-        style="background-image: url(/assets/images/cover1.jpg) ">
+        style="background-image: url(/assets/images/cover1.png) ">
     <nav class="main-nav overlay clearfix">
-        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        <a class="blog-logo" href="/">
+            <img src="/assets/images/logo.png" alt="Blog Logo" />
+        </a>
         
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         
@@ -117,9 +158,7 @@
             <a class="newer-posts" href="/page3/" title="Previous Page">&laquo; Newer Posts</a>
       
     
-    <span class="page-number"> Page 4 of 5 </span>
-     
-        <a class="older-posts" href="/page5/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 4 of 4 </span>
      
 </nav>
         
@@ -187,126 +226,21 @@
 
         
             
+            <img class="author-thumb" src="/assets/images/authors/drakejin.jpg" alt="Author image" nopin="nopin" />
+            
             <!-- author -->
-            <a href='/author/'></a>
+            <a href='/author/drakejin'>drakejin</a>
             <!-- [[tags prefix=" on "]] -->
         
              
                 on 
                 
                     
-                       <a href='/tag/docker'>Docker</a>,
-                       
-                
-                    
-                       <a href='/tag/virtualization'>Virtualization</a>,
-                       
-                
-                    
-                       <a href='/tag/container'>Container</a>,
-                       
-                
-                    
-                       <a href='/tag/Immutable Infrastructure'>Immutable infrastructure</a>
+                       <a href='/tag/docker'>Docker</a>
                        
                 
             
             <time class="post-date" datetime="2017-04-02">02 Apr 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/a-full-and-comprehensive-style-test">A Full and Comprehensive Style Test</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>This is just an ipsis verbis copy of the first example running on the Ghost Demo. This shows how you can use html styling to achieve... <a class="read-more" href="/a-full-and-comprehensive-style-test">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/casper.png" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/casper'>casper</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/test'>Test</a>,
-                       
-                
-                    
-                       <a href='/tag/content'>Content</a>
-                       
-                
-            
-            <time class="post-date" datetime="2014-09-27">27 Sep 2014</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/the-businessman-and-fisherman">The Businessman & the fisherman</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>An American businessman took a vacation to a small coastal Mexican village on doctor’s orders. Unable to sleep after an urgent phone call from the office... <a class="read-more" href="/the-businessman-and-fisherman">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/casper.png" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/casper'>casper</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/fables'>Fables</a>,
-                       
-                
-                    
-                       <a href='/tag/fiction'>Fiction</a>
-                       
-                
-            
-            <time class="post-date" datetime="2014-08-12">12 Aug 2014</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/i-have-a-dream">I Have a Dream</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>I am happy to join with you today in what will go down in history as the greatest demonstration for freedom in the history of our... <a class="read-more" href="/i-have-a-dream">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/casper.png" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/casper'>casper</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/speeches'>Speeches</a>
-                       
-                
-            
-            <time class="post-date" datetime="1963-08-28">28 Aug 1963</time>
         </footer>
     </article>
     
@@ -319,9 +253,7 @@
             <a class="newer-posts" href="/page3/" title="Previous Page">&laquo; Newer Posts</a>
       
     
-    <span class="page-number"> Page 4 of 5 </span>
-     
-        <a class="older-posts" href="/page5/" title="Next Page">Older Posts &raquo;</a>
+    <span class="page-number"> Page 4 of 4 </span>
      
 </nav>
     

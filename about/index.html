@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>About</title>
+    <title>데이터공작소</title>
     <meta name="description" content="데이터공작소 - 데이터 분석은 잘 못하지만, 데이터 분석할 수 있게 도와드리겠어요!" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -63,17 +63,56 @@
 <body class="page-template nav-closed">
 
     <div class="nav">
-    <h3 class="nav-title">Menu</h3>
+    <h3 class="nav-title"><a href="/">HOME</a></h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
+    <!-- 
+        To do list : 
+        내가 이거 반드시 수정한다. 
+
+        햐 이 족같은 ㅡㅡ 아니 포스트에다가 tag 를 달아놓았으면 그거에 맞춰서 
+        자동으로 생성되게 해놔야지 하드코딩하고있어 ㅡㅡ 하.... jasper 너 마음에 안들라고 한다?
+    -->
     <ul>
-        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
-        <li class="nav-about  nav-current" role="presentation"><a href="/about">About</a></li>
-        <li class="nav-fables " role="presentation"><a href="/tag/fables">Fables</a></li>
-        <li class="nav-speeches " role="presentation"><a href="/tag/speeches">Speeches</a></li>
-        <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li>
+        <h4 class="page-title">프롤로그</h4>
+        <li class="nav-about  nav-current" 
+            role="presentation">
+            <a href="/about">
+                블로그소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <a href="/me">
+                자기소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <!-- <a href="/project"> -->
+            <a href="https://github.com/drake-jin" >
+                프로젝트
+            </a>
+        </li>
+    </ul>
+
+
+
+    <ul style="padding-top:0px;">
+        <h4 class="page-title"> 포스팅 </h4>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/hadoop">
+                Hadoop
+            </a>
+        </li>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/docker">
+                Docker
+            </a>
+        </li>
     </ul>
     <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
 </div>
@@ -91,9 +130,11 @@
 <!-- Everything inside the #post tags pulls data from the page -->
 <!-- #post -->
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
-        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+<header class="main-header post-head " style="background-image: url(/assets/images/cover1.png)">
+    <nav class="main-nav overlay clearfix">
+        <a class="blog-logo" href="/">
+            <img src="/assets/images/logo.png" alt="Blog Logo" />
+        </a>
         
             <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
             
@@ -106,15 +147,31 @@
         <!-- Everything inside the #post tags pulls data from the post -->
 
         <header class="post-header">
-            <h1 class="post-title">About</h1>
+            <h1 class="post-title">데이터공작소</h1>
         </header>
 
         <section class="post-content">
-            <p>This is a demo blog for Ghost, it contains dummy content which allows you to click around and see what a Ghost blog running the default theme looks like.</p>
+            <p>이 블로그의 이름은 데이터 공작소 입니다. 
+데이터 발생부터 데이터를 이쁘게 만들어서 분석가들한태 전달하기까지 일련의 모든 과정을
+다뤄보고자 블로그를 개설하였고, 
+저와 같은 목표가 있는 분들과 소통하고자 블로그를 개설하였습니다.
+공부를 처음하는 사람이든지 전공이 뭐였든지 상관없이 하나의 목표를 향해 같이 소통했으면 합니다.</p>
 
-<p>We use this for testing and for reference!</p>
+<h2 id="section">프로젝트</h2>
+<p>데이터 공작소의 프로젝트는 추후 블로그의 공사가 끝남과 동시에 프로젝트를 진행하려 합니다.
+현재 게시한 프로젝트는 가급적 데이터 처리 및 분석 까지의 기술들에 대해서진행한 공부들 입니다.
+앞으로도 데이터 처리부터 저장 최후에는 분석까지의 기술 관련 프로젝트만 업로드 할 생각입니다.
+깃 오거나이저를 파서 거기에서 작업을 할까 생각중이기도 합니다.</p>
 
-<p>If you’d like to set up your own blog, head on over to <a href="https://ghost.org">https://ghost.org</a> and sign up.</p>
+<ol>
+  <li>
+    <p>하둡 스터디 <a href="https://github.com/drake-jin/hadoop-study">git@drake-jin/hadoop-study</a></p>
+  </li>
+  <li>
+    <p>도커 스터디 <a href="https://github.com/drake-jin/docker-toyserver">git@drake-jin/docker-toyserver</a></p>
+  </li>
+</ol>
+
 
         </section>
 

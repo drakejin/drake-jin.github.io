@@ -63,17 +63,56 @@
 <body class="tag-template nav-closed">
 
     <div class="nav">
-    <h3 class="nav-title">Menu</h3>
+    <h3 class="nav-title"><a href="/">HOME</a></h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
+    <!-- 
+        To do list : 
+        내가 이거 반드시 수정한다. 
+
+        햐 이 족같은 ㅡㅡ 아니 포스트에다가 tag 를 달아놓았으면 그거에 맞춰서 
+        자동으로 생성되게 해놔야지 하드코딩하고있어 ㅡㅡ 하.... jasper 너 마음에 안들라고 한다?
+    -->
     <ul>
-        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
-        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
-        <li class="nav-fables " role="presentation"><a href="/tag/fables">Fables</a></li>
-        <li class="nav-speeches " role="presentation"><a href="/tag/speeches">Speeches</a></li>
-        <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li>
+        <h4 class="page-title">프롤로그</h4>
+        <li class="nav-about " 
+            role="presentation">
+            <a href="/about">
+                블로그소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <a href="/me">
+                자기소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <!-- <a href="/project"> -->
+            <a href="https://github.com/drake-jin" >
+                프로젝트
+            </a>
+        </li>
+    </ul>
+
+
+
+    <ul style="padding-top:0px;">
+        <h4 class="page-title"> 포스팅 </h4>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/hadoop">
+                Hadoop
+            </a>
+        </li>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/docker">
+                Docker
+            </a>
+        </li>
     </ul>
     <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
 </div>
@@ -83,7 +122,9 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < dynamically overriding backgrounds for tags as well as descriptions -->
+        <!-- 
+    To do list : tags 나 뭐 ... 음.. ... _data 에서 셋팅할 수 있도록 만들어보자
+    으아아악 여기에도 직접 .... 이미지를... 때려 넣어 주어야 한다니... 이 새끼야... -->
 
 
 <!-- < default}} -->
@@ -92,9 +133,11 @@
 <!-- If we have a tag cover, display that - else blog cover - else nothing -->
 <header class="main-header tag-head " style="background-image: url(/assets/images/cover2.jpg) ">
     <nav class="main-nav overlay clearfix">
-        <a class="blog-logo" href="/"><img src="/assets/images/ghost.png" alt="Blog Logo" /></a>
+        <a class="blog-logo" href="/">
+            <img src="/assets/images/logo.png" alt="Blog Logo" />
+        </a>
         
-            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+        <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         
     </nav>
     <div class="vertical">
@@ -102,7 +145,7 @@
             <h1 class="page-title">Virtualization</h1>
             <h2 class="page-description">
             
-			    A 10-post collection
+			    A 9-post collection
             
             </h2>
         </div>
@@ -347,6 +390,7 @@
 
 
 </main>
+
 
         <footer class="site-footer clearfix">
           <section class="copyright"><a href="/">데이터공작소</a> &copy; 2017</section>

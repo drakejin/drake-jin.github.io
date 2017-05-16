@@ -63,17 +63,56 @@
 <body class="home-template nav-closed">
 
     <div class="nav">
-    <h3 class="nav-title">Menu</h3>
+    <h3 class="nav-title"><a href="/">HOME</a></h3>
     <a href="#" class="nav-close">
         <span class="hidden">Close</span>
     </a>
+    <!-- 
+        To do list : 
+        내가 이거 반드시 수정한다. 
+
+        햐 이 족같은 ㅡㅡ 아니 포스트에다가 tag 를 달아놓았으면 그거에 맞춰서 
+        자동으로 생성되게 해놔야지 하드코딩하고있어 ㅡㅡ 하.... jasper 너 마음에 안들라고 한다?
+    -->
     <ul>
-        <li class="nav-home " role="presentation"><a href="/">Home</a></li>
-        <li class="nav-about " role="presentation"><a href="/about">About</a></li>
-        <li class="nav-fables " role="presentation"><a href="/tag/fables">Fables</a></li>
-        <li class="nav-speeches " role="presentation"><a href="/tag/speeches">Speeches</a></li>
-        <li class="nav-fiction " role="presentation"><a href="/tag/fiction">Fiction</a></li>
-        <li class="nav-author " role="presentation"><a href="/author/casper">Author</a></li>
+        <h4 class="page-title">프롤로그</h4>
+        <li class="nav-about " 
+            role="presentation">
+            <a href="/about">
+                블로그소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <a href="/me">
+                자기소개
+            </a>
+        </li>
+        <li class="nav-author " 
+            role="presentation">
+            <!-- <a href="/project"> -->
+            <a href="https://github.com/drake-jin" >
+                프로젝트
+            </a>
+        </li>
+    </ul>
+
+
+
+    <ul style="padding-top:0px;">
+        <h4 class="page-title"> 포스팅 </h4>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/hadoop">
+                Hadoop
+            </a>
+        </li>
+        <li class="nav-fables " 
+            role="presentation">
+            <a href="/tag/docker">
+                Docker
+            </a>
+        </li>
     </ul>
     <a class="subscribe-button icon-feed" href="/feed.xml">Subscribe</a>
 </div>
@@ -93,16 +132,20 @@
 
 
 
-<header class="main-header post-head no-cover">
-    <nav class="main-nav  clearfix">
+<header class="main-header post-head " style="background-image: url(/assets/images/post/2017-04-02/docker.png) ">
+    <nav class="main-nav  overlay  clearfix">
+        <a class="blog-logo" href="/">
+            <img src="/assets/images/logo.png" alt="Blog Logo" />
+        </a>
         
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
         
     </nav>
 </header>
 
 <main class="content" role="main">
 
-    <article class="">
+    <article class="post tag-docker">
 
         <header class="post-header">
             <h1 class="post-title">(스터디) 도커.araboza - Intro</h1>
@@ -114,19 +157,7 @@
                 on 
                 
                     
-                       <a href='/tag/docker'>Docker</a>,
-                       
-                
-                    
-                       <a href='/tag/virtualization'>Virtualization</a>,
-                       
-                
-                    
-                       <a href='/tag/container'>Container</a>,
-                       
-                
-                    
-                       <a href='/tag/Immutable Infrastructure'>Immutable infrastructure</a>
+                       <a href='/tag/docker'>Docker</a>
                        
                 
                 
@@ -316,15 +347,27 @@ $ sudo apt-get install docker.io -y
             <!-- #author-->
         
             
+            <figure class="author-image">
+                <a class="img" href="/author/drakejin" style="background-image: url(/assets/images/authors/drakejin.jpg)">
+                    <span class="hidden">drakejin's 사진</span>
+                </a>
+            </figure>
+            
 
             <section class="author">
-                <h4><a href="/author/"></a></h4>
+                <h4><a href="/author/drakejin">drakejin</a></h4>
 
                 
-                <p>Read <a href="/author/">more posts</a> by this author.</p>
+                <p> IT 쪽은 데이터 처리&가공분야에 관심이 있고, 취미는 기타입니당. </p>
                 
                 <div class="author-meta">
+                    
+                    <span class="author-location icon-location">
+                        Seoul, Korea
+                    </span>
                      
+                    
+                    <span class="author-link icon-link"><a href="http://blog.drakejin.me">blog.drakejin.me</a></span>
                     
                 </div>
             </section> 
@@ -407,13 +450,6 @@ $ sudo apt-get install docker.io -y
     
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
-    
-        <a class="read-next-story prev " style="background-image: url(/assets/images/cover3.jpg)" href="/a-full-and-comprehensive-style-test">
-            <section class="post">
-                <h2>A Full and Comprehensive Style Test</h2>
-                <p>This is just an ipsis verbis copy of the first example running on the Ghost...</p>
-            </section>
-        </a>
     
     <!-- [[! /prev_post ]] -->
 </aside>

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>Author</title>
+    <title>자기소개</title>
     <meta name="description" content="데이터공작소 - 데이터 분석은 잘 못하지만, 데이터 분석할 수 있게 도와드리겠어요!" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="author-template nav-closed">
+<body class="page-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title"><a href="/">HOME</a></h3>
@@ -82,7 +82,7 @@
                 블로그소개
             </a>
         </li>
-        <li class="nav-author " 
+        <li class="nav-author  nav-current" 
             role="presentation">
             <a href="/me">
                 자기소개
@@ -122,121 +122,144 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- < default}} -->
-<!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
-<!-- Todo List Author에 맞추어서 이미지를 준비해주자 -->
-<!-- The big featured header -->
+        <!-- < default -->
 
-<!-- Everything inside the #author tags pulls data from the author -->
-<!-- #author  -->
+<!-- This is a page template. A page outputs content just like any other post, and has all the same -->
+    <!-- attributes by default, but you can also customise it to behave differently if you prefer.  -->
 
-    <header class="main-header author-head " style="background-image: url(/assets/images/cover4.jpg) ">
-        <nav class="main-nav overlay clearfix">
-            <a class="blog-logo" href="/">
-                <img src="/assets/images/logo.png" alt="Blog Logo" />
-            </a>
-            
-            
-                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-            
-        </nav>
-    </header>
+<!-- Everything inside the #post tags pulls data from the page -->
+<!-- #post -->
 
-    <section class="author-profile inner">
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        <a class="blog-logo" href="/">
+            <img src="/assets/images/logo.png" alt="Blog Logo" />
+        </a>
         
-        <figure class="author-image">
-            <div class="img" style="background-image: url(/assets/images/authors/drakejin.jpg)">
-                <span class="hidden">drakejin's Picture</span>
-            </div>
-        </figure>
-        
-        <h1 class="author-title">drakejin</h1>
-        
-        <div class="author-meta">
+            <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
             
-                <span class="author-location icon-location">Seoul, Korea</span>
-            
-
-            
-                <span class="author-link icon-link"><a href="http://blog.drakejin.me">blog.drakejin.me</a></span>
-            
-            <!-- <span class="author-stats"><i class="icon-stats"></i> [[plural ../pagination.total empty='No posts' singular='% post' plural='% posts']]</span> -->
-            <span class="author-stats">
-                <i class="icon-stats"></i>
-                
-                    1 post 
-                
-            </span>
-        </div>
-    </section>
-<!-- /author -->
-
-<!-- The main content area on the homepage -->
-<main id="content" class="content" role="main">
-
-    <!-- The tag below includes the post loop - partials/loop.hbs  -->
-        <!-- Previous/next page links - only displayed on page 2+ -->
-    <div class="extra-pagination inner">
         
-            <nav class="pagination" role="pagination">
-    
-    <span class="page-number"> Page 1 of 1 </span>
-     
-</nav>
+    </nav>
+</header>
 
-        
-    </div>
-    <!--
-    drakejin
-
-    -->
-
-
-
-    <!-- This is the post loop - each post will be output using this markup -->
-    
+<main class="content" role="main">
     <article class="post">
+        <!-- Everything inside the #post tags pulls data from the post -->
+
         <header class="post-header">
-            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro">(스터디) 도커.araboza - Intro</a></h2>
+            <h1 class="post-title">자기소개</h1>
         </header>
-        <section class="post-excerpt">
-            <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 도커에 대해 공부해보자. 도커는 2013년 docker.inc에서 출시한 오픈소스 컨테이너 프로젝트 AWS, Google Cloud... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro">&raquo;</a></p>
+
+        <section class="post-content">
+            <p>안녕하세요. 예비개발자 조용진입니다. 
+저는 세상을 즐겁게 만드는것이 저의 개발 모토입니다.
+그리고 저만의 세상을 즐겁게 만드는일의 시작은 서버엔지니어(Backend)를 하면서 부터 입니다.</p>
+
+<p>저는 개발을 좋아합니다. 
+개발을 시작하면서 다양한 사람과 만남을 가질 수 있었고 저에게 많이 부족했던 자존감들을 얻을 수 있었습니다. 
+아슬아슬하게 학사경고라는 작두에서 춤을 추던 제가 장학금을 받으며,
+팀프로젝트의 팀장도 할 수 있었던 것은 개발을 시작하면서 부터였기 때문입니다. 
+그런 저는 개발을 할 때 마다 즐거움을 느낍니다.</p>
+
+<p>시간이지나 졸업을 앞두고, 취업할 때가 된 지금은
+개발을 통해 많은 걸 얻은 만큼 남들을 위해 일할 때가 되었다고 생각합니다. 
+그렇기 때문에 저는 제가 배운것들과 앞으로의 시간들을 “세상을 즐겁게 만드는 회사”에 
+취업하려고 합니다.</p>
+
+<blockquote>
+  <p>앗! 아니 자..잠깐! 잠깐만요! 가지 마세요!</p>
+
+  <p>“세상을 즐겁게 만드는 회사”는 많은 의미를 담고 있다구요!</p>
+</blockquote>
+
+<p>제 소개에 이런 저런 서론이 길었지만.
+이제 사회로 뛰어드는 갖난 신입 개발자입니다.</p>
+
+<p>잘 부탁드립니다.</p>
+
+<h3 id="section">간단한 신상정보</h3>
+<p><img src="/assets/images/authors/drakejin.jpg" width="150" /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>이름</th>
+      <th>조용진</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>별명</td>
+      <td>drakejin</td>
+    </tr>
+    <tr>
+      <td>출생</td>
+      <td>1992.10.15</td>
+    </tr>
+    <tr>
+      <td>사는곳</td>
+      <td>청량리역 5분 거리</td>
+    </tr>
+    <tr>
+      <td>관심사</td>
+      <td>IT, 일렉기타, 음악, Anime</td>
+    </tr>
+  </tbody>
+</table>
+
+<blockquote>
+  <p><a href="/assets/resource/cv.pdf">이력서</a> 및 <a href="/assets/resource/portfolio.pdf">포트폴리오</a></p>
+</blockquote>
+
+<h3 id="section-1">대표 프로젝트</h3>
+
+<blockquote>
+  <p>[포트폴리오와 동일]</p>
+</blockquote>
+
+<h3 id="section-2">자랑하고 싶은 프로젝트</h3>
+<ul>
+  <li><a href="https://github.com/drake-jin/.dotfiles">git@drake-jin/.dotfiles</a>
+    <ul>
+      <li>처음 설치한 우분투에 셸 스크립트 한방이면 모든 설정들이 자동셋팅!</li>
+    </ul>
+  </li>
+  <li><a href="https://github.com/drake-jin/jasper">git@drake-jin/jasper</a>
+    <ul>
+      <li>기존의 jasper-jekyll에 버그가 너무 많지만… 이뻐서 어기적 어기적 쓰는대</li>
+      <li>버그와 로직 장애부분에서 직접 수정해서 issue로 달아서 해결방법도 제시함.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="section-3">현재 진행중인 활동</h3>
+
+<ol>
+  <li><a href="https://www.hanium.or.kr/portal/index.do">2017 한이음 공모전</a></li>
+  <li>페이스북 “대신전해드립니다.” 관리 서비스(Private)</li>
+  <li><a href="http://www.army.mil.kr/idea/">창의적 아이디어 육군 공모전</a></li>
+</ol>
+
+<h3 id="section-4">전공 외 활동</h3>
+<ul>
+  <li>밴드동아리에서 매 학기마다 정기 공연 : <a href="https://www.youtube.com/channel/UCPBSUqMc36e6ztggstn_B7Q/videos?shelf_id=0&amp;view=0&amp;sort=dd">문예창작단</a></li>
+</ul>
+
+<h3 id="section-5">개발이야기해요.</h3>
+<p>개발이야기가 면접의 목적이든 심심풀이의 목적이든 관계없이 모두 환영합니다.
+개발이야기 개발자개그 다 좋아합니다. (사실…. IT 관련 제외하고는 말을 잘 못해서…. )
+ - <a href="https://facebook.com/drakejin">페이스북</a>
+ - <a href="https://www.slideshare.net/ssuser67b08e">Slideshare</a>
+ - 카카오톡:dydwls121200
+ - <a href="&#109;&#097;&#105;&#108;&#116;&#111;:&#100;&#121;&#100;&#119;&#108;&#115;&#049;&#050;&#049;&#050;&#048;&#048;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;">이메일</a></p>
+
+
         </section>
-        <footer class="post-meta">
 
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/drakejin.jpg" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/drakejin'>drakejin</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/docker'>Docker</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-04-02">02 Apr 2017</time>
-        </footer>
     </article>
-    
-
-    <!-- Previous/next page links - displayed on every page -->
-    
-        <nav class="pagination" role="pagination">
-    
-    <span class="page-number"> Page 1 of 1 </span>
-     
-</nav>
-
-    
-
 
 </main>
+<!-- /post -->
 
 
         <footer class="site-footer clearfix">
