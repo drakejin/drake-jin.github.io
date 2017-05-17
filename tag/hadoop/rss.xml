@@ -15,7 +15,7 @@
 	  <title>(스터디) 하둡.araboza - 6</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-6</link>
 	  <author>drakejin</author>
-	  <pubDate>2017-05-08T00:00:00+09:00</pubDate>
+	  <pubDate>2017-05-08T09:00:00+09:00</pubDate>
 	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-6</guid>
 	  <description><![CDATA[
 	     <p>[데이터공작소] 하둡의 WordCount 예제가 아닌 약간의 응용을 해보는 예제를 체험합니다.</p>
@@ -109,7 +109,7 @@
 	  <title>(스터디) 하둡.araboza - 5</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-5</link>
 	  <author>drakejin</author>
-	  <pubDate>2017-05-08T00:00:00+09:00</pubDate>
+	  <pubDate>2017-05-08T09:00:00+09:00</pubDate>
 	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-5</guid>
 	  <description><![CDATA[
 	     <p>[데이터공작소]하둡.araboza - 5 에서 진행했던 소스를 좀 더 자세히 살펴보는 글입니다. 이번 챕터를 통해 맵 리듀스에 대해 자세히 알아보는 시간을 갖도록 합니다.</p>
@@ -663,7 +663,7 @@ public int compareTo(ItemFreq o) {
 	  <title>(스터디) 하둡.araboza - 4</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-4</link>
 	  <author>drakejin</author>
-	  <pubDate>2017-05-07T00:00:00+09:00</pubDate>
+	  <pubDate>2017-05-07T09:00:00+09:00</pubDate>
 	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-4</guid>
 	  <description><![CDATA[
 	     <p>[데이터공작소] 하둡 스터디 자세한 내용은 소스에 주석을 달아 놓았습니다. 소스를 참고해주시기 바랍니다.</p>
@@ -691,37 +691,10 @@ $ hadoop jar {jar} wc.MyWordCount […args]</p>
 	</item>
 
 	<item>
-	  <title>(스터디) 하둡.araboza - 3</title>
-	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-3</link>
-	  <author>drakejin</author>
-	  <pubDate>2017-05-05T00:00:00+09:00</pubDate>
-	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-3</guid>
-	  <description><![CDATA[
-	     <p>[데이터공작소] 설치는 구글에 “하둡 의사분산노드 설치”라는 검색어로 직접 찾아서 버전에 맞도록 설치합니다. 본 블로그에서 사용한 버전은  1.x 버전을 사용하였습니다.</p>
-
-<h2 id="section">의사분산 노드 설치하기</h2>
-<ul>
-  <li>각 버전에 맞추어 직접 설치하길 바란다.</li>
-  <li>본 블로그에서는 1.x 버전에서 작업을 하였다.</li>
-  <li>참고는 Do it 하둡 프로젝트의 내용을 참고하였다.</li>
-  <li>설치할 때 hdfs-core.xml 에서 data.tmp 의 경로를 /tmp로 설정하지 않는것을 권장한다.</li>
-  <li>재부팅시 마다 매번 hdfs를 새로 생성해야하기때문.</li>
-</ul>
-
-<ol>
-  <li>ssh server를 오픈해야함. 보통 desktop mode의 ubuntu에서는 ssh서버를 Default로 열어놓지 않으니 직접 열어서 할것.</li>
-  <li>jps했을 때 의사분산모드의 경우 6개의 프로세스(jps포함)가 올바르게 잘 뜨는지 확인할것.</li>
-</ol>
-
-
-	  ]]></description>
-	</item>
-
-	<item>
 	  <title>(스터디) 하둡.araboza - 2</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-2</link>
 	  <author>drakejin</author>
-	  <pubDate>2017-04-30T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-30T09:00:00+09:00</pubDate>
 	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-2</guid>
 	  <description><![CDATA[
 	     <p>[데이터공작소] 멥리듀스와 하둡 그리고 hdfs에 대해서 알아봅니다.</p>
@@ -979,7 +952,7 @@ $ hadoop jar {jar} wc.MyWordCount […args]</p>
 	  <title>(스터디) 하둡.araboza - 1</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-1</link>
 	  <author>drakejin</author>
-	  <pubDate>2017-04-28T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-28T09:00:00+09:00</pubDate>
 	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-1</guid>
 	  <description><![CDATA[
 	     <p>[데이터 공작소] 하둡을 들어가기전의 기초 지식에 대해서 포스팅하였습니다. 기초 지식이라고 하기 이전에 약간의 진입장벽이있으니 주의해주시기 바랍니다. 그렇다고해서 전부를 암기하고 들어가는것이 아니므로 가볍게 읽어주세요. 감사합니다.</p>
@@ -1180,9 +1153,36 @@ $ hadoop jar {jar} wc.MyWordCount […args]</p>
 
 	<item>
 	  <title>(스터디) 하둡.araboza - Intro</title>
+	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-3</link>
+	  <author>drakejin</author>
+	  <pubDate>2017-04-21T09:00:00+09:00</pubDate>
+	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-3</guid>
+	  <description><![CDATA[
+	     <p>[데이터공작소] 설치는 구글에 “하둡 의사분산노드 설치”라는 검색어로 직접 찾아서 버전에 맞도록 설치합니다. 본 블로그에서 사용한 버전은  1.x 버전을 사용하였습니다.</p>
+
+<h2 id="section">의사분산 노드 설치하기</h2>
+<ul>
+  <li>각 버전에 맞추어 직접 설치하길 바란다.</li>
+  <li>본 블로그에서는 1.x 버전에서 작업을 하였다.</li>
+  <li>참고는 Do it 하둡 프로젝트의 내용을 참고하였다.</li>
+  <li>설치할 때 hdfs-core.xml 에서 data.tmp 의 경로를 /tmp로 설정하지 않는것을 권장한다.</li>
+  <li>재부팅시 마다 매번 hdfs를 새로 생성해야하기때문.</li>
+</ul>
+
+<ol>
+  <li>ssh server를 오픈해야함. 보통 desktop mode의 ubuntu에서는 ssh서버를 Default로 열어놓지 않으니 직접 열어서 할것.</li>
+  <li>jps했을 때 의사분산모드의 경우 6개의 프로세스(jps포함)가 올바르게 잘 뜨는지 확인할것.</li>
+</ol>
+
+
+	  ]]></description>
+	</item>
+
+	<item>
+	  <title>(스터디) 하둡.araboza - Intro</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-intro</link>
 	  <author>drakejin</author>
-	  <pubDate>2017-04-21T00:00:00+09:00</pubDate>
+	  <pubDate>2017-04-21T09:00:00+09:00</pubDate>
 	  <guid>//%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-intro</guid>
 	  <description><![CDATA[
 	     <p>[데이터 공작소] 하둡공부하기전 Intro 어떻게 공부할것인가! 참고서적 (Do it 하둡 프로그래밍 및 Hadoop완벽가이드 책을 참고하였습니다.</p>

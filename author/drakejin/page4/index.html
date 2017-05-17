@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>데이터공작소</title>
+    <title>Author</title>
     <meta name="description" content="데이터공작소 - 데이터 분석은 잘 못하지만, 데이터 분석할 수 있게 도와드리겠어요!" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -60,7 +60,7 @@
 
 
 </head>
-<body class="tag-template nav-closed">
+<body class="paged archive-template nav-closed">
 
     <div class="nav">
     <h3 class="nav-title"><a href="/">HOME</a></h3>
@@ -101,7 +101,7 @@
 
     <ul style="padding-top:0px;">
         <h4 class="page-title"> 포스팅 </h4>
-        <li class="nav-fables  nav-current" 
+        <li class="nav-fables " 
             role="presentation">
             <a href="/tag/hadoop">
                 Hadoop
@@ -122,54 +122,76 @@
     <div class="site-wrapper">
 
         <!-- [[! Everything else gets inserted here ]] -->
-        <!-- 
-    To do list : tags 나 뭐 ... 음.. ... _data 에서 셋팅할 수 있도록 만들어보자
-    으아아악 여기에도 직접 .... 이미지를... 때려 넣어 주어야 한다니... 이 새끼야... -->
-
-
-<!-- < default}} -->
+        <!-- < default}} -->
 <!-- The tag above means - insert everything in this file into the [body] of the default.hbs template -->
+<!-- Todo List Author에 맞추어서 이미지를 준비해주자 -->
+<!-- The big featured header -->
 
-<!-- If we have a tag cover, display that - else blog cover - else nothing -->
-<header class="main-header tag-head " style="background-image: url(/assets/images/post/tags/hadoop.png) ">
-    <nav class="main-nav overlay clearfix">
-        <a class="blog-logo" href="/">
-            <img src="/assets/images/logo.png" alt="Blog Logo" />
-        </a>
-        
-        <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
-        
-    </nav>
-    <div class="vertical">
-        <div class="main-header-content inner">
-            <h1 class="page-title">Hadoop</h1>
-            <h2 class="page-description">
+<!-- Everything inside the #author tags pulls data from the author -->
+<!-- #author  -->
+
+    <header class="main-header author-head " style="background-image: url(/assets/images/cover4.jpg) ">
+        <nav class="main-nav overlay clearfix">
+            <a class="blog-logo" href="/">
+                <img src="/assets/images/logo.png" alt="Blog Logo" />
+            </a>
             
-                클러스터링서버 기가막히게 만들어보아용!
             
-            </h2>
+                <a class="menu-button icon-menu" href="#"><span class="word">Menu</span></a>
+            
+        </nav>
+    </header>
+
+    <section class="author-profile inner">
+        
+        <figure class="author-image">
+            <div class="img" style="background-image: url(/assets/images/authors/drakejin.jpg)">
+                <span class="hidden">drakejin's Picture</span>
+            </div>
+        </figure>
+        
+        <h1 class="author-title">drakejin</h1>
+        
+        <div class="author-meta">
+            
+                <span class="author-location icon-location">Seoul, Korea</span>
+            
+
+            
+                <span class="author-link icon-link"><a href="http://blog.drakejin.me">blog.drakejin.me</a></span>
+            
+            <!-- <span class="author-stats"><i class="icon-stats"></i> [[plural ../pagination.total empty='No posts' singular='% post' plural='% posts']]</span> -->
+            <span class="author-stats">
+                <i class="icon-stats"></i>
+                
+                    17 posts
+                
+            </span>
         </div>
-    </div>
-</header>
+    </section>
+<!-- /author -->
 
 <!-- The main content area on the homepage -->
 <main id="content" class="content" role="main">
 
-    <!-- The tag below includes the post loop - partials/loop.hbs -->
+    <!-- The tag below includes the post loop - partials/loop.hbs  -->
         <!-- Previous/next page links - only displayed on page 2+ -->
     <div class="extra-pagination inner">
         
             <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 2 </span>
-     
-        <a class="older-posts" href="/tag/hadoop/page2/" title="Next Page">Older Posts &raquo;</a>
+        
+            <a class="newer-posts" href="/author/drakejin/page3/" title="Previous Page">&laquo; Newer Posts</a>
+      
+    
+    <span class="page-number"> Page 4 of 4 </span>
      
 </nav>
+
         
     </div>
     <!--
-    
+    drakejin
 
     -->
 
@@ -179,10 +201,10 @@
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-6">(스터디) 하둡.araboza - 6</a></h2>
+            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-1">(스터디) 도커.araboza - 1</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>[데이터공작소] 하둡의 WordCount 예제가 아닌 약간의 응용을 해보는 예제를 체험합니다. 소스 위치 이클립스에서 작업하였고 실행하기위해서는 maven project import 기능을 사용해 주세요. Chapter 06 본 챕터는 소스... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-6">&raquo;</a></p>
+            <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 이 문서의 저작권은 여기에 있습니다. 혼자 공부하려고 글들의 내용을 참고하였습니다. 문제시 삭제하겠습니다. 컨테이너의... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-1">&raquo;</a></p>
         </section>
         <footer class="post-meta">
 
@@ -198,20 +220,20 @@
                 on 
                 
                     
-                       <a href='/tag/hadoop'>Hadoop</a>
+                       <a href='/tag/docker'>Docker</a>
                        
                 
             
-            <time class="post-date" datetime="2017-05-08">08 May 2017</time>
+            <time class="post-date" datetime="2017-04-04">04 Apr 2017</time>
         </footer>
     </article>
     
     <article class="post">
         <header class="post-header">
-            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-5">(스터디) 하둡.araboza - 5</a></h2>
+            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro">(스터디) 도커.araboza - Intro</a></h2>
         </header>
         <section class="post-excerpt">
-            <p>[데이터공작소]하둡.araboza - 5 에서 진행했던 소스를 좀 더 자세히 살펴보는 글입니다. 이번 챕터를 통해 맵 리듀스에 대해 자세히 알아보는 시간을 갖도록 합니다. Chapter 05 Chapter04의 WordCount소스에... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-5">&raquo;</a></p>
+            <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 도커에 대해 공부해보자. 도커는 2013년 docker.inc에서 출시한 오픈소스 컨테이너 프로젝트 AWS, Google Cloud... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro">&raquo;</a></p>
         </section>
         <footer class="post-meta">
 
@@ -227,98 +249,11 @@
                 on 
                 
                     
-                       <a href='/tag/hadoop'>Hadoop</a>
+                       <a href='/tag/docker'>Docker</a>
                        
                 
             
-            <time class="post-date" datetime="2017-05-08">08 May 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-4">(스터디) 하둡.araboza - 4</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>[데이터공작소] 하둡 스터디 자세한 내용은 소스에 주석을 달아 놓았습니다. 소스를 참고해주시기 바랍니다. Chapter 04 WordCount 에 대해서 배워본다. 이번장은 소스에 주석으로 진행하였으니 소스를 참고하여 주시기 바랍니다.... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-4">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/drakejin.jpg" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/drakejin'>drakejin</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/hadoop'>Hadoop</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-05-07">07 May 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-2">(스터디) 하둡.araboza - 2</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>[데이터공작소] 멥리듀스와 하둡 그리고 hdfs에 대해서 알아봅니다. Chapter 02 MapReduce 맵리듀스는 데이터 처리를 위한 프로그래밍 모델이다. 하둡은 다양한 언어로 쓰인 맵 리듀스 프로그램을 구동시킬 수 있다.... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-2">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/drakejin.jpg" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/drakejin'>drakejin</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/hadoop'>Hadoop</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-04-30">30 Apr 2017</time>
-        </footer>
-    </article>
-    
-    <article class="post">
-        <header class="post-header">
-            <h2 class="post-title"><a href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-1">(스터디) 하둡.araboza - 1</a></h2>
-        </header>
-        <section class="post-excerpt">
-            <p>[데이터 공작소] 하둡을 들어가기전의 기초 지식에 대해서 포스팅하였습니다. 기초 지식이라고 하기 이전에 약간의 진입장벽이있으니 주의해주시기 바랍니다. 그렇다고해서 전부를 암기하고 들어가는것이 아니므로 가볍게 읽어주세요. 감사합니다. Chapter 01... <a class="read-more" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-1">&raquo;</a></p>
-        </section>
-        <footer class="post-meta">
-
-        
-            
-            <img class="author-thumb" src="/assets/images/authors/drakejin.jpg" alt="Author image" nopin="nopin" />
-            
-            <!-- author -->
-            <a href='/author/drakejin'>drakejin</a>
-            <!-- [[tags prefix=" on "]] -->
-        
-             
-                on 
-                
-                    
-                       <a href='/tag/hadoop'>Hadoop</a>
-                       
-                
-            
-            <time class="post-date" datetime="2017-04-28">28 Apr 2017</time>
+            <time class="post-date" datetime="2017-04-02">02 Apr 2017</time>
         </footer>
     </article>
     
@@ -327,11 +262,14 @@
     
         <nav class="pagination" role="pagination">
     
-    <span class="page-number"> Page 1 of 2 </span>
-     
-        <a class="older-posts" href="/tag/hadoop/page2/" title="Next Page">Older Posts &raquo;</a>
+        
+            <a class="newer-posts" href="/author/drakejin/page3/" title="Previous Page">&laquo; Newer Posts</a>
+      
+    
+    <span class="page-number"> Page 4 of 4 </span>
      
 </nav>
+
     
 
 
