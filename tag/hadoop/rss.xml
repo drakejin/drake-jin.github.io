@@ -200,7 +200,7 @@ part-r-xxxx =&gt; part-m-xxxx가 된다.</p>
 
 <h2 id="mapreduce----">MapReduce의 기본 자료형 및 변수들</h2>
 
-<p><img src="/assets/posts/res/2017-05-08/wrapping-variables.png" alt="wrapping variables" /></p>
+<p><img src="/assets/images/post/2017-05-08/wrapping-variables.png" alt="wrapping variables" /></p>
 
 <h3 id="writable-">Writable 인터페이스</h3>
 <ul>
@@ -482,7 +482,7 @@ public int compareTo(ItemFreq o) {
 
 <h3 id="section-7">셔플링</h3>
 
-<p><img src="/assets/post/2017-05-08/shuffling-sorting.png" alt="Shuffling &amp; sorting" /></p>
+<p><img src="/assets/images/post/2017-05-08/shuffling-sorting.png" alt="Shuffling &amp; sorting" /></p>
 
 <ul>
   <li>셔플링 : 맵 태스크가 종료되면 그때 리듀스 태스크들이 자신에게 해당하는 파티션의 데이터만 읽어가게 되는데 이때는 RPC등을 통하는 것이 아니라 그냥 HTTP를 통해 읽습니다. 이 과정을 셔플링이라한다.</li>
@@ -541,7 +541,7 @@ public int compareTo(ItemFreq o) {
 </ul>
 
 <h2 id="section-14">출력 포맷</h2>
-<p><img src="/assets/post/2017-05-08/output-format.png" alt="output format" /></p>
+<p><img src="/assets/images/post/2017-05-08/output-format.png" alt="output format" /></p>
 
 <h3 id="textoutputformat">TextOutputFormat</h3>
 <ul>
