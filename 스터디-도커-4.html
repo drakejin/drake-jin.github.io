@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>(스터디) 도커.araboza - 4</title>
+    <title>(스터디) 도커.araboza - 5</title>
     <meta name="description" content="데이터공작소(공사중 >    3 < ) - 데이터 분석은 잘 못하지만, 데이터 분석할 수 있게 도와드리겠어요!" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -148,10 +148,10 @@
     <article class="post tag-docker">
 
         <header class="post-header">
-            <h1 class="post-title">(스터디) 도커.araboza - 4</h1>
+            <h1 class="post-title">(스터디) 도커.araboza - 5</h1>
             <section class="post-meta">
             <!-- <a href='/'>drakejin</a> -->
-            <time class="post-date" datetime="2017-04-12">12 Apr 2017</time>
+            <time class="post-date" datetime="2017-04-18">18 Apr 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
@@ -168,50 +168,69 @@
             
             <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 이 문서의 저작권은 <img src="http://pyrasis.com/private/2014/11/30/publish-docker-for-the-really-impatient-book" alt="pyrasis.com" /> 여기에 있습니다. 혼자 공부하려고 글들의 내용을 참고하였습니다. 문제시 삭제하겠습니다.</p>
 
-<h2 id="docker-image-">Docker Image 만들기</h2>
+<h2 id="docker-history">docker history</h2>
+<p>이미지 히스토리를 살펴보도록 하자.</p>
 
-<h3 id="bash--">bash 기본 명령</h3>
-
-<p><img src="http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter04" alt="pyraris에 있는 bash기본 명령어를 따라해봅시당" /></p>
-
-<p>기분좋게 한번 따라해봅시당</p>
-
-<h3 id="dockerfile-">DockerFile 작성하기</h3>
-
-<p><img src="http://pyrasis.com/book/DockerForTheReallyImpatient/Chapter04/02" alt="pyraris를 보고 dockerFile을 작성해봅시당" /></p>
-
-<h3 id="build----">build 명령으로 이미지를 생성해 봅시다.</h3>
-
-<p>docker image를 만들때에는 DockerFile 을 이용해야 합니다.</p>
-
-<p><code class="highlighter-rouge">
- $ sudo docker build --tag {image_name}:{tag} {dockerfile_path}
+<p><code class="highlighter-rouge">bash
+$ sudo docker history {image_name}:{tag}
+# or
+$ sudo docker history {image_id}
 </code>
- - {dockerfile_path} 이 존재하는 경로를 입력해야함.
- -  이미지 이름만 설정하면 태그는 latest로 설정됨.</p>
+아이디 값{image_id} 또는 {image_name}:{tag}을 이용하여 설치한 이미지의 내역을 확인할 수 있다.</p>
 
 <h4 id="section">실행 화면</h4>
 
-<p><img src="images/sudo_docker_build.png" alt="sudo docker build" /></p>
+<p><img src="/assets/images/post/2017-04-18/history.png" alt="docker history" /></p>
 
-<h2 id="run--container-">생성된 이미지를 run 하여 container를 생성해봅시다.</h2>
-
-<p><code class="highlighter-rouge">bash
- $ sudo docker run --name {container_name} -d -p {host_port}:{container_port} -v {host_dir}:{container_dir} 
-</code></p>
-
-<ul>
-  <li>-d =&gt; 컨테이너를 백그라운드로 실행한다.</li>
-  <li>-p {host_port}:{container_port} =&gt; 컨테이너의 포트와 호스트의 포트를 연결하여 외부에 노출.</li>
-  <li>-v {host_dir}:{container_dir} =&gt; 컨테이너의 디렉토리와 호스트의 디렉토리를 연결하여 호스트에서 컨테이너의 디렉토리를 읽습니다.</li>
-</ul>
+<h2 id="docker-cp">docker cp</h2>
+<p>컨테이너 내부의 파일을 꺼내와보자.</p>
 
 <h4 id="section-1">실행 화면</h4>
 
-<p><img src="images/sudo_docker_run.png" alt="sudo docker run" /></p>
+<p><img src="/assets/images/post/2017-04-18/cp.png" alt="docker cp" /></p>
 
-<p><img src="images/nginx.png" alt="sudo_docker_access" /></p>
+<p><code class="highlighter-rouge">bash 
+$ sudo docker cp {container_name}:{container_internal_file} {store_path}
+</code></p>
 
+<h1 id="docker-commit">docker commit</h1>
+<p>컨테이너의 변경사항을 이미지로 저장</p>
+
+<p><code class="highlighter-rouge">bash
+$ sudo docker commit -{option} "{title}" -m "{content}" {container_name} {image_name}:{tag}
+</code></p>
+
+<h4 id="section-2">실행 화면</h4>
+
+<p><img src="/assets/images/post/2017-04-18/commit.png" alt="docker commit" /></p>
+
+<h2 id="docker-diff">docker diff</h2>
+<p>commit 이후 컨테이너에서 변경된 파일 확인하기</p>
+
+<ul>
+  <li>A는 추가된 파일</li>
+  <li>C는 변경된 파일</li>
+  <li>D는 삭제된 파일</li>
+</ul>
+
+<p><code class="highlighter-rouge">bash
+$ sudo docker diff {container_name}
+</code></p>
+
+<h4 id="section-3">실행화면</h4>
+
+<p><img src="/assets/images/post/2014-04-18/diff.png" alt="docker diff" /></p>
+
+<h1 id="docker-inspect">docker inspect</h1>
+<p>컨테이너 세부정보 확인</p>
+
+<p><code class="highlighter-rouge">bash
+$ sudo docker inspect {container_name}
+</code></p>
+
+<h4 id="section-4">실행화면</h4>
+
+<p><img src="/assets/images/post/2014-04-18/inspect.png" alt="docker inspect" /></p>
 
 
         </section>
@@ -251,7 +270,7 @@
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=(스터디) 도커.araboza - 4&amp;url=blog.drakejin.me%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-4"
+                <a class="icon-twitter" href="http://twitter.com/share?text=(스터디) 도커.araboza - 5&amp;url=blog.drakejin.me%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-4"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
@@ -316,8 +335,8 @@
     
         <a class="read-next-story " style="background-image: url(/assets/images/post/tags/docker.png)" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-5">
             <section class="post">
-                <h2>(스터디) 도커.araboza - 5</h2>
-                <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 이 문서의...</p>
+                <h2>(스터디) 도커.araboza - 6-1</h2>
+                <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. ## 개인저장소...</p>
             </section>
         </a>
     
@@ -326,7 +345,7 @@
     
         <a class="read-next-story prev " style="background-image: url(/assets/images/post/tags/docker.png)" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-3">
             <section class="post">
-                <h2>(스터디) 도커.araboza - 3</h2>
+                <h2>(스터디) 도커.araboza - 4</h2>
                 <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 이 문서의...</p>
             </section>
         </a>

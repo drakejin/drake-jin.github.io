@@ -130,7 +130,8 @@
       <item>
         <title>(스터디) 하둡.araboza - Intro</title>
         
-          <description>&lt;p&gt;[데이터 공작소] 하둡공부하기전 Intro 어떻게 공부할것인가! 참고서적 (Do it 하둡 프로그래밍 및 Hadoop완벽가이드 책을 참고하였습니다.&lt;/p&gt;
+          <description>&lt;p&gt;[데이터 공작소] 하둡공부하기전 Intro 어떻게 공부할것인가! 
+(참고서적은 Do it 하둡 프로그래밍 및 Hadoop완벽가이드 책을 참고하였습니다.)&lt;/p&gt;
 
 </description>
         
@@ -151,8 +152,8 @@
         
         <pubDate>Wed, 19 Apr 2017 09:00:00 +0900</pubDate>
         <link>
-        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6-2</link>
-        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6-2</guid>
+        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6</link>
+        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6</guid>
       </item>
       
     
@@ -160,21 +161,14 @@
       <item>
         <title>(스터디) 도커.araboza - 6-1</title>
         
-          <description>&lt;hr /&gt;
-&lt;p&gt;layout: post
-title: (스터디) 도커.araboza - 6-1
-category: docker
-image: /assets/posts/res/2017-04-19/docker.png
-tags: [docker, virtualization, container, Immutable Infrastructure]
-—
-[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다.&lt;/p&gt;
+          <description>&lt;p&gt;[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다.&lt;/p&gt;
 
 </description>
         
         <pubDate>Wed, 19 Apr 2017 09:00:00 +0900</pubDate>
         <link>
-        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6-1</link>
-        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6-1</guid>
+        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-5</link>
+        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-5</guid>
       </item>
       
     
@@ -188,8 +182,8 @@ tags: [docker, virtualization, container, Immutable Infrastructure]
         
         <pubDate>Tue, 18 Apr 2017 09:00:00 +0900</pubDate>
         <link>
-        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-5</link>
-        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-5</guid>
+        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-4</link>
+        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-4</guid>
       </item>
       
     
@@ -203,8 +197,8 @@ tags: [docker, virtualization, container, Immutable Infrastructure]
         
         <pubDate>Wed, 12 Apr 2017 09:00:00 +0900</pubDate>
         <link>
-        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-4</link>
-        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-4</guid>
+        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-3</link>
+        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-3</guid>
       </item>
       
     
@@ -217,21 +211,6 @@ tags: [docker, virtualization, container, Immutable Infrastructure]
 </description>
         
         <pubDate>Sat, 08 Apr 2017 09:00:00 +0900</pubDate>
-        <link>
-        blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-3</link>
-        <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-3</guid>
-      </item>
-      
-    
-      
-      <item>
-        <title>(스터디) 도커.araboza - 2</title>
-        
-          <description>&lt;p&gt;[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 이 문서의 저작권은 &lt;img src=&quot;http://pyrasis.com/private/2014/11/30/publish-docker-for-the-really-impatient-book&quot; alt=&quot;pyrasis.com&quot; /&gt; 여기에 있습니다. 혼자 공부하려고 글들의 내용을 참고하였습니다. 문제시 삭제하겠습니다.&lt;/p&gt;
-
-</description>
-        
-        <pubDate>Fri, 07 Apr 2017 09:00:00 +0900</pubDate>
         <link>
         blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-2</link>
         <guid isPermaLink="true">blog.drakejin.me/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-2</guid>

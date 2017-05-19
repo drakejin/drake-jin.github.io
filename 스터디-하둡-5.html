@@ -170,10 +170,10 @@
 
 <h2 id="chapter-05">Chapter 05</h2>
 <p>Chapter04의 WordCount소스에 사용된 MapReduce소스에 대해서 분석해보는 챕터입니다.
- - <a href="https://autofei.wordpress.com/2010/06/27/oreilly-hadoop-the-definitive-guide-06-2009/">하둡의 작동방법에 대해 상세히 나와있음 </a></p>
+ - <a href="https://autofei.wordpress.com/2010/06/27/oreilly-hadoop-the-definitive-guide-06-2009">하둡의 작동방법에 대해 상세히 나와있음 </a></p>
 
-<p><img src="/assets/posts/res/2017-05-08/mapreduce.jpg" alt="mapreduce" />
-<img src="/assets/posts/res/2017-05-08/mapreduce-process.png" alt="mapreduce-process" /></p>
+<p><img src="/assets/images/post/2017-05-08/mapreduce.jpg" alt="mapreduce" />
+<img src="/assets/images/post/2017-05-08/mapreduce-process.png" alt="mapreduce-process" /></p>
 
 <h2 id="section">차례</h2>
 <ol>
@@ -366,7 +366,7 @@ public int compareTo(ItemFreq o) {
 </ul>
 
 <h2 id="section-2">입력 포맷의 역할</h2>
-<p><img src="/assets/posts/res/2017-05-08/input-format.png" alt="input format " />
+<p><img src="/assets/images/post/2017-05-08/input-format.png" alt="input format " />
  - job.setInputFormatClass() 에 해당되는 내용.</p>
 
 <h3 id="textinputformat">TextInputFormat</h3>
@@ -429,19 +429,19 @@ public int compareTo(ItemFreq o) {
   <li>리듀스가 하나일경우</li>
 </ol>
 
-<p><img src="/assets/posts/res/2017-05-08/one-reduce.png" alt="one reduce" /></p>
+<p><img src="/assets/images/post/2017-05-08/one-reduce.png" alt="one reduce" /></p>
 
 <ol>
   <li>리듀스가 두개일 경우</li>
 </ol>
 
-<p><img src="/assets/posts/res/2017-05-08/two-reduce.png" alt="two reduce" /></p>
+<p><img src="/assets/images/post/2017-05-08/two-reduce.png" alt="two reduce" /></p>
 
 <ol>
   <li>리듀스가 없을 경우</li>
 </ol>
 
-<p><img src="/assets/posts/res/2017-05-08/none-reduce.png" alt="none reduce" /></p>
+<p><img src="/assets/images/post/2017-05-08/none-reduce.png" alt="none reduce" /></p>
 
 <h3 id="getsplits----">getSplits의 파일 조각 나누는 방식</h3>
 
@@ -536,7 +536,7 @@ public int compareTo(ItemFreq o) {
 
 <h3 id="section-7">셔플링</h3>
 
-<p><img src="/assets/posts/res/2017-05-08/shuffling-sorting.png" alt="Shuffling &amp; sorting" /></p>
+<p><img src="/assets/post/2017-05-08/shuffling-sorting.png" alt="Shuffling &amp; sorting" /></p>
 
 <ul>
   <li>셔플링 : 맵 태스크가 종료되면 그때 리듀스 태스크들이 자신에게 해당하는 파티션의 데이터만 읽어가게 되는데 이때는 RPC등을 통하는 것이 아니라 그냥 HTTP를 통해 읽습니다. 이 과정을 셔플링이라한다.</li>
@@ -595,7 +595,7 @@ public int compareTo(ItemFreq o) {
 </ul>
 
 <h2 id="section-14">출력 포맷</h2>
-<p><img src="/assets/posts/res/2017-05-08/output-format.png" alt="output format" /></p>
+<p><img src="/assets/post/2017-05-08/output-format.png" alt="output format" /></p>
 
 <h3 id="textoutputformat">TextOutputFormat</h3>
 <ul>
