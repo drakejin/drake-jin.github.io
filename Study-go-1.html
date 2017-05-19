@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- [[! Page Meta ]] -->
-    <title>(스터디) 도커.araboza - 6-2</title>
+    <title>(스터디) Go 언어를.arabojja - 1</title>
     <meta name="description" content="데이터공작소 - 데이터 분석은 잘 못하지만, 데이터 분석할 수 있게 도와드리겠어요!" />
 
     <meta name="HandheldFriendly" content="True" />
@@ -139,7 +139,7 @@
 
 
 
-<header class="main-header post-head " style="background-image: url(/assets/images/post/tags/docker.png) ">
+<header class="main-header post-head " style="background-image: url(/assets/images/post/tags/go.png) ">
     <nav class="main-nav  overlay  clearfix">
         <a class="blog-logo" href="/">
             <img src="/assets/images/logo.png" alt="Blog Logo" />
@@ -152,19 +152,19 @@
 
 <main class="content" role="main">
 
-    <article class="post tag-docker">
+    <article class="post tag-go">
 
         <header class="post-header">
-            <h1 class="post-title">(스터디) 도커.araboza - 6-2</h1>
+            <h1 class="post-title">(스터디) Go 언어를.arabojja - 1</h1>
             <section class="post-meta">
             <!-- <a href='/'>drakejin</a> -->
-            <time class="post-date" datetime="2017-04-19">19 Apr 2017</time>
+            <time class="post-date" datetime="2017-05-20">20 May 2017</time>
                 <!-- [[tags prefix=" on "]] -->
                  
                 on 
                 
                     
-                       <a href='/tag/docker'>Docker</a>
+                       <a href='/tag/go'>Go</a>
                        
                 
                 
@@ -173,156 +173,75 @@
 
         <section class="post-content">
             
-            <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다.</p>
+            <p>[데이터공작소] 일단 시작하기 앞서서 설치를 먼저 해봅시다.</p>
 
-<h2 id="docker--">Docker 데이터 볼륨</h2>
-<ul>
-  <li>Docker의 데이터 볼륨은 데이터를 컨테이너가 아닌 호스트에 저장하는 방식</li>
-  <li>데이터 볼륨은 컨테이너끼리 데이터를 공유할 때 활용할 수 있다.</li>
-  <li>Docker 컨테이너 안의 파일 변경사항은 Union File System에 의해 관리된다.</li>
-  <li>데이터 볼륨은 Union File System을 통하지 않고 바로 호스트에 저장된다.</li>
-  <li>Union File System은 docker container</li>
-  <li>데이터 볼륨 은 공유를 위한 호스트 File System!</li>
-  <li><em>즉 docker commit 명령을 통해 이미지로 생성해도 데이터 볼륨의 변경 사항은 이미지에 포함되지 않는다.</em></li>
-</ul>
+<h2 id="section">설치</h2>
+<p>Go Compiler는 공식 웹페이지 에서 다운 받을 수 있다.  버전은 1.8.1</p>
 
-<h2 id="data-volume-">컨테이너 안에 data volume 만들기</h2>
-
-<p>``` bash
-$ sudo docker run -i -t –name {container_name} -v {data_volume_path} {image_name} /bin/bash</p>
-
-<h1 id="container---cd-data">container / &gt; cd /data</h1>
-<p>#container /data &gt; touce hello world
-#container /data &gt; mkdir test
-#container /data &gt; ls -ailF</p>
-
-<p>```
- - -v {data_volume_path} =&gt; 데이터 볼륨 디렉토리를 설정하는 옵션</p>
-
-<h4 id="section">실행화면</h4>
-
-<p><img src="/assets/images/post/2017-04-19/volume.png" alt="docker volume" />
-<img src="/assets/images/post/2017-04-19/container_volumes.png" alt="docker file create" /></p>
-
-<h1 id="host---data-volume--">Host 에서 만들어진 data volume 으로 열람하기</h1>
-<p>sudo 권한이 아니고서는 만들어진 data_volume으로 탐색이 불가능하다.
-실행화면에 접근하는 디렉토리에 파일을 생성하면 컨테이너에서도 생성될것이다.</p>
-
-<ul>
-  <li>1.9버전 미만</li>
-</ul>
-
-<p><code class="highlighter-rouge">bash 
-$ sudo docker inspect -f "" hello-volume
- </code>
- - 1.9버전 이상</p>
-
-<p><code class="highlighter-rouge">bash
-$ sudo docker insect -f "" hello-volume 
- </code>
-#### 실행화면(1.9 이상의 실습화면)</p>
-
-<p><img src="/assets/images/post/2017-04-19/inspect.png" alt="docker volume" />
-<img src="/assets/images/post/2017-04-19/ls.png" alt="docker ls" /></p>
-
-<h1 id="section-1">두 컨테이너와 호스트의 디렉토리를 공유하자</h1>
 <ol>
-  <li>컨테이너를 생성하고 데이터 볼륨을 설정한다. 그리고 생성된 컨테이너의 /data 디렉토리에 파일을 생성하고 빠져나온다</li>
+  <li>플랫폼별 인스톨 파일
+    <ul>
+      <li><a href="https://storage.googleapis.com/golang/go1.8.1.linux-amd64.tar.gz">Linux 다운로드</a></li>
+      <li><a href="https://storage.googleapis.com/golang/go1.8.1.darwin-amd64.pkg">MacOS 다운로드</a></li>
+      <li><a href="https://storage.googleapis.com/golang/go1.8.1.windows-amd64.msi">Windows 다운로드</a></li>
+    </ul>
+  </li>
+  <li>환경변수 및 PATH 설정[<a href="https://golang.org/doc/install?download=go1.8.1.linux-amd64.tar.gz">참고페이지</a>]</li>
 </ol>
 
-<p><code class="highlighter-rouge">bash
-$ sudoc docker run -it --name {container_name} -v {host_dir_path}:{container_dir_path} {image_name} /bin/bash
-</code></p>
+<p>``` sh</p>
 
-<h4 id="section-2">실행화면</h4>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ sudo tar -C /usr/local -xzf go1.8.1.linux-amd64.tar.gz 
+$ vi ~/.zshrc
 
-<p><img src="/assets/images/post/2017-04-19/share_volume.png" alt="volumes" /></p>
+# ----------- vi ~/.zshrc -------------------------------
+GOROOT=/usr/local/go
+PATH=$PATH:$GO_HOME/bin:$GOROOT/bin
 
-<h1 id="section-3">볼륨 컨테이너 사용하기</h1>
-<p>데이터 볼륨 컨테이너는 데이터 볼륨을 설정한 컨테이너를 뜻함.
-일반 컨테이너에서 데이터 볼륨 컨테이너를 연결하면 데이터 볼륨 컨테이너 안의 데이터 볼륨을 디렉터리에 접근할 수 있다.</p>
+export PATH GOROOT
+# ------------------------------------------------------   ```
+</code></pre>
+</div>
 
-<p><img src="http://jam.sg/blog/wp-content/uploads/2015/02/Screen-Shot-2015-02-01-at-17.47.40.png" alt="volume container" /></p>
+<h4 id="vi-bashrc--">vi ~/.bashrc 파일 설정</h4>
 
-<p>``` bash
-# 호스트와 공유할 디렉토리를 하나 지정한다.
-$ sudo docker run -it –name hello-volume -v /home/likemilk/docker/data/:/data ubuntu /bin/bash
-# 컨테이너의 /data 디렉토리에 파일을 만들고 빠져나올때
-# 해동 컨테이너를 종료하면 안된다. 
-# ctrl + p =&gt; ctrl +q 로 빠져나올 수 있도록 하자.
-$ sudo docker run -it –volumes-from hello-volume –name using-volume ubuntu /bin/bash
-# –volumes-from {container_name}은 데이터 볼륨 컨테이너를 연결할 때 사용한다.</p>
+<p><img src="/assets/images/post/2017-05-20/bash.png" alt="vi .bashrc.sh" /></p>
 
-<p>```
-#### 실행화면</p>
+<ol>
+  <li>Source 편집</li>
+</ol>
 
-<p><img src="/assets/images/post/2017-04-19//container_volume.png" alt="container_volumes" /></p>
+<p>``` go</p>
 
-<h2 id="docker-base-images-">Docker Base Images 생성하기</h2>
-<p>보통 Dockerfile로 이미지를 생성할 때 Docker Hub에서 제공하는 공식이미지를 기반으로 생성합니다. 공식이미지가 아닌 자신만의 이미지를 만들어봅시다.</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>$ vi {CUSTOM\_PROJECT\_HOME}/src/hello/hello.go  
+----------------
+package main 
+import "fmt"
 
-<p>``` bash
-$ sudo apt-get install -y debootstrap
-# 부트스트랩 도구 debootstrap 을 설치한다.</p>
-
-<p>$ sudo debootstrap trusty trusty
-# debootstrap 으로 우분투 trusty 바이너리 파일을 받는다. trusy는 코드네임이다. 
-# sudo debootstrap {code_name} {dir_path}
-# 우분투 버전별 코드네임 https://wiki.ubuntu.com/DevelopmentCodeNames</p>
-
-<p>$ sudo tar -C trusty -c . | sudo docker import - trusty
-# $ sudo docker import http://example.com/trusty.tgz trusty
-# sudo docker import {URL} {image name}:{tag}
-# 또는 웹상에서 만들어진 우분투 바이너리 파일을 사용할 수 있습니다.</p>
-
-<p>$ sudo docker images 
-# 설치가 잘 되었나 확인합니다.</p>
-
-<h1 id="trusty---">임포트 한 trusty 이미지로 컨테이너를 생성합니다.</h1>
-<p>$ sudo docker run -it –name debootstrap trusty /bin/bash</p>
+func main(){
+    fmt.Printf("Hello world\n")
+}
+---------------
+$ cd {CUSTOM\_PROJECT\_HOME}/src/hello
+$ go build 
+</code></pre>
+</div>
 
 <p>```</p>
 
-<h4 id="section-4">실행화면</h4>
+<h4 id="vi-bashrc---1">vi ~/.bashrc 파일 설정</h4>
 
-<p><img src="/assets/images/post/2017-04-19/apt-get.png" alt="install debootstrap" />
-<img src="/assets/images/post/2017-04-19/debootstrap.png" alt="install trusty" />
-<img src="/assets/images/post/2017-04-19/tar.png" alt="importing &amp; extract on docker" /></p>
+<p><img src="/assets/images/post/2017-05-20/hello.go.png" alt="vi hello.go" /></p>
 
-<h2 id="docker-in-docker">Docker in Docker</h2>
+<h4 id="section-1">소스 실행 결과</h4>
 
-<p>우분투 14.04 에서는 정상 동작 합니다만 CentOS 6.5 또는 7.0에서 잘 안됩니다. 커널 패닉 및 마운트 실패.. 등등.. Docker 는 1.1.2이상을 추천합니다.</p>
+<p><img src="/assets/images/post/2017-05-20/hello-result.png" alt="result hello.go" /></p>
 
-<p>``` bash 
-$ git clone https://github.com/jpetazzo/dind
-# git hub에서 Dockerfile과bash 스크립트를 다운받아야 합니다.</p>
+<h4 id="go---">설치된 Go 의 환경설정 확인</h4>
 
-<p>$ cd dind
-$ sudo docker build –tag dind .
-# 이미지를 생성합니다.</p>
+<p><img src="/assets/images/post/2017-05-20/env.png" alt="go env" /></p>
 
-<p>$ sudo docker run -it –privileged dind
-# dind 프로젝트에서 생성한 이미지로 컨테이너를 생성합니다.
-# –privileged 옵션은 컨테이너 안에있는 호스트의 리눅스 커널 기능을 모두 사용할 수 있도록 합니다.
-# Docker in Docker 는 실험적 기능이라 로그가 기본으로 출력되도록 설정되어 있습니다. 
-# $ sudo docker run -it –privileged -e LOG=file dind
-# 로그 설정을 파일로하려면 다음과 같이 하시면 됩니다.</p>
-
-<h1 id="section-5">————- 지금은 도커안의 도커가 설치된 컨테이너에 있습니다</h1>
-<p>$ sudo docker run -it busybox:latest /bin/sh</p>
-
-<p>```</p>
-
-<h4 id="section-6">실행화면</h4>
-
-<p><img src="/assets/images/post/2017-04-19/dind.png" alt="dind" />
-<img src="/assets/images/post/2017-04-19/dind_container.png" alt="dind container" />
-<img src="/assets/images/post/2017-04-19/busybox.png" alt="busybox" /></p>
-
-<blockquote>
-  <p>컨테이너 구성은 다음과 같이 되어있습니다.
-호스트 -&gt; dind 컨테이너 -&gt; busy box 컨테이너</p>
-</blockquote>
+<p>여기 과정까지 무사히 왔다면 설치는 완료</p>
 
 
 
@@ -363,15 +282,15 @@ $ sudo docker build –tag dind .
 
             <section class="share">
                 <h4>Share this post</h4>
-                <a class="icon-twitter" href="http://twitter.com/share?text=(스터디) 도커.araboza - 6-2&amp;url=blog.drakejin.me%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6"
+                <a class="icon-twitter" href="http://twitter.com/share?text=(스터디) Go 언어를.arabojja - 1&amp;url=blog.drakejin.meStudy-go-1"
                     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
                     <span class="hidden">Twitter</span>
                 </a>
-                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=blog.drakejin.me%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6"
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=blog.drakejin.meStudy-go-1"
                     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
                     <span class="hidden">Facebook</span>
                 </a>
-                <a class="icon-google-plus" href="https://plus.google.com/share?url=blog.drakejin.me%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-6"
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=blog.drakejin.meStudy-go-1"
                    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
                     <span class="hidden">Google+</span>
                 </a>
@@ -410,20 +329,20 @@ s.setAttribute('data-timestamp', +new Date());
 
     <!-- [[! next_post ]] -->
     
-        <a class="read-next-story " style="background-image: url(/assets/images/post/tags/hadoop.png)" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%ED%95%98%EB%91%A1-intro">
+        <a class="read-next-story " style="background-image: url(/assets/images/post/tags/go.png)" href="/Study-go-2">
             <section class="post">
-                <h2>(스터디) 하둡.araboza - Intro</h2>
-                <p>[데이터 공작소] 하둡공부하기전 Intro 어떻게 공부할것인가! (참고서적은 Do it 하둡 프로그래밍 및 Hadoop완벽가이드 책을 참고하였습니다.)...</p>
+                <h2>(스터디) Go 언어를.arabojja - 2</h2>
+                <p>[데이터공작소] Write & Compile & Run 배움의 WCR > < !! ## 마라톤 코딩 [gobyexample.com](https://gobyexample.com/)...</p>
             </section>
         </a>
     
     <!-- [[! /next_post ]] -->
     <!-- [[! prev_post ]] -->
     
-        <a class="read-next-story prev " style="background-image: url(/assets/images/post/tags/docker.png)" href="/%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-5">
+        <a class="read-next-story prev " style="background-image: url(/assets/images/post/tags/go.png)" href="/Study-go-intro">
             <section class="post">
-                <h2>(스터디) 도커.araboza - 6-1</h2>
-                <p>[데이터 공작소] 데이터 공작소는 도커는 어떻게 공부할것인가! 처음 시작하는 도커에 대해 공부를 시작합니다. 개인저장소 구축...</p>
+                <h2>(스터디) Go 언어를.arabogga - Intro</h2>
+                <p>[데이터공작소] Go언어에 대해 알아볼까요 ? 이 언어를 시작하게 된 동기 Retrica 면접을 보는대 Retrica 서버는...</p>
             </section>
         </a>
     

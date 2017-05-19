@@ -1023,7 +1023,7 @@ $ hadoop jar {jar} wc.MyWordCount […args]</p>
 
 <h3 id="section-3">그리드 컴퓨팅</h3>
 
-<p><img src="/assets/posts/res/2017-04-28/grid.gif" alt="grid computing" />
+<p><img src="/assets/images/post/2017-04-28/grid.gif" alt="grid computing" />
  여러 자원의 컴퓨터가 한대의 컴퓨터처럼 동작하도록 작동하는 컴퓨팅</p>
 
 <ul>

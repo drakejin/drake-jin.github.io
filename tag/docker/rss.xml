@@ -579,7 +579,7 @@ $ sudo docker inspect {container_name}
 </code></p>
 
 <h6 id="section-1">실행 화면</h6>
-<p><img src="images/sudo_docker_search.png" alt="sudo docker search" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_search.png" alt="sudo docker search" /></p>
 
 <h3 id="pull">pull</h3>
 <p>pull 명령어는 dockerhub에 있는 이미지를 다운받는데 사용합니다.</p>
@@ -592,7 +592,7 @@ tag자리에 latest를 입력하면 이미지의 최신버전을 다운받습니
 위 링크에서 tag 자리에 올 적합한 버전을 찾아서 입력하면 해당 tag 버전으로 설치할 수 있습니다.</p>
 
 <h5 id="section-2">실행 화면</h5>
-<p><img src="images/sudo_docker_pull.png" alt="sudo docker pull iamges_name_tag" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_pull.png" alt="sudo docker pull iamges_name_tag" /></p>
 
 <h3 id="images">images</h3>
 <p>다운받은 이미지 목록 출력하기</p>
@@ -604,7 +604,7 @@ tag자리에 latest를 입력하면 이미지의 최신버전을 다운받습니
 
 <h5 id="section-3">실행화면</h5>
 
-<p><img src="images/sudo_docker_images.png" alt="sudo docker images" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_images.png" alt="sudo docker images" /></p>
 
 <h3 id="run">run</h3>
 <p>컨테이너 생성하는 명령어, 다운 받은 이미지를 기반으로 컨테이너를 만듭니다.</p>
@@ -626,7 +626,7 @@ $ sudo docker run -i -t --name {container_name} {image_name} {login_shell}
 
 <h5 id="section-4">실행화면</h5>
 
-<p><img src="images/sudo_docker_run.png" alt="sudo docker run -i -t --name" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_run.png" alt="sudo docker run -i -t --name" /></p>
 
 <h3 id="ps">ps</h3>
 <p>컨테이너의 목록 확인하기</p>
@@ -638,7 +638,7 @@ $ sudo docker ps -a
 
 <h5 id="section-5">실행화면</h5>
 
-<p><img src="images/sudo_docker_ps.png" alt="sudo docker ps" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_ps.png" alt="sudo docker ps" /></p>
 
 <h3 id="start">start</h3>
 <p>정지된 컨테이너를 구동시킬 때 사용한다.</p>
@@ -649,7 +649,7 @@ $ sudo docker ps -a
 
 <h5 id="section-6">실행화면</h5>
 
-<p><img src="images/sudo_docker_start.png" alt="sudo docker start" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_start.png" alt="sudo docker start" /></p>
 
 <h3 id="stop">stop</h3>
 <p>실행된 컨테이너를 정지 시킬 때 사용한다.</p>
@@ -660,7 +660,7 @@ $ sudo docker ps -a
 
 <h5 id="section-7">실행화면</h5>
 
-<p><img src="images/sudo_docker_stop.png" alt="sudo_docker_stop" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_stop.png" alt="sudo_docker_stop" /></p>
 
 <h3 id="restart">restart</h3>
 
@@ -672,7 +672,7 @@ $ sudo docker ps -a
 
 <h5 id="section-8">실행화면</h5>
 
-<p><img src="images/sudo_docker_restart.png" alt="sudo docker restart" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_restart.png" alt="sudo docker restart" /></p>
 
 <h3 id="attach">attach</h3>
 <p>실행된 컨테이너에 접속하기위해 사용한다.
@@ -682,7 +682,7 @@ $ sudo docker ps -a
 
 <h5 id="section-9">실행화면</h5>
 
-<p><img src="images/sudo_docker_attach.png" alt="sudo docker attach" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_attach.png" alt="sudo docker attach" /></p>
 
 <h3 id="exec">exec</h3>
 <p>실행된 컨테이너에 접속하지않고 명령어를 수행하기 위해 사용한다. 결과창은 Host OS 에서 확인 할 수 있다.</p>
@@ -693,7 +693,7 @@ $ sudo docker ps -a
 
 <h5 id="section-10">실행화면</h5>
 
-<p><img src="images/sudo_docker_exec.png" alt="sudo docker exec" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_exec.png" alt="sudo docker exec" /></p>
 
 <h3 id="rm">rm</h3>
 <p>생성된 컨테이너를 삭제한다. 실행되고 있는 컨테이너는 제거할 수 없다.</p>
@@ -704,7 +704,7 @@ $ sudo docker ps -a
 
 <h5 id="section-11">실행화면</h5>
 
-<p><img src="images/sudo_docker_rm.png" alt="sudo_docker_rm" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_rm.png" alt="sudo_docker_rm" /></p>
 
 <h3 id="rmi">rmi</h3>
 <p>설치한 이미지를 삭제한다. 단 삭제하려는 이미지로 생성한 컨테이너가 사용중이거나 만들어져있다면 삭제할 수 없다. 
@@ -714,7 +714,7 @@ $ sudo docker ps -a
 
 <h5 id="section-12">실행화면</h5>
 
-<p><img src="images/sudo_docker_rmi.png" alt="sudo_docker_rmi" /></p>
+<p><img src="/assets/images/post/2017-04-08/sudo_docker_rmi.png" alt="sudo_docker_rmi" /></p>
 
 
 	  ]]></description>
