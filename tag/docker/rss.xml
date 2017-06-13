@@ -721,7 +721,7 @@ $ sudo docker ps -a
 	</item>
 
 	<item>
-	  <title>(스터디) 도커.araboza - 1</title>
+	  <title>(스터디) 도커.araboza - 2</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-1</link>
 	  <author>drakejin</author>
 	  <pubDate>2017-04-04T09:00:00+09:00</pubDate>
@@ -842,7 +842,7 @@ $ sudo docker ps -a
 	</item>
 
 	<item>
-	  <title>(스터디) 도커.araboza - Intro</title>
+	  <title>(스터디) 도커.araboza - 1</title>
 	  <link>//%EC%8A%A4%ED%84%B0%EB%94%94-%EB%8F%84%EC%BB%A4-intro</link>
 	  <author>drakejin</author>
 	  <pubDate>2017-04-02T09:00:00+09:00</pubDate>
