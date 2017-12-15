@@ -1,11 +1,11 @@
 [
   
     {
-      "title"    : "처음 겪은 마이그레이션 전략-intro",
-      "tags"     : "tag1, tag2, and tag3",
-      "categories" : "startup",
-      "url"      : "/%ED%85%9C%ED%94%8C%EB%A6%BF-intro/",
-      "date"     : "12/09/2017"
+      "title"    : "ReactJS 코드를 에디터에 쓰기 전에",
+      "tags"     : "javascript and react",
+      "categories" : "reactjs",
+      "url"      : "/React-Intro/",
+      "date"     : "12/16/2017"
     } 
   
 ]

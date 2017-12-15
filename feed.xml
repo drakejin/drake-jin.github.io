@@ -3,27 +3,25 @@
   <channel>
     <title>DrakeJin</title>
     <description>세상을 재미있게 만들기 위한 기술</description>
-    <link>http://blog.drakejin.me/</link>
-    <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 13 Dec 2017 07:10:09 +0900</pubDate>
-    <lastBuildDate>Wed, 13 Dec 2017 07:10:09 +0900</lastBuildDate>
+    <link>http://localhost:3000/</link>
+    <atom:link href="http://localhost:3000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Sat, 16 Dec 2017 00:40:25 +0900</pubDate>
+    <lastBuildDate>Sat, 16 Dec 2017 00:40:25 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
-        <title>처음 겪은 마이그레이션 전략-intro</title>
-        <description>&lt;h1 id=&quot;summary&quot;&gt;Summary&lt;/h1&gt; &lt;p&gt;회사에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;북딜&lt;/code&gt;이란 서비스를 샀다. 그럼과 동시에 &lt;code class=&quot;highlighter-rouge&quot;&gt;북딜&lt;/code&gt;의 서버를 우리 회사의 인프라로 가져와야한다. 하지만, &lt;code class=&quot;highlighter-rouge&quot;&gt;북딜&lt;/code&gt;서버를 인스턴스 째로 가져오고 싶지만 해당 인스턴스 안에 보안관련한 api키들이 가득하니 그렇게 할 수는 없다고 한다.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;즉 보안관련된 정보는 받아볼 수 없기때문에 직접 받아볼 수 있는것들은 소스코드뿐, 구술로 들은 아키텍쳐들의 내용..&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;이 포스팅의 마이그레이션 작업의 중요점것 바로&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;DNS를 활용하여 url을 교체하는 마이그레이션 작업.&lt;/p&gt; &lt;/blockquote&gt; &lt;h2 id=&quot;상황&quot;&gt;상황&lt;/h2&gt; &lt;h4 id=&quot;초기-인수인계-상황&quot;&gt;초기 인수인계 상황&lt;/h4&gt; &lt;ol&gt; &lt;li&gt;인수인계를 우리측 경영자와 건내주는 CEO 둘이서 이야기를 하며 인수인계 절차를 밟고 있음&lt;/li&gt; &lt;li&gt;인수인계 해줄 개발자가 있지만 퇴사하고 다른 회사에 있는 상태&lt;/li&gt; &lt;li&gt;직접 작업해 줄 수 있는건 인수해오는 회사의...</description>
-        <pubDate>Sat, 09 Dec 2017 00:00:00 +0900</pubDate>
-        <link>http://blog.drakejin.me/%ED%85%9C%ED%94%8C%EB%A6%BF-intro/</link>
-        <guid isPermaLink="true">http://blog.drakejin.me/%ED%85%9C%ED%94%8C%EB%A6%BF-intro/</guid>
+        <title>ReactJS 코드를 에디터에 쓰기 전에</title>
+        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 인간의 생리학적 기능인 배설 활동 중 똥만드는 interface를 상속한 나머지 주체할 수 없는 인간의 불가항력 생리활동이 왕성해버려 어쩔 수 없음을 미리 알려드립니다.&lt;/p&gt; &lt;h1 id=&quot;vue가-최고임-ㅎㅎ-왜-굳이-react함&quot;&gt;Vue가 최고임 ㅎㅎ 왜 굳이 React함?&lt;/h1&gt; &lt;p&gt;… 이런 논란은 항상있기 마련이지만.. 상황과 필요에 의해 React가 적합할거 같아 적용합니다… 도태와 비도태된 기술의 비교도 아니구요.. 개발비용에는 생산비용만 있는것도 아니잖아요..!&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;a href=&quot;https://joshua1988.github.io/web_dev/vue-or-react/&quot;&gt;React인가 Vue인가?&lt;/a&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;큰 SPA의 웹 페이지를 만들라구웃&lt;/p&gt; &lt;p&gt;&lt;a href=&quot;https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&quot;&gt;글이 올라가 있는 장소&lt;/a&gt;&lt;/p&gt;...</description>
+        <pubDate>Sat, 16 Dec 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:3000/React-Intro/</link>
+        <guid isPermaLink="true">http://localhost:3000/React-Intro/</guid>
         
-        <category>tag1</category>
+        <category>javascript</category>
         
-        <category>tag2</category>
-        
-        <category>tag3</category>
+        <category>react</category>
         
         
-        <category>startup</category>
+        <category>reactjs</category>
         
       </item>
     
