@@ -5,13 +5,13 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 17 Dec 2017 20:58:00 +0900</pubDate>
-    <lastBuildDate>Sun, 17 Dec 2017 20:58:00 +0900</lastBuildDate>
+    <pubDate>Sun, 17 Dec 2017 21:00:23 +0900</pubDate>
+    <lastBuildDate>Sun, 17 Dec 2017 21:00:23 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>flex 에 대해서 알아보자</title>
-        <description>&lt;p&gt;http://flexboxfroggy.com/#ko&lt;/p&gt; &lt;p&gt;읽기전에 위 링크에 있는 튜토리얼을 먼저 하고나서 글을 보면 좋을것 같다. &lt;a href=&quot;https://teamtreehouse.com&quot;&gt;treehouse&lt;/a&gt;에서 만든 튜토리얼로 flex를 이해하는데 이걸로 잠깐 써보면 어느정도 감이 잡히지 않을까 싶다.&lt;/p&gt; &lt;h1 id=&quot;왜-flex를-쓸까&quot;&gt;왜 flex를 쓸까?&lt;/h1&gt; &lt;p&gt;float: left, right를 하고 픽셀을 퍼센트로 고정시키거나 display:inline-block으로 mobile web 처럼 보이는 UI/UX를 구현할 수 있다. 하지만, flex를 이용해서 UI를 짜면 더 &lt;code class=&quot;highlighter-rouge&quot;&gt;쉽다&lt;/code&gt;. 심지어 반응형웹에도 쉽게 만들어낼 수 있는 마법의 속성이다.&lt;/p&gt; &lt;p&gt;일반적으로 flex 이전의 것들은 텍스트 중심의 block들을 제어하기위한 속성들이지만, 미디어 콘텐츠를 중심으로 제어하기 위해서는 2퍼센트 부족하다. flex는 이런 점들을 개선하기 위해 나왔으며 기존의 방식보다 더 줄어든 코드로 매끄러운 UI 배치가 되도록 지원할 것이다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;&lt;em&gt;flex를 쓰고 아래와 같은...</description>
+        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 제가 미숙하기 때문입니다. 그럼에도 불구하고 피드백 많이 주시면 감사하겠습니다.&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;intro&lt;/h1&gt; &lt;p&gt;http://flexboxfroggy.com/#ko&lt;/p&gt; &lt;p&gt;읽기전에 위 링크에 있는 튜토리얼을 먼저 하고나서 글을 보면 좋을것 같다. &lt;a href=&quot;https://teamtreehouse.com&quot;&gt;treehouse&lt;/a&gt;에서 만든 튜토리얼로 flex를 이해하는데 이걸로 잠깐 써보면 어느정도 감이 잡히지 않을까 싶다.&lt;/p&gt; &lt;h1 id=&quot;왜-flex를-쓸까&quot;&gt;왜 flex를 쓸까?&lt;/h1&gt; &lt;p&gt;float: left, right를 하고 픽셀을 퍼센트로 고정시키거나 display:inline-block으로 mobile web 처럼 보이는 UI/UX를 구현할 수 있다. 하지만, flex를 이용해서 UI를 짜면 더 &lt;code class=&quot;highlighter-rouge&quot;&gt;쉽다&lt;/code&gt;. 심지어 반응형웹에도 쉽게 만들어낼 수 있는 마법의 속성이다.&lt;/p&gt; &lt;p&gt;일반적으로 flex 이전의 것들은 텍스트 중심의 block들을 제어하기위한 속성들이지만, 미디어 콘텐츠를 중심으로 제어하기 위해서는...</description>
         <pubDate>Sun, 17 Dec 2017 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/css-flex/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/css-flex/</guid>
@@ -27,7 +27,7 @@
     
       <item>
         <title>ReactJS 코드를 에디터에 쓰기 전에</title>
-        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 인간의 생리학적 기능인 배설 활동 중 똥만들기 interface를 상속했기 때문입니다.&lt;/p&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;a href=&quot;https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&quot;&gt;출처&lt;/a&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;큰 SPA의 웹 페이지를 만들기에 좋습니다.&lt;/p&gt; &lt;h4 id=&quot;그럼-그-이전에는-큰-어플리케이션은-어떻게-만들었을까&quot;&gt;그럼 그 이전에는 큰 어플리케이션은 어떻게 만들었을까?&lt;/h4&gt; &lt;p&gt;일반적으로 모든 웹페이지에서 서버와 통신하며 요청을 주고 받으면, 받은 데이터를 DOM 객체에 속성값, text들을 변화시키거나 새로 만들거나 제거하게 되로록 짰었다. 그리고 이 때 코드는 계속해서 DOM객체의 CRUD코드를 반복해서 코드를 짜 주어야 한다. 또한 성능적인 측면에서 DOM객체를 지속적으로 연산을 하게 될...</description>
+        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 제가 미숙하기 때문입니다. 그럼에도 불구하고 피드백 많이 주시면 감사하겠습니다.&lt;/p&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;a href=&quot;https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&quot;&gt;출처&lt;/a&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;큰 SPA의 웹 페이지를 만들기에 좋습니다.&lt;/p&gt; &lt;h4 id=&quot;그럼-그-이전에는-큰-어플리케이션은-어떻게-만들었을까&quot;&gt;그럼 그 이전에는 큰 어플리케이션은 어떻게 만들었을까?&lt;/h4&gt; &lt;p&gt;일반적으로 모든 웹페이지에서 서버와 통신하며 요청을 주고 받으면, 받은 데이터를 DOM 객체에 속성값, text들을 변화시키거나 새로 만들거나 제거하게 되로록 짰었다. 그리고 이 때 코드는 계속해서 DOM객체의 CRUD코드를 반복해서 코드를 짜 주어야 한다. 또한 성능적인 측면에서 DOM객체를 지속적으로 연산을 하게 될 경우...</description>
         <pubDate>Sat, 16 Dec 2017 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/react-Intro/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/react-Intro/</guid>
