@@ -18,7 +18,7 @@
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://blog.drakejin.me/react-intro/">
+    <meta property="og:url" content="http://blog.drakejin.me/React-Intro/">
     <meta property="og:title" content="ReactJS 코드를 에디터에 쓰기 전에 | DrakeJin">
     
     <meta property="og:image" content="https://i.imgur.com/yRH0zfw.png">
@@ -60,7 +60,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://blog.drakejin.me/react-intro/">
+    <link rel="canonical" href="http://blog.drakejin.me/React-Intro/">
     <link rel="alternate" type="application/rss+xml" title="DrakeJin" href="http://blog.drakejin.me/feed.xml" />
 </head>
 
@@ -131,7 +131,7 @@ December 16, 2017
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>8 min to read</span>
+                    <span>9 min to read</span>
                 </p>
                 <h1 class="post-title" itemprop="name">ReactJS 코드를 에디터에 쓰기 전에</h1>
                 <p itemprop="description" class="subtitle">시작하기전에 이론충이 한번 되어보는것은 어떠한지?</p>
@@ -142,7 +142,7 @@ December 16, 2017
 
                 <h1 id="주의">주의</h1>
 
-<p>이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 제가 미숙하기 때문입니다. 그럼에도 불구하고 피드백 많이 주시면 감사하겠습니다.</p>
+<p>이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 제가 미숙하기 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 읽고 검토해서 반영하도록 하겠습니다. 감사하겠습니다.</p>
 
 <h1 id="react는-왜-존재하는가">React는 왜 존재하는가?</h1>
 
@@ -218,9 +218,13 @@ December 16, 2017
 
 <h4 id="virtual-dom과-regular-dom-의-차이">Virtual DOM과 regular DOM 의 차이</h4>
 
-<p>VirtualDOM과 DOM은 화면에 그려지는 그 순간의 차이는 다르지 않다.</p>
+<p>VirtualDOM과 DOM은 화면에 그려지는 그 순간의 차이는 다르지 않다. 실제로도 많은 사람들이 Virtual DOM 하고 regular DOM 하고 다르지 않다고 한다. 
+나는 그 말이 해매게 하기 아주 좋은 말이라 생각한다. 그야 당연히 보이거나 그려지고 난 이후에는 DOM일 태니까 다를게 없겠지만. 
+코드 작성이나 동작 부문에서는 완벽하게 다르다. 일단. 클릭이나 이벤트시에 이벤트 함수의 파라메터로 들어오는 이벤트 객체부터가 다르다. 
+이건… 브라우저한태만 같은 DOM객체지, 개발자 입장에선 완벽히 다르다.(적어도 내 기준에서는)</p>
 
-<p>하지만 그려지기 이전까지는 VirtualDOM과 regular(일반) DOM은 대단히 다르다.</p>
+<p>나중에 배우겠지만… 컴포넌트에는 생명주기란것이 있다. (일단 컴포넌트는 Virtual DOM의 모음집이다 라고 생각하면된다.) regular DOM에 생명주기 있는거 본사람은 없을것이다.
+비슷한 역할을 하는거라면 eventListener를 이용하는정도가 있겠지만… 무튼 Virtual DOM은 regular DOM 하고 차이라고 하기에 무색할정도로 다른 것같다.  마치 오렌지와 귤 처럼 말이다.</p>
 
 <ol>
   <li>VirtualDOM에는 생명주기가 있으며, regular DOM은 정적으로 그려지게 된다.</li>
@@ -232,31 +236,12 @@ December 16, 2017
 
 <p><em>위 링크가 차이점이라기보다. 서로 다른것을 설명하는 것 같다. 마치 오랜지와 감귤의 특징 나열 같은?  다른 링크가 링크가 있으면 덧글로 알려주시면 감사하겠습니다.좋겠습니다.</em></p>
 
-<p><a href="https://auth0.com/blog/face-off-virtual-dom-vs-incremental-dom-vs-glimmer/">관련자료:VirtualDOM vs IncrementalDOM vs Ember’s Glimmer: Fight</a></p>
+<h1 id="virtual-dom의-알고리즘">Virtual DOM의 알고리즘</h1>
 
-<ol>
-  <li>Virtual DOM provides a series of Javascript calls that tell the library how to build an in-memory DOM tree and how to update it when data bound to it changes
-    <ul>
-      <li>VirtualDOM 자바스크립트 종류들은 데이터가 변경될 때, 라이브러리를 통해 in-memory에 있는 돔 트리에게 어떻게 수정할것인지 알려준다. 즉 돔트리가 인메모리에 있다.</li>
-    </ul>
-  </li>
-  <li>The central piece of Virtual DOM is its smart diffing algorithm: once the differences in the model have been mapped to the in-memory copy of the DOM, the algorithm finds the minimum number of operations required to update the real DOM
-    <ul>
-      <li>Virtual DOM의 핵심은 smart diffing algorithm을 통해 하나의 다른 모델(데이터)에 매핑되어있는 인메모리 안에 있는 돔 객체를 하나 복사한다.  그 알고리즘은 최소의 연산으로 요구되는 실제 돔객체를 찾아서 수정한다.
-여기서의 두 개의 돔 트리는, 1개는 일반 DOM 트리 이며, 하나는 React 의 Virtual DOM Tree이다.</li>
-    </ul>
-  </li>
-</ol>
+<p>Virtual DOM의 특징은 앞서 언급했듯이 reflow 와 repaint를 줄여 <code class="highlighter-rouge">브라우저 레이아웃 엔진</code>에 성능에 최적화를 시켜준다고 했다.
+이런 특징을 가질 수 있도록 한 알고리즘은 무엇일까?</p>
 
-<p><img src="https://i.imgur.com/QRtqIui.png" alt="diffing process" /></p>
-
-<p>혹시 다른 자바스크립트 라이브러리의 DOM Change Workflow가 궁금하다면 다음의 링크를 읽어보고 오길 바란다.</p>
-
-<p><a href="http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html">Change And Its Detection In JavaScript Frameworks</a></p>
-
-<p>그러니까.. 위에서는 쭈욱~ 일반 DOM 객체가 좋지 않으며 느리다 라고 구박하고 매도했었다. <code class="highlighter-rouge">VirtualDOM</code>이 더 좋다는건 알겠는데, 뭐가 어떻게 더 좋다는걸까?</p>
-
-<h1 id="조화reconciliation-비교-알고리즘">조화(Reconciliation) 비교 알고리즘</h1>
+<h2 id="조화reconciliation-비교-알고리즘과-diffing-algorithm">조화(Reconciliation) 비교 알고리즘과 Diffing Algorithm</h2>
 
 <p>render가 되었을 때 이 알고리즘이 나오는 순간이며, 
 실제 조화(Reconciliation) 비교 알고리즘 알고리즘을 생각하게 되었을 때가 바로 
@@ -268,22 +253,36 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
 
 <p>성능은 기존 트리비교(he state of the art algorithms을 이용)는 O(n^3)이라면 리엑트의 트리비교 알고리즘(Heuristic을 이용)은  O(n)의 비교를 한다. [링크]:<a href="http://d2.naver.com/helloworld/9297403">제목 : D2의 React 적용하기 전에 읽어둘것 중에 Reconciliation을 찾아서 보길 바란다.</a></p>
 
-<h1 id="virtaul-dom의-장점">Virtaul DOM의 장점</h1>
+<p><strong><a href="https://auth0.com/blog/face-off-virtual-dom-vs-incremental-dom-vs-glimmer/">관련자료:VirtualDOM vs IncrementalDOM vs Ember’s Glimmer: Fight</a> 내용 중에 React.js’ Virtual DOM 요약</strong></p>
 
-<p>앞서 말했지만, repaint와 reflow를 주구장창 이야기한 이유가 있다.
-바로 Virtual DOM은 이를 최소화한 DOM 연산을 사용하기 때문이다.</p>
+<ol>
+  <li>Virtual DOM에 대한 돔 트리는 인메모리에 있으며 VirtualDOM은 데이터가 변경될 때, 라이브러리를 통해 in-memory에 있는 돔 트리에게 어떻게 수정할것인지 알려준다.</li>
+  <li>Virtual DOM의 핵심은 smart diffing algorithm을 통해 최소한의 연산으로 요구되는 실제 돔 객체를 찾아서 수정 및 변경작업을 한다. smart diffing algorithm은 
+Virtaul DOM Tree와 일반 DOM Tree를 맵핑되어있고 어떤 DOM Node가 다른지 찾는다. 기존의 DOM Tree에서 탐색 알고리즘은 big-O(n^3)였지만 react 에서의 탐색 알고리즘은 big-O(n)이기 때문에 타 virtualDOM 보다 빠르다고 할 수 있다.</li>
+</ol>
 
-<p>위의 이미지를 보면 Real DOM과 In-memory에 있는 virtaul DOM 을 비교하여 수정 연산을 한 결과를 한 큐에
-전부 뱉어냅니다. 그리고 수정은 바뀐것 하나만 하게 하죠.</p>
+<p><img src="https://i.imgur.com/QRtqIui.png" alt="diffing process" /></p>
 
-<p>이렇게 될경우에 repaint와 reflow는 한번에 레이아웃 계산으로 빠르게 랜더링을 할 수 있게 됩니다.</p>
+<p>혹시 다른 자바스크립트 라이브러리의 DOM Change Workflow가 궁금하다면 다음의 링크를 읽어보고 오길 바란다.</p>
 
-<p>이 방식이 더블버퍼링과 비슷한 역할을 하게 됩니다.</p>
+<p><a href="http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html">Change And Its Detection In JavaScript Frameworks</a>[이 링크는 읽던 안 읽던 선택해서 읽으면 된다.]</p>
+
+<h2 id="virtual-dom-이-좋다고-하는-이유">Virtual DOM 이 좋다고 하는 이유</h2>
 
 <blockquote>
-  <p>https://velopert.com/3236 복 붙</p>
+  <p>https://velopert.com/3236 복붙</p>
 
   <p>업데이트: ugwe43to874nf4 라는 레딧유저님이 Virtual DOM 의 중요성을 더 알려주었습니다.</p>
+
+  <p>DOM 조작의 실제 문제는 각 조작이 레이아웃 변화, 트리 변화와 렌더링을 일으킨다는겁니다. 그래서, 예를 들어 여러분이 30개의 노드를 하나 하나 수정하면, 그 뜻은 30번의 (잠재적인) 레이아웃 재계산과 30번의 (잠재적인) 리렌더링을 초래한다는 것이죠.</p>
+
+  <p>Virtual DOM 은 그냥 뭐 엄청 새로운것도 아니고, 그냥 DOM 차원에서의 더블 버퍼링이랑 다름이 없는거에요. 변화가 일어나면 그걸 오프라인 DOM 트리에 적용시키죠. 이 DOM 트리는 렌더링도 되지 않기때문에 연산 비용이 적어요. 연산이 끝나고나면 그 최종적인 변화를 실제 DOM 에 던져주는거에요. 딱 한번만 한는거에요. 모든 변화를 하나로 묶어서. 그러면, 레이아웃 계산과 리렌더링의 규모는 커지겠지만, 다시 한번 강조하자면 딱 한번만 하는거에요. 바로 이렇게, 하나로 묶어서 적용시키는것이, 연산의 횟수를 줄이는거구요.</p>
+
+  <p>사실, 이 과정은 Virtual DOM 이 없이도 이뤄질수 있어요. 그냥, 변화가 있을 때, 그 변화를 묶어서 DOM fragment 에 적용한 다음에 기존 DOM 에 던져주면 돼요.</p>
+
+  <p>그러면, Virtual DOM 이 해결 하려고 하는건 무엇이냐? 그 DOM fragment를 관리하는 과정을 수동으로 하나하나 작업 할 필요 없이, 자동화하고 추상화하는거에요. 그 뿐만 아니라, 만약에 이 작업을 여러분들이 직접 한다면, 기존 값 중 어떤게 바뀌었고 어떤게 바뀌지 않았는지 계속 파악하고 있어야하는데 (그렇지 않으면 수정 할 필요가 없는 DOM 트리도 업데이트를 하게 될 수도 있으니까요), 이것도 Virtual DOM 이 이걸 자동으로 해주는거에요. 어떤게 바뀌었는지 , 어떤게 바뀌지 않았는지 알아내주죠.</p>
+
+  <p>마지막으로, DOM 관리를 Virtual DOM 이 하도록 함으로써, 컴포넌트가 DOM 조작 요청을 할 때 다른 컴포넌트들과 상호작용을 하지 않아도 되고, 특정 DOM 을 조작할 것 이라던지, 이미 조작했다던지에 대한 정보를 공유 할 필요가 없습니다. 즉, 각 변화들의 동기화 작업을 거치지 않으면서도 모든 작업을 하나로 묶어줄 수 있다irtual DOM 의 중요성을 더 알려주었습니다.</p>
 
   <p>DOM 조작의 실제 문제는 각 조작이 레이아웃 변화, 트리 변화와 렌더링을 일으킨다는겁니다. 그래서, 예를 들어 여러분이 30개의 노드를 하나 하나 수정하면, 그 뜻은 30번의 (잠재적인) 레이아웃 재계산과 30번의 (잠재적인) 리렌더링을 초래한다는 것이죠.</p>
 
@@ -296,13 +295,7 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
   <p>마지막으로, DOM 관리를 Virtual DOM 이 하도록 함으로써, 컴포넌트가 DOM 조작 요청을 할 때 다른 컴포넌트들과 상호작용을 하지 않아도 되고, 특정 DOM 을 조작할 것 이라던지, 이미 조작했다던지에 대한 정보를 공유 할 필요가 없습니다. 즉, 각 변화들의 동기화 작업을 거치지 않으면서도 모든 작업을 하나로 묶어줄 수 있다는거죠.</p>
 </blockquote>
 
-<h1 id="컴포넌트">컴포넌트</h1>
-<p>React 에는 Component라는 개념이 있다. 나는 이것을 <code class="highlighter-rouge">하나의 기능</code>을 위한 DOM 덩어리라 생각한다.
-그리고 원래 컴포넌트라는 단어는 컴포넌트는 소프트웨어의 재사용의 중요성 과 필용성을 위해 나온 기술이란 이름에서 비롯했다.</p>
-
-<blockquote>
-  <p>즉 재사용, 필용성이 있는 하나의 기능을 하는 DOM 덩어리이다. 나는 그렇게 정의를 내렸다. (자세한 정의가 알고싶다면 이 곳이 아닌 구글에 검색해보길 바란다.)</p>
-</blockquote>
+<p><img src="http://cfile29.uf.tistory.com/image/234C904E58D2899A1F294A" alt="double buffering" /></p>
 
 <h1 id="컴포넌트의-장점">컴포넌트의 장점</h1>
 
@@ -368,7 +361,7 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
 
             </article>
 
-            <div class="progress-bar" data-minutes="8">
+            <div class="progress-bar" data-minutes="9">
                 <span class="time-completed"></span>
                 <span class="time-remaining"></span>
                 <div class="bar">
@@ -379,15 +372,15 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;ReactJS 코드를 에디터에 쓰기 전에&quot;%20http://blog.drakejin.me/react-intro/%20via%20&#64;&hashtags=javascript,react,"
+    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;ReactJS 코드를 에디터에 쓰기 전에&quot;%20http://blog.drakejin.me/React-Intro/%20via%20&#64;&hashtags=javascript,react,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/react-intro/"
+    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/React-Intro/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/react-intro/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/React-Intro/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -440,7 +433,7 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
         disqus_loaded = true;
         var disqus_shortname = 'blog-drakejin-me';
         var disqus_title = '';
-        var disqus_url = '/react-intro/';
+        var disqus_url = '/React-Intro/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
