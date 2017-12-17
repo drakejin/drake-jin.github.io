@@ -5,16 +5,32 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://localhost:3000/</link>
     <atom:link href="http://localhost:3000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 16 Dec 2017 01:26:35 +0900</pubDate>
-    <lastBuildDate>Sat, 16 Dec 2017 01:26:35 +0900</lastBuildDate>
+    <pubDate>Sun, 17 Dec 2017 18:15:32 +0900</pubDate>
+    <lastBuildDate>Sun, 17 Dec 2017 18:15:32 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
+        <title>flex 에 대해서 알아보자</title>
+        <description>&lt;p&gt;http://flexboxfroggy.com/#ko&lt;/p&gt; &lt;p&gt;읽기전에 이거 한번 해보고 글을 다시 읽도록 하자.&lt;/p&gt; &lt;h1 id=&quot;왜-flex를-쓸까&quot;&gt;왜 flex를 쓸까?&lt;/h1&gt; &lt;p&gt;float: left, right를 하고 픽셀을 퍼센트로 고정시키거나 display:inline-block으로 좌우 정렬도 하기도 하는데… 이것으로 최근 유행하는 모바일페이지 처럼 div를 배치하라고 한다면 할 수 있지만, display:flex를 이용하고난 이후부터는 block들을 배치하는것이 이전보다 비교적 쉽게다가올 것이다. 더불어 반응형 페이지를 보다 더 쉽게 만들어주기도 한다.&lt;/p&gt; &lt;p&gt;무엇보다 위 속성들은 글자들을 담은 block류의 display를 중심적으로 제어하기위한 프로퍼티 속성들이며 미디어 콘텐츠를 중심으로 제어하기 위해서는 2퍼센트 부족하기 때문이다.&lt;/p&gt; &lt;ul&gt; &lt;li&gt;flex를 쓰고 아래와 같은 panel을 만드는것과 안쓰고 만드는 것. 어떤게 더 편할까? &lt;img src=&quot;https://i.imgur.com/c3wvCtv.png&quot; alt=&quot;flex&quot; /&gt;&lt;/li&gt; &lt;/ul&gt; &lt;h4 id=&quot;deceprated&quot;&gt;deceprated&lt;/h4&gt; &lt;p&gt;구글링을 하다보면 옛날 자료에서 &lt;code class=&quot;highlighter-rouge&quot;&gt;display:box&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;display:...</description>
+        <pubDate>Sun, 17 Dec 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:3000/css-flex/</link>
+        <guid isPermaLink="true">http://localhost:3000/css-flex/</guid>
+        
+        <category>css</category>
+        
+        <category>flex</category>
+        
+        
+        <category>css</category>
+        
+      </item>
+    
+      <item>
         <title>ReactJS 코드를 에디터에 쓰기 전에</title>
-        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 인간의 생리학적 기능인 배설 활동 중 똥만드는 interface를 상속한 나머지 주체할 수 없는 불가항력의 생리활동이 왕성한건 어쩔 수 없음을 미리 알려드립니다.&lt;/p&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;a href=&quot;https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&quot;&gt;출처&lt;/a&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;큰 SPA의 웹 페이지를 만들기에 좋습니다.&lt;/p&gt; &lt;h4 id=&quot;그럼-그-이전에는-큰-어플리케이션은-어떻게-만들었을까&quot;&gt;그럼 그 이전에는 큰 어플리케이션은 어떻게 만들었을까?&lt;/h4&gt; &lt;p&gt;일반적으로 모든 웹페이지에서 서버와 통신하며 요청을 주고 받으면, 받은 데이터를 DOM 객체에 속성값, text들을 변화시키거나 새로 만들거나 제거하게 되로록 짰었다. 그리고 이 때 코드는 계속해서 DOM객체의 CRUD코드를 반복해서 코드를...</description>
+        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 인간의 생리학적 기능인 배설 활동 중 똥만들기 interface를 상속했기 때문입니다.&lt;/p&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;a href=&quot;https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&quot;&gt;출처&lt;/a&gt;&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;큰 SPA의 웹 페이지를 만들기에 좋습니다.&lt;/p&gt; &lt;h4 id=&quot;그럼-그-이전에는-큰-어플리케이션은-어떻게-만들었을까&quot;&gt;그럼 그 이전에는 큰 어플리케이션은 어떻게 만들었을까?&lt;/h4&gt; &lt;p&gt;일반적으로 모든 웹페이지에서 서버와 통신하며 요청을 주고 받으면, 받은 데이터를 DOM 객체에 속성값, text들을 변화시키거나 새로 만들거나 제거하게 되로록 짰었다. 그리고 이 때 코드는 계속해서 DOM객체의 CRUD코드를 반복해서 코드를 짜 주어야 한다. 또한 성능적인 측면에서 DOM객체를 지속적으로 연산을 하게 될...</description>
         <pubDate>Sat, 16 Dec 2017 00:00:00 +0900</pubDate>
-        <link>http://localhost:3000/React-Intro/</link>
-        <guid isPermaLink="true">http://localhost:3000/React-Intro/</guid>
+        <link>http://localhost:3000/react-Intro/</link>
+        <guid isPermaLink="true">http://localhost:3000/react-Intro/</guid>
         
         <category>javascript</category>
         

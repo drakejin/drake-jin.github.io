@@ -1,10 +1,18 @@
 [
   
     {
+      "title"    : "flex 에 대해서 알아보자",
+      "tags"     : "css and flex",
+      "categories" : "css",
+      "url"      : "/css-flex/",
+      "date"     : "12/17/2017"
+    } ,
+  
+    {
       "title"    : "ReactJS 코드를 에디터에 쓰기 전에",
       "tags"     : "javascript and react",
       "categories" : "reactjs",
-      "url"      : "/React-Intro/",
+      "url"      : "/react-Intro/",
       "date"     : "12/16/2017"
     } 
   

@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>ReactJS 코드를 에디터에 쓰기 전에 | DrakeJin</title>
-    <meta name="description" content="시작하기전에 이론충이 한번 되어보는것은 어떠한지?">
+    <title>flex 에 대해서 알아보자 | DrakeJin</title>
+    <meta name="description" content="flex IE11부터 지원 되지만 편하게 블록들을 배치할 수 있는 display">
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@">
-    <meta name="twitter:title" content="ReactJS 코드를 에디터에 쓰기 전에 | DrakeJin">
-    <meta name="twitter:description" content="시작하기전에 이론충이 한번 되어보는것은 어떠한지?">
+    <meta name="twitter:title" content="flex 에 대해서 알아보자 | DrakeJin">
+    <meta name="twitter:description" content="flex IE11부터 지원 되지만 편하게 블록들을 배치할 수 있는 display">
     
     <meta property="twitter:image:src" content="https://i.imgur.com/yRH0zfw.png">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://localhost:3000/react-Intro/">
-    <meta property="og:title" content="ReactJS 코드를 에디터에 쓰기 전에 | DrakeJin">
+    <meta property="og:url" content="http://localhost:3000/css-flex/">
+    <meta property="og:title" content="flex 에 대해서 알아보자 | DrakeJin">
     
     <meta property="og:image" content="https://i.imgur.com/yRH0zfw.png">
     
-    <meta property="og:description" content="시작하기전에 이론충이 한번 되어보는것은 어떠한지?">
+    <meta property="og:description" content="flex IE11부터 지원 되지만 편하게 블록들을 배치할 수 있는 display">
     <meta property="og:site_name" content="DrakeJin">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="ReactJS 코드를 에디터에 쓰기 전에 | DrakeJin"/>
-    <meta itemprop="description" content="시작하기전에 이론충이 한번 되어보는것은 어떠한지?">
+    <meta itemprop="name" content="flex 에 대해서 알아보자 | DrakeJin"/>
+    <meta itemprop="description" content="flex IE11부터 지원 되지만 편하게 블록들을 배치할 수 있는 display">
     <meta itemprop="image" content="http://localhost:3000/assets/img/blog-image.png"/>
 
     <!-- Favicon -->
@@ -60,7 +60,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://localhost:3000/react-Intro/">
+    <link rel="canonical" href="http://localhost:3000/css-flex/">
     <link rel="alternate" type="application/rss+xml" title="DrakeJin" href="http://localhost:3000/feed.xml" />
 </head>
 
@@ -122,253 +122,225 @@
                 <p itemprop="post-info" class="post-info">
                     
                         <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
-                        <time itemprop="datePublished" datetime="2017-12-16T00:00:00+09:00" class="date">
+                        <time itemprop="datePublished" datetime="2017-12-17T00:00:00+09:00" class="date">
                             
 
 
-December 16, 2017
+December 17, 2017
 
                         </time>
                     
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>8 min to read</span>
+                    <span>4 min to read</span>
                 </p>
-                <h1 class="post-title" itemprop="name">ReactJS 코드를 에디터에 쓰기 전에</h1>
-                <p itemprop="description" class="subtitle">시작하기전에 이론충이 한번 되어보는것은 어떠한지?</p>
+                <h1 class="post-title" itemprop="name">flex 에 대해서 알아보자</h1>
+                <p itemprop="description" class="subtitle">flex IE11부터 지원 되지만 편하게 블록들을 배치할 수 있는 display</p>
 
                 
                     <img src="https://i.imgur.com/yRH0zfw.png" alt="Imagem de capa" class="post-cover">
                 
 
-                <h1 id="주의">주의</h1>
+                <p>http://flexboxfroggy.com/#ko</p>
 
-<p>이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 인간의 생리학적 기능인 배설 활동 중 똥만들기 interface를 상속했기 때문입니다.</p>
+<p>읽기전에 이거 한번 해보고 글을 다시 읽도록 하자.</p>
 
-<h1 id="react는-왜-존재하는가">React는 왜 존재하는가?</h1>
+<h1 id="왜-flex를-쓸까">왜 flex를 쓸까?</h1>
+<p>float: left, right를 하고 픽셀을 퍼센트로 고정시키거나 
+display:inline-block으로 좌우 정렬도 하기도 하는데…
+이것으로 최근 유행하는 모바일페이지 처럼 div를 배치하라고 한다면 할 수 있지만,
+display:flex를 이용하고난 이후부터는 block들을 배치하는것이 이전보다 비교적 쉽게다가올 것이다. 
+더불어 반응형 페이지를 보다 더 쉽게 만들어주기도 한다.</p>
 
-<blockquote>
-  <p>We built React to solve one problem: building large applications with data that changes over time.<a href="https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md">출처</a></p>
-</blockquote>
-
-<p>큰 SPA의 웹 페이지를 만들기에 좋습니다.</p>
-
-<h4 id="그럼-그-이전에는-큰-어플리케이션은-어떻게-만들었을까">그럼 그 이전에는 큰 어플리케이션은 어떻게 만들었을까?</h4>
-
-<p>일반적으로 모든 웹페이지에서 서버와 통신하며 요청을 주고 받으면, 받은 데이터를 DOM 객체에 속성값, text들을 변화시키거나 새로 만들거나 제거하게 되로록 짰었다. 그리고 이 때 코드는 계속해서 DOM객체의 CRUD코드를 반복해서 코드를 짜 주어야 한다. 또한 성능적인 측면에서 DOM객체를 지속적으로 연산을 하게 될 경우 성능상으로 문제가 될 수 있다.</p>
-
-<p>페이스북의 React는 이 방법을 가상의 DOM 객체(Virtual DOM)를 이용해 이 문제를 해결하였다.</p>
-
-<h1 id="dom-virtual-dom은-무엇">DOM? Virtual DOM은 무엇?</h1>
-
-<h4 id="dom">DOM</h4>
-
-<p><code class="highlighter-rouge">Document Object Model(DOM)</code>은 html, js, css로 생성하는 태그들을 말한다. 우리가 자주 보는 <code class="highlighter-rouge">&lt;div&gt;</code>, <code class="highlighter-rouge">&lt;input&gt;</code>, <code class="highlighter-rouge">&lt;a&gt;</code> 등의 것들이다.</p>
-
-<h4 id="virtualdom">VirtualDOM</h4>
-
-<p>DOM tree가 인메모리에 하나 더 있고(Virtual DOM Tree), DOM의 추상화 개념을 활용한 새로운 또 다른 DOM.</p>
-
-<h4 id="dom은-느리다">DOM은 느리다?</h4>
-
-<p>DOM이 느리다라는 표현은 옳지 않다.</p>
-
-<p>맨 위에 언급되었듯이 React의 존재는 대규모 SPA의 웹 페이지를 만들기 위해이며, 대규모 SPA 웹이 아닌 일반 소개페이지라면 당연히 regular(일반) DOM이 더 성능이 좋다.</p>
-
-<p>상황에 따라 다르다는것이다.</p>
-
-<h4 id="그런데-왜-다른-블로그들은-dom에-대한-문제점을-설파할까">그런데.. 왜 다른 블로그들은 DOM에 대한 문제점을 설파할까?</h4>
-
-<p>요즘 DOM이 사용되고 있는 트렌드(DOM이 애니메이션마냥 휘황찬란하게 바뀌는 상황)에서 현재의 DOM객체에 문제가 있기 때문이다. 
-그 부분은 바로 <code class="highlighter-rouge">브라우저 레이아웃 엔진</code>에서 발생하며, repaint와 reflow연산작업의 빈번한 발생으로 UI/UX렌더링에 비교적 많은 리소스를 먹게되기 때문이다.</p>
-
-<p>하지만 정확히 알기위해서는 반드시 이 <a href="https://velopert.com/3236">링크:velopert blog</a>를 참조해보는것을 추천한다.</p>
-
-<p><strong>링크요약</strong></p>
-
-<p><img src="https://i.imgur.com/0XdloJi.png" alt="링크요약" /></p>
-
-<h1 id="repaint-와-reflow-는-무엇">Repaint 와 Reflow 는 무엇?</h1>
-
-<blockquote>
-  <p><strong>reflow</strong>는 하나의 DOM객체의 크기나 위치가 변경되엇 을 때(레이아웃의 변경작업), 다른 DOM객체들의 위치와 크기가 함께 변경하는것을 말한다.</p>
-</blockquote>
-
-<blockquote>
-  <p><strong>repaint</strong>는 색상이 변경되거나 글자의 내용이 바뀌었을 때 발생되는 연산이다.</p>
-</blockquote>
-
-<p>코드로 보면 다음과 같다.</p>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">;</span> <span class="c1">//캐싱</span>
-<span class="nx">style</span><span class="p">.</span><span class="nx">padding</span> <span class="o">=</span><span class="s2">"20px"</span><span class="p">;</span> <span class="c1">// reflow, repaint</span>
-<span class="nx">style</span><span class="p">.</span><span class="nx">border</span> <span class="o">=</span><span class="s2">"10px solid red"</span><span class="p">;</span> <span class="c1">// reflow, repaint</span>
-<span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span><span class="s2">"blue"</span><span class="p">;</span> <span class="c1">// repaint (레이아웃이변경되진않았기때문에 reflow 안함)</span>
-<span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span><span class="s2">"#ffa"</span><span class="p">;</span> <span class="o">!</span><span class="c1">// repaint</span>
-<span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span><span class="s2">"1em"</span><span class="p">;</span> <span class="o">!</span><span class="c1">// reflow, repaint!</span>
-
-<span class="c1">// reflow, repaint</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s1">'hello world!'</span><span class="p">));</span>
-</code></pre></div></div>
-
-<p>하지만 브라우저는 매 한줄 한줄의 명령에 의해 repaint와 reflow가 발생하는것은 아니다. style에 대한 작업이 더 없고 다른 연산으로 들어갈 때 <code class="highlighter-rouge">Batched DOM Update</code>가 된다. 즉, 매 한 줄 마다 reapint, reflow연산을 하지 않는다는 것이다.</p>
-
-<p>하지만 그 중에 한줄 한줄 강제로 reflow연산을 발생시키는 동작들이 부분있다. 그것이 바로  <a href="https://gist.github.com/paulirish/5d52fb081b3570c81e3a">Forced Reflow</a>이다.</p>
-
-<h4 id="참고용reflow의-최적화-작업들브라우저-레이아웃-엔진의-성능튜닝-10가지">[참고용][reflow의 최적화 작업들]<a href="https://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/">브라우저 레이아웃 엔진의 성능튜닝 10가지</a></h4>
-
-<h4 id="virtual-dom과-regular-dom-의-차이">Virtual DOM과 regular DOM 의 차이</h4>
-
-<p>VirtualDOM과 DOM은 화면에 그려지는 그 순간의 차이는 다르지 않다.</p>
-
-<p>하지만 그려지기 이전까지는 VirtualDOM과 regular(일반) DOM은 대단히 다르다.</p>
-
-<ol>
-  <li>VirtualDOM에는 생명주기가 있으며, regular DOM은 정적으로 그려지게 된다.</li>
-  <li>VirtaulDOM은 regular DOM의 추상화 개념을 사용한다. 이것은 가볍고, 브라우저 스펙의 구현체와는 분리되어있다.(사실 regular DOM은 자체가 추상화 개념이다.)</li>
-  <li>event객체가 서로 다른 객체이다.(하긴.. regular DOM의 추상화 개념을 사용한 것이면 결과물(생성된 DOM) 마저도 다르겠지….)</li>
-</ol>
-
-<p>https://github.com/FEDevelopers/tech.description/wiki/%EA%B0%80%EC%83%81-%EB%8F%94%EA%B3%BC-%EB%8F%94%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90</p>
-
-<p><em>위 링크가 차이점이라기보다. 서로 다른것을 설명하는 것 같다. 마치 오랜지와 감귤의 특징 나열 같은?  다른 링크가 링크가 있으면 덧글로 알려주시면 감사하겠습니다.좋겠습니다.</em></p>
-
-<p><a href="https://auth0.com/blog/face-off-virtual-dom-vs-incremental-dom-vs-glimmer/">관련자료:VirtualDOM vs IncrementalDOM vs Ember’s Glimmer: Fight</a></p>
-
-<ol>
-  <li>Virtual DOM provides a series of Javascript calls that tell the library how to build an in-memory DOM tree and how to update it when data bound to it changes
-    <ul>
-      <li>VirtualDOM 자바스크립트 종류들은 데이터가 변경될 때, 라이브러리를 통해 in-memory에 있는 돔 트리에게 어떻게 수정할것인지 알려준다. 즉 돔트리가 인메모리에 있다.</li>
-    </ul>
-  </li>
-  <li>The central piece of Virtual DOM is its smart diffing algorithm: once the differences in the model have been mapped to the in-memory copy of the DOM, the algorithm finds the minimum number of operations required to update the real DOM
-    <ul>
-      <li>Virtual DOM의 핵심은 smart diffing algorithm을 통해 하나의 다른 모델(데이터)에 매핑되어있는 인메모리 안에 있는 돔 객체를 하나 복사한다.  그 알고리즘은 최소의 연산으로 요구되는 실제 돔객체를 찾아서 수정한다.
-여기서의 두 개의 돔 트리는, 1개는 일반 DOM 트리 이며, 하나는 React 의 Virtual DOM Tree이다.</li>
-    </ul>
-  </li>
-</ol>
-
-<p><img src="https://i.imgur.com/QRtqIui.png" alt="diffing process" /></p>
-
-<p>혹시 다른 자바스크립트 라이브러리의 DOM Change Workflow가 궁금하다면 다음의 링크를 읽어보고 오길 바란다.</p>
-
-<p><a href="http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html">Change And Its Detection In JavaScript Frameworks</a></p>
-
-<p>그러니까.. 위에서는 쭈욱~ 일반 DOM 객체가 좋지 않으며 느리다 라고 구박하고 매도했었다. <code class="highlighter-rouge">VirtualDOM</code>이 더 좋다는건 알겠는데, 뭐가 어떻게 더 좋다는걸까?</p>
-
-<h1 id="조화reconciliation-비교-알고리즘">조화(Reconciliation) 비교 알고리즘</h1>
-
-<p>render가 되었을 때 이 알고리즘이 나오는 순간이며, 
-실제 조화(Reconciliation) 비교 알고리즘 알고리즘을 생각하게 되었을 때가 바로 
-render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가 에서 시작되었다고 한다. <strong>즉, 컴포넌트가 update 되는 순간에 The Diffing Algorithm와 Reconciliation Algorithm이 사용된다.</strong></p>
-
-<blockquote>
-  <p>The diffing algorithm은 Reconciliation Algorithm을 활용한 로직알고리즘</p>
-</blockquote>
-
-<p>성능은 기존 트리비교(he state of the art algorithms을 이용)는 O(n^3)이라면 리엑트의 트리비교 알고리즘(Heuristic을 이용)은  O(n)의 비교를 한다. [링크]:<a href="http://d2.naver.com/helloworld/9297403">제목 : D2의 React 적용하기 전에 읽어둘것 중에 Reconciliation을 찾아서 보길 바란다.</a></p>
-
-<h1 id="virtaul-dom의-장점">Virtaul DOM의 장점</h1>
-
-<p>앞서 말했지만, repaint와 reflow를 주구장창 이야기한 이유가 있다.
-바로 Virtual DOM은 이를 최소화한 DOM 연산을 사용하기 때문이다.</p>
-
-<p>위의 이미지를 보면 Real DOM과 In-memory에 있는 virtaul DOM 을 비교하여 수정 연산을 한 결과를 한 큐에
-전부 뱉어냅니다. 그리고 수정은 바뀐것 하나만 하게 하죠.</p>
-
-<p>이렇게 될경우에 repaint와 reflow는 한번에 레이아웃 계산으로 빠르게 랜더링을 할 수 있게 됩니다.</p>
-
-<p>이 방식이 더블버퍼링과 비슷한 역할을 하게 됩니다.</p>
-
-<blockquote>
-  <p>https://velopert.com/3236 복 붙</p>
-
-  <p>업데이트: ugwe43to874nf4 라는 레딧유저님이 Virtual DOM 의 중요성을 더 알려주었습니다.</p>
-
-  <p>DOM 조작의 실제 문제는 각 조작이 레이아웃 변화, 트리 변화와 렌더링을 일으킨다는겁니다. 그래서, 예를 들어 여러분이 30개의 노드를 하나 하나 수정하면, 그 뜻은 30번의 (잠재적인) 레이아웃 재계산과 30번의 (잠재적인) 리렌더링을 초래한다는 것이죠.</p>
-
-  <p>Virtual DOM 은 그냥 뭐 엄청 새로운것도 아니고, 그냥 DOM 차원에서의 더블 버퍼링이랑 다름이 없는거에요. 변화가 일어나면 그걸 오프라인 DOM 트리에 적용시키죠. 이 DOM 트리는 렌더링도 되지 않기때문에 연산 비용이 적어요. 연산이 끝나고나면 그 최종적인 변화를 실제 DOM 에 던져주는거에요. 딱 한번만 한는거에요. 모든 변화를 하나로 묶어서. 그러면, 레이아웃 계산과 리렌더링의 규모는 커지겠지만, 다시 한번 강조하자면 딱 한번만 하는거에요. 바로 이렇게, 하나로 묶어서 적용시키는것이, 연산의 횟수를 줄이는거구요.</p>
-
-  <p>사실, 이 과정은 Virtual DOM 이 없이도 이뤄질수 있어요. 그냥, 변화가 있을 때, 그 변화를 묶어서 DOM fragment 에 적용한 다음에 기존 DOM 에 던져주면 돼요.</p>
-
-  <p>그러면, Virtual DOM 이 해결 하려고 하는건 무엇이냐? 그 DOM fragment를 관리하는 과정을 수동으로 하나하나 작업 할 필요 없이, 자동화하고 추상화하는거에요. 그 뿐만 아니라, 만약에 이 작업을 여러분들이 직접 한다면, 기존 값 중 어떤게 바뀌었고 어떤게 바뀌지 않았는지 계속 파악하고 있어야하는데 (그렇지 않으면 수정 할 필요가 없는 DOM 트리도 업데이트를 하게 될 수도 있으니까요), 이것도 Virtual DOM 이 이걸 자동으로 해주는거에요. 어떤게 바뀌었는지 , 어떤게 바뀌지 않았는지 알아내주죠.</p>
-
-  <p>마지막으로, DOM 관리를 Virtual DOM 이 하도록 함으로써, 컴포넌트가 DOM 조작 요청을 할 때 다른 컴포넌트들과 상호작용을 하지 않아도 되고, 특정 DOM 을 조작할 것 이라던지, 이미 조작했다던지에 대한 정보를 공유 할 필요가 없습니다. 즉, 각 변화들의 동기화 작업을 거치지 않으면서도 모든 작업을 하나로 묶어줄 수 있다는거죠.</p>
-</blockquote>
-
-<h1 id="컴포넌트">컴포넌트</h1>
-<p>React 에는 Component라는 개념이 있다. 나는 이것을 <code class="highlighter-rouge">하나의 기능</code>을 위한 DOM 덩어리라 생각한다.
-그리고 원래 컴포넌트라는 단어는 컴포넌트는 소프트웨어의 재사용의 중요성 과 필용성을 위해 나온 기술이란 이름에서 비롯했다.</p>
-
-<blockquote>
-  <p>즉 재사용, 필용성이 있는 하나의 기능을 하는 DOM 덩어리이다. 나는 그렇게 정의를 내렸다. (자세한 정의가 알고싶다면 이 곳이 아닌 구글에 검색해보길 바란다.)</p>
-</blockquote>
-
-<h1 id="컴포넌트의-장점">컴포넌트의 장점</h1>
-
-<ol>
-  <li>비교, 탐색이 빠르다.</li>
-  <li>변경된 부분에 대해서만 렌더링을 새로하기때문에 빠르다.</li>
-  <li>DOM Tree구조 자체가 다르면 내부 비교를 하지 않음</li>
-</ol>
-
-<p>이 3개의 장점을 존재하게한 알고리즘이 있는데 리엑트를 깊게 공부하려거든 이 링크의 글을 보는것이 좋다.</p>
-
-<p><a href="https://reactjs.org/docs/reconciliation.html">공홈: 조화(Reconciliation) 비교알고리즘</a></p>
-
-<h1 id="조화-비교알고리즘의-동작">조화 비교알고리즘의 동작</h1>
-
-<ol>
-  <li>엘리먼트 타입이 다를경우</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderA</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="o">/&gt;</span>
-<span class="c1">// 이후</span>
-<span class="nx">renderB</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="o">/&gt;</span>
-<span class="c1">// Result : div를 제거하고 span태그를 추가한다.</span>
-</code></pre></div></div>
-
-<ol>
-  <li>엘리먼트 타입이 같을경우</li>
-</ol>
-
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderA</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">a</span><span class="o">=</span><span class="s2">"1"</span><span class="o">/&gt;</span>
-<span class="c1">// 이후</span>
-<span class="nx">renderB</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">a</span><span class="o">=</span><span class="s2">"2"</span><span class="o">/&gt;</span>
-<span class="c1">// Result : 컴포넌트가 사라지지 않고, 속성(props)값만 변경 </span>
-</code></pre></div></div>
-
-<ol>
-  <li>리스트를 렌더링 할 때</li>
-</ol>
-
-<p>다르게 생겼으면 내부비교하지않음, key 를 사용해서 리스트 렌더링 성능을 최적화 한다.</p>
-
-<h1 id="정리">정리</h1>
-
-<p>react는 대규모 어플리케이션을 만들기 위해 만들어졌다. react는 <code class="highlighter-rouge">Virtual DOM</code> 을 이용하여 
-<code class="highlighter-rouge">repaint</code>와 <code class="highlighter-rouge">reflow</code>의 과정을 최소화 하려 노력하였으며, 
-이러한 노력은 <code class="highlighter-rouge">조화비교알고리즘</code>이 큰 역할을 했다.</p>
-
-<p><code class="highlighter-rouge">조화비교알고리즘</code>은 virtual DOM과 Real DOM의 차이를 비교하여 수정해야하는 부분만 수정하며 
-연산이 끝나면 수정이 완성된 DOM Tree를 <code class="highlighter-rouge">브라우저 레이아웃 엔진</code>에 건내주어
-한번의 reflow와 repaint과정이 되도록 한다. 이 과정이 <code class="highlighter-rouge">reflow</code>, <code class="highlighter-rouge">repaint</code>과정의 최소화라 본다.</p>
-
-<p>오타 및 틀린 부분 있으면 과감하게 지적 부탁드립니다.  관리하겠습니다.</p>
-
-<h1 id="react에-대해서-깊이-있게-알아보려면">React에 대해서 깊이 있게 알아보려면..</h1>
+<p>무엇보다 위 속성들은 글자들을 담은 block류의 display를 중심적으로 제어하기위한 프로퍼티 속성들이며 미디어 콘텐츠를 중심으로 제어하기 위해서는 2퍼센트 부족하기 때문이다.</p>
 
 <ul>
-  <li>https://reactjs.org/docs 에서 <code class="highlighter-rouge">Advanced Guide</code>를 참조해주세요.</li>
-  <li>https://velopert.com/reactjs-tutorials 의 튜토리얼 최소 한번 정도는 돌려보자.</li>
+  <li>flex를 쓰고 아래와 같은 panel을 만드는것과 안쓰고 만드는 것. 어떤게 더 편할까?
+<img src="https://i.imgur.com/c3wvCtv.png" alt="flex" /></li>
 </ul>
+
+<h4 id="deceprated">deceprated</h4>
+
+<p>구글링을 하다보면 옛날 자료에서 <code class="highlighter-rouge">display:box</code>, <code class="highlighter-rouge">display: flexbox</code> 또는 <code class="highlighter-rouge">flex() 함수</code> 들을 봐왔을 것이다. 
+이것들은 옛날자료이다. deceprate 되었다. 또한 flex 가 나오기 이전에는 <strong>flexie</strong>라는 자바스크립트 라이브러리를 이용해서 flex display UI를 짜기도 하였다.
+이 라이브러리는 polyfill 라이브러리로써 사용되었으며 시기는 2009~2011년도에 사용되었다. 현재는 사용하지 않는다.</p>
+
+<p>최근에 사용하는 속성은 <code class="highlighter-rouge">display:flex</code>, <code class="highlighter-rouge">flex-*</code> 의 속성과 프로퍼티들이다.</p>
+
+<h1 id="flexbox">flexbox</h1>
+
+<p>사용 가능 브라우저</p>
+
+<p><img src="https://i.imgur.com/cuKmw31.png" alt="사용 가능 브라우저" /></p>
+
+<h1 id="flex-속성-정리">flex 속성 정리</h1>
+
+<h4 id="justify-content">justify-content:</h4>
+
+<ul>
+  <li>flex-start: 요소들을 컨테이너의 왼쪽으로 정렬합니다.</li>
+  <li>flex-end: 요소들을 컨테이너의 오른쪽으로 정렬합니다.</li>
+  <li>center: 요소들을 컨테이너의 가운데로 정렬합니다.</li>
+  <li>space-between: 요소들 사이에 동일한 간격을 둡니다.</li>
+  <li>space-around: 요소들 주위에 동일한 간격을 둡니다.</li>
+</ul>
+
+<h4 id="align-items">align-items:</h4>
+
+<ul>
+  <li>flex-start: 요소들을 컨테이너의 꼭대기로 정렬합니다.</li>
+  <li>flex-end: 요소들을 컨테이너의 바닥으로 정렬합니다.</li>
+  <li>center: 요소들을 컨테이너의 세로선 상의 가운데로 정렬합니다.</li>
+  <li>baseline: 요소들을 컨테이너의 시작 위치에 정렬합니다.</li>
+  <li>stretch: 요소들을 컨테이너에 맞도록 늘립니다.</li>
+</ul>
+
+<h4 id="flex-direction">flex-direction:</h4>
+
+<ul>
+  <li>row: 요소들을 텍스트의 방향과 동일하게 정렬합니다.</li>
+  <li>row-reverse: 요소들을 텍스트의 반대 방향으로 정렬합니다.</li>
+  <li>column: 요소들을 위에서 아래로 정렬합니다.</li>
+  <li>column-reverse: 요소들을 아래에서 위로 정렬합니다.</li>
+</ul>
+
+<h4 id="order">order:</h4>
+
+<ul>
+  <li>기본값은 0 이며 flex 디스플레이의 이하에 있는곳에서</li>
+</ul>
+
+<h4 id="align-self">align-self:</h4>
+<p>align-self 는 개별 요소에 적용할 수 있는 또 다른 속성입니다.</p>
+
+<p>align-items가 사용하는 값들을 인자로 받으며, 그 값들은 지정한 요소에만 적용됩니다.</p>
+
+<h4 id="flex-wrap">flex-wrap:</h4>
+
+<ul>
+  <li>nowrap: 모든 요소들을 한 줄에 정렬합니다.</li>
+  <li>wrap: 요소들을 여러 줄에 걸쳐 정렬합니다.</li>
+  <li>wrap-reverse: 요소들을 여러 줄에 걸쳐 반대로 정렬합니다.</li>
+</ul>
+
+<h4 id="flex-flow">flex-flow:</h4>
+
+<p>flex-direction과 flex-wrap이 자주 같이 사용되기 때문에, flex-flow가 이를 대신할 수 있습니다. 이 속성은 공백문자를 이용하여 두 속성의 값들을 인자로 받습니다.</p>
+
+<ul>
+  <li>ex): flex-flow: row wrap;</li>
+  <li>ex): flex-flow: column wrap-reverse;</li>
+</ul>
+
+<h4 id="align-content">align-content:</h4>
+
+<p>주의 (align-items와 혼동 금지)</p>
+
+<p>align-content는 여러 <strong>줄들 사이의 간격</strong>을 지정하며 align-items는 컨테이너 안에서 어떻게 모든 <strong>요소들이 정렬</strong>하는지를 지정합니다. 한 줄만 있는 경우, align-content는 효과를 보이지 않습니다.</p>
+
+<ul>
+  <li>flex-start: 여러 줄들을 컨테이너의 꼭대기에 정렬합니다.</li>
+  <li>flex-end: 여러 줄들을 컨테이너의 바닥에 정렬합니다.</li>
+  <li>center: 여러 줄들을 세로선 상의 가운데에 정렬합니다.</li>
+  <li>space-between: 여러 줄들 사이에 동일한 간격을 둡니다.</li>
+  <li>space-around: 여러 줄들 주위에 동일한 간격을 둡니다.</li>
+  <li>stretch: 여러 줄들을 컨테이너에 맞도록 늘립니다.</li>
+</ul>
+
+<h4 id="flex-basis">flex-basis:</h4>
+
+<p>참고 문서 : https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis</p>
+
+<p>해당 노드의 넓이값을 고정적으로 정할 수 있다. 또는 키워드로 이름을 정할 수 있다.</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Specify &lt;'width'&gt; */</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">10em</span><span class="o">;</span>      
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">3px</span><span class="o">;</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">auto</span><span class="o">;</span>
+
+<span class="c">/* Intrinsic sizing keywords */</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">fill</span><span class="o">;</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">max-content</span><span class="o">;</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">min-content</span><span class="o">;</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">fit-content</span><span class="o">;</span>
+
+<span class="c">/* Automatically size based on the flex item’s content */</span>
+<span class="nt">flex-basis</span><span class="o">:</span> <span class="nt">content</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h4 id="flex-grow">flex-grow:</h4>
+
+<p>참고 문서 : https://developer.mozilla.org/en-US/docs/Web/CSS/flex-grow</p>
+
+<p>해당 box의 공간 차지 비율을 정한다.
+기본값은 0 이며 자식 노드들에게 상속되지 않는다.</p>
+
+<p><img src="https://i.imgur.com/2Z054qc.png" alt="flex-grow" /></p>
+
+<h4 id="flex-shrink">flex-shrink:</h4>
+
+<p>참고 문서 : https://developer.mozilla.org/en-US/docs/Web/CSS/flex-shrink</p>
+
+<p>flex-grow의 반대로 사용되는 속성값의 사용이며, 
+초기값은 1이며 상속되지 않는다.</p>
+
+<p><img src="https://i.imgur.com/a1wZfi2.png" alt="flex-shrink" /></p>
+
+<h4 id="flex">flex:</h4>
+<p>참고 문서 : https://developer.mozilla.org/ko/docs/Web/CSS/flex
+기본값은	[0, 1, auto] 이고 상속되는 속성은 아니다.</p>
+
+<p>flex의 속성은 여러 속성들의 조합으로 만들어 질 수 있는데</p>
+
+<ol>
+  <li>width / height 의 조합</li>
+  <li>flex-grow / flex-basis 의 조합</li>
+  <li>flex-grow / flex-shrink 의 조합</li>
+</ol>
+
+<blockquote>
+  <p>flex container = (flex나 display들을 감싸고 있는 녀석들)</p>
+</blockquote>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">/* Basic values */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">auto</span><span class="o">;</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">initial</span><span class="o">;</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">none</span><span class="o">;</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">2</span><span class="o">;</span>
+
+<span class="c">/* One value, unitless number: flex-grow */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">2</span><span class="o">;</span>
+
+<span class="c">/* One value, width/height: flex-basis */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">10em</span><span class="o">;</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">30px</span><span class="o">;</span>
+
+<span class="c">/* Two values: flex-grow | flex-basis */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">1</span> <span class="nt">30px</span><span class="o">;</span>
+
+<span class="c">/* Two values: flex-grow | flex-shrink */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">2</span> <span class="nt">2</span><span class="o">;</span>
+
+<span class="c">/* Three values: flex-grow | flex-shrink | flex-basis */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">2</span> <span class="nt">2</span> <span class="nt">10</span><span class="o">%;</span>
+
+<span class="c">/* Global values */</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">inherit</span><span class="o">;</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">initial</span><span class="o">;</span>
+<span class="nt">flex</span><span class="o">:</span> <span class="nt">unset</span><span class="o">;</span>
+</code></pre></div></div>
+
+<h1 id="정리-및-결론">정리 및 결론</h1>
+
+<p>http://flexboxfroggy.com/#ko</p>
+
+<p>교육용 게임인데 반드시 하자. 이해가 정말 쉽다.</p>
 
 <hr />
 <p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
 
             </article>
 
-            <div class="progress-bar" data-minutes="8">
+            <div class="progress-bar" data-minutes="4">
                 <span class="time-completed"></span>
                 <span class="time-remaining"></span>
                 <div class="bar">
@@ -379,15 +351,15 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;ReactJS 코드를 에디터에 쓰기 전에&quot;%20http://localhost:3000/react-Intro/%20via%20&#64;&hashtags=javascript,react,"
+    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;flex 에 대해서 알아보자&quot;%20http://localhost:3000/css-flex/%20via%20&#64;&hashtags=css,flex,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/react-Intro/"
+    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:3000/css-flex/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:3000/react-Intro/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://localhost:3000/css-flex/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -440,7 +412,7 @@ render()를 돌릴때에 모든 노드를 굳이 새로 만들어내야하는가
         disqus_loaded = true;
         var disqus_shortname = 'blog-drakejin-me';
         var disqus_title = '';
-        var disqus_url = '/react-Intro/';
+        var disqus_url = '/css-flex/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
