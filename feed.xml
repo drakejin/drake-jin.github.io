@@ -5,16 +5,16 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sat, 23 Dec 2017 19:04:22 +0900</pubDate>
-    <lastBuildDate>Sat, 23 Dec 2017 19:04:22 +0900</lastBuildDate>
+    <pubDate>Mon, 25 Dec 2017 01:29:57 +0900</pubDate>
+    <lastBuildDate>Mon, 25 Dec 2017 01:29:57 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
-        <title>ES5 사용자 ES7을 만나다. Cheat Sheet</title>
-        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 제가 미숙하기 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 읽고 검토해서 반영하도록 하겠습니다. 감사하겠습니다.&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;intro&lt;/h1&gt; &lt;p&gt;내가 쓸때는 ES5 문법 밖에 없었는데.. 정신차리고 보니 ES7을 써야했고 사실 자바스크립트도 jQuey만 열심히 돌려봤지 프로토타입따위 만져본적 없고 남이 만들어준것만 써봤다. 하지만 어느날 나는 react를 해야했고, &lt;code class=&quot;highlighter-rouge&quot;&gt;객체지향프로그래밍&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;MVC 패턴&lt;/code&gt;이 우주최고의 패턴인줄만 알았는데 &lt;code class=&quot;highlighter-rouge&quot;&gt;함수형프로그래밍&lt;/code&gt;프로그래밍이 나오고 &lt;code class=&quot;highlighter-rouge&quot;&gt;Flux 패턴&lt;/code&gt;이 나왔다. 사실 나는, 변화들이 있다는건 알고 있었지만 ‘그럼 난! 그 기술들이 하나로 통합되고 안정화 되면 &lt;code class=&quot;highlighter-rouge&quot;&gt;그때가서 공부할래!&lt;/code&gt;’ 했었는데 지금 당장에 만들어야 하는것이 있고, 따라잡으려고 공부하니 점점 우후죽순으로 쏟아지는 새로운것들이 쏟아져...</description>
-        <pubDate>Mon, 18 Dec 2017 00:00:00 +0900</pubDate>
-        <link>http://blog.drakejin.me/ES5-Met-ES7/</link>
-        <guid isPermaLink="true">http://blog.drakejin.me/ES5-Met-ES7/</guid>
+        <title>ES5 사용자 ES8을 만나다. Cheat Sheet</title>
+        <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;intro&lt;/h1&gt; &lt;p&gt;내가 쓸때는 ES5 문법 밖에 없었는데..실ㅅ 정신차리고 보니 ES8을 써야했고 사실 자바스크립트도 jQuey만 열심히 돌려봤지 프로토타입따위 만져본적 없고 남이 만들어준것만 써봤다. 하지만 어느날 나는 react를 해야했고, &lt;code class=&quot;highlighter-rouge&quot;&gt;객체지향프로그래밍&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;MVC 패턴&lt;/code&gt;이 우주최고의 패턴인줄만 알았는데 &lt;code class=&quot;highlighter-rouge&quot;&gt;함수형프로그래밍&lt;/code&gt;프로그래밍이 나오고 &lt;code class=&quot;highlighter-rouge&quot;&gt;Flux 패턴&lt;/code&gt;이 나왔다. 사실 나는, backbone.js, angular.js, meteor.js, io.js, socket.io 등등등 javascript 파생 라이브러리 및 프레임워크가...</description>
+        <pubDate>Mon, 25 Dec 2017 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/ES5-User-Meet-ES8/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/ES5-User-Meet-ES8/</guid>
         
         <category>javascript</category>
         
@@ -42,15 +42,17 @@
       </item>
     
       <item>
-        <title>ReactJS 코드를 에디터에 쓰기 전에</title>
+        <title>ReactJS의 Virtual DOM과 Repaint, Reflow</title>
         <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;p&gt;큰 SPA(Single Page Application) 또는 Dynamic UI 의 웹 페이지를 만들기 위해서&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;/strong&gt; 출처 : https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;**SPA: Single Page Application : 페이지 전환없이 서비스를 이용할 수 있는 애플리케이션 UI를 말한다. Dynamic UI의 성격이 강하다.&lt;/p&gt; &lt;h3...</description>
         <pubDate>Sat, 16 Dec 2017 00:00:00 +0900</pubDate>
-        <link>http://blog.drakejin.me/React-Intro/</link>
-        <guid isPermaLink="true">http://blog.drakejin.me/React-Intro/</guid>
+        <link>http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/</guid>
         
         <category>javascript</category>
         
         <category>react</category>
+        
+        <category>virtualDOM</category>
         
         
         <category>reactjs</category>

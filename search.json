@@ -1,11 +1,11 @@
 [
   
     {
-      "title"    : "ES5 사용자 ES7을 만나다. Cheat Sheet",
+      "title"    : "ES5 사용자 ES8을 만나다. Cheat Sheet",
       "tags"     : "javascript and functional",
       "categories" : "javascript",
-      "url"      : "/ES5-Met-ES7/",
-      "date"     : "12/18/2017"
+      "url"      : "/ES5-User-Meet-ES8/",
+      "date"     : "12/25/2017"
     } ,
   
     {
@@ -17,10 +17,10 @@
     } ,
   
     {
-      "title"    : "ReactJS 코드를 에디터에 쓰기 전에",
-      "tags"     : "javascript and react",
+      "title"    : "ReactJS의 Virtual DOM과 Repaint, Reflow",
+      "tags"     : "javascript, react, and virtualDOM",
       "categories" : "reactjs",
-      "url"      : "/React-Intro/",
+      "url"      : "/React-VirtualDOM-And-Repaint-Reflow/",
       "date"     : "12/16/2017"
     } 
   
