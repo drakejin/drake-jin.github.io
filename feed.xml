@@ -5,8 +5,8 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 02 Jan 2018 01:10:22 +0900</pubDate>
-    <lastBuildDate>Tue, 02 Jan 2018 01:10:22 +0900</lastBuildDate>
+    <pubDate>Tue, 02 Jan 2018 01:15:53 +0900</pubDate>
+    <lastBuildDate>Tue, 02 Jan 2018 01:15:53 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
@@ -16,12 +16,12 @@
         <link>http://blog.drakejin.me/2018-Prolog/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/2018-Prolog/</guid>
         
-        <category>css</category>
+        <category>2018</category>
         
-        <category>flex</category>
+        <category>prolog</category>
         
         
-        <category>css</category>
+        <category>prolog</category>
         
       </item>
     
