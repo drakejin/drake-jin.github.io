@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/BlogPosting">
+    <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>ReactJS의 Virtual DOM과 Repaint, Reflow | DrakeJin</title>
+    <meta name="description" content="Virtual DOM의 동작 원리와 Virtual DOM이 repaint와 reflow연산을 줄이기 위한 노력에 대해 알아보자">
+
+    <!-- Social: Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@">
+    <meta name="twitter:title" content="ReactJS의 Virtual DOM과 Repaint, Reflow | DrakeJin">
+    <meta name="twitter:description" content="Virtual DOM의 동작 원리와 Virtual DOM이 repaint와 reflow연산을 줄이기 위한 노력에 대해 알아보자">
+    
+    <meta property="twitter:image:src" content="https://i.imgur.com/yRH0zfw.png">
+    
+
+    <!-- Social: Facebook / Open Graph -->
+    <meta property="og:url" content="http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/">
+    <meta property="og:title" content="ReactJS의 Virtual DOM과 Repaint, Reflow | DrakeJin">
+    
+    <meta property="og:image" content="https://i.imgur.com/yRH0zfw.png">
+    
+    <meta property="og:description" content="Virtual DOM의 동작 원리와 Virtual DOM이 repaint와 reflow연산을 줄이기 위한 노력에 대해 알아보자">
+    <meta property="og:site_name" content="DrakeJin">
+
+    <!-- Social: Google+ / Schema.org  -->
+    <meta itemprop="name" content="ReactJS의 Virtual DOM과 Repaint, Reflow | DrakeJin"/>
+    <meta itemprop="description" content="Virtual DOM의 동작 원리와 Virtual DOM이 repaint와 reflow연산을 줄이기 위한 노력에 대해 알아보자">
+    <meta itemprop="image" content="http://blog.drakejin.me/assets/img/blog-image.png"/>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" href="/assets/img/icons/apple-touch-icon.png" />
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/icons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/icons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/icons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/icons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/icons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/icons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/icons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
+
+    <!-- Windows 8 Tile Icons -->
+    <meta name="application-name" content="DrakeJin Blog">
+    <meta name="msapplication-TileColor" content="#0562DC">
+    <meta name="msapplication-square70x70logo" content="smalltile.png" />
+    <meta name="msapplication-square150x150logo" content="mediumtile.png" />
+    <meta name="msapplication-wide310x150logo" content="widetile.png" />
+    <meta name="msapplication-square310x310logo" content="largetile.png" />
+    
+    <!-- Android Lolipop Theme Color -->
+    <meta name="theme-color" content="">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="canonical" href="http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/">
+    <link rel="alternate" type="application/rss+xml" title="DrakeJin" href="http://blog.drakejin.me/feed.xml" />
+</head>
+
+    <body class="has-push-menu">
+        
+
+
+
+
+
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" display="none" version="1.1"><defs><symbol id="icon-menu" viewBox="0 0 1024 1024"><path class="path1" d="M128 213.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 725.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5zM128 469.333h768q17.667 0 30.167 12.5t12.5 30.167-12.5 30.167-30.167 12.5h-768q-17.667 0-30.167-12.5t-12.5-30.167 12.5-30.167 30.167-12.5z"/></symbol><symbol id="icon-search" viewBox="0 0 951 1024"><path class="path1" d="M658.286 475.429q0-105.714-75.143-180.857t-180.857-75.143-180.857 75.143-75.143 180.857 75.143 180.857 180.857 75.143 180.857-75.143 75.143-180.857zM950.857 950.857q0 29.714-21.714 51.429t-51.429 21.714q-30.857 0-51.429-21.714l-196-195.429q-102.286 70.857-228 70.857-81.714 0-156.286-31.714t-128.571-85.714-85.714-128.571-31.714-156.286 31.714-156.286 85.714-128.571 128.571-85.714 156.286-31.714 156.286 31.714 128.571 85.714 85.714 128.571 31.714 156.286q0 125.714-70.857 228l196 196q21.143 21.143 21.143 51.429z"/></symbol><symbol id="icon-close" viewBox="0 0 1000 1000"><path d="M969.8,870.3c27,27.7,27,71.8,0,99.1C955.7,983,937.9,990,920,990c-17.9,0-35.7-7-49.7-20.7L500,599L129.6,969.4C115.6,983,97.8,990,79.9,990s-35.7-7-49.7-20.7c-27-27.3-27-71.4,0-99.1L400.9,500L30.3,129.3c-27-27.3-27-71.4,0-99.1c27.3-27,71.8-27,99.4,0L500,400.9L870.4,30.2c27.7-27,71.8-27,99.4,0c27,27.7,27,71.8,0,99.1L599.1,500L969.8,870.3z"/></symbol><symbol id="icon-twitter" viewBox="0 0 951 1024"><path class="path1" d="M925.714 233.143q-38.286 56-92.571 95.429 0.571 8 0.571 24 0 74.286-21.714 148.286t-66 142-105.429 120.286-147.429 83.429-184.571 31.143q-154.857 0-283.429-82.857 20 2.286 44.571 2.286 128.571 0 229.143-78.857-60-1.143-107.429-36.857t-65.143-91.143q18.857 2.857 34.857 2.857 24.571 0 48.571-6.286-64-13.143-106-63.714t-42-117.429v-2.286q38.857 21.714 83.429 23.429-37.714-25.143-60-65.714t-22.286-88q0-50.286 25.143-93.143 69.143 85.143 168.286 136.286t212.286 56.857q-4.571-21.714-4.571-42.286 0-76.571 54-130.571t130.571-54q80 0 134.857 58.286 62.286-12 117.143-44.571-21.143 65.714-81.143 101.714 53.143-5.714 106.286-28.571z"/></symbol><symbol id="icon-facebook" viewBox="0 0 585 1024"><path class="path1" d="M548 6.857v150.857h-89.714q-49.143 0-66.286 20.571t-17.143 61.714v108h167.429l-22.286 169.143h-145.143v433.714h-174.857v-433.714h-145.714v-169.143h145.714v-124.571q0-106.286 59.429-164.857t158.286-58.571q84 0 130.286 6.857z"/></symbol><symbol id="icon-google-plus" viewBox="0 0 951 1024"><path class="path1" d="M420 454.857q0 20.571 18.286 40.286t44.286 38.857 51.714 42 44 59.429 18.286 81.143q0 51.429-27.429 98.857-41.143 69.714-120.571 102.571t-170.286 32.857q-75.429 0-140.857-23.714t-98-78.571q-21.143-34.286-21.143-74.857 0-46.286 25.429-85.714t67.714-65.714q74.857-46.857 230.857-57.143-18.286-24-27.143-42.286t-8.857-41.714q0-20.571 12-48.571-26.286 2.286-38.857 2.286-84.571 0-142.571-55.143t-58-139.714q0-46.857 20.571-90.857t56.571-74.857q44-37.714 104.286-56t124.286-18.286h238.857l-78.857 50.286h-74.857q42.286 36 64 76t21.714 91.429q0 41.143-14 74t-33.714 53.143-39.714 37.143-34 35.143-14 37.714zM336.571 400q21.714 0 44.571-9.429t37.714-24.857q30.286-32.571 30.286-90.857 0-33.143-9.714-71.429t-27.714-74-48.286-59.143-66.857-23.429q-24 0-47.143 11.143t-37.429 30q-26.857 33.714-26.857 91.429 0 26.286 5.714 55.714t18 58.857 29.714 52.857 42.857 38.286 55.143 14.857zM337.714 898.857q33.143 0 63.714-7.429t56.571-22.286 41.714-41.714 15.714-62.286q0-14.286-4-28t-8.286-24-15.429-23.714-16.857-20-22-19.714-20.857-16.571-23.714-17.143-20.857-14.857q-9.143-1.143-27.429-1.143-30.286 0-60 4t-61.429 14.286-55.429 26.286-39.143 42.571-15.429 60.286q0 40 20 70.571t52.286 47.429 68 25.143 72.857 8.286zM800.571 398.286h121.714v61.714h-121.714v125.143h-60v-125.143h-121.143v-61.714h121.143v-124h60v124z"/></symbol><symbol id="icon-clock" viewBox="0 0 1000 1000"><path d="M500,10C229.8,10,10,229.8,10,500c0,270.2,219.8,490,490,490c270.2,0,490-219.8,490-490C990,229.8,770.2,10,500,10z M500,910.2c-226.2,0-410.2-184-410.2-410.2c0-226.2,184-410.2,410.2-410.2c226.2,0,410.2,184,410.2,410.2C910.2,726.1,726.2,910.2,500,910.2z M753.1,374c8.2,11.9,5.2,28.1-6.6,36.3L509.9,573.7c-4.4,3.1-9.6,4.6-14.8,4.6c-4.1,0-8.3-1-12.1-3c-8.6-4.5-14-13.4-14-23.1V202.5c0-14.4,11.7-26.1,26.1-26.1c14.4,0,26.1,11.7,26.1,26.1v300l195.6-135.1C728.7,359.2,744.9,362.1,753.1,374z"/></symbol><symbol id="icon-calendar" viewBox="0 0 1000 1000"><path d="M920,500v420H80V500H920 M990,430H10v490c0,38.7,31.3,70,70,70h840c38.7,0,70-31.3,70-70V430L990,430z"/><path d="M850,80v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80H360v105c0,57.9-47.2,105-105,105c-58,0-105-47.1-105-105V80C72.8,80,10,142.7,10,220v140h980V220C990,142.7,927.2,80,850,80z"/><path d="M255,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C290,25.8,274.3,10,255,10z"/><path d="M745,10c-19.3,0-35,15.8-35,35v140c0,19.2,15.7,35,35,35c19.3,0,35-15.8,35-35V45C780,25.8,764.3,10,745,10z"/></symbol><symbol id="icon-github" viewBox="0 0 12 14"><path d="M6 1q1.633 0 3.012 0.805t2.184 2.184 0.805 3.012q0 1.961-1.145 3.527t-2.957 2.168q-0.211 0.039-0.312-0.055t-0.102-0.234q0-0.023 0.004-0.598t0.004-1.051q0-0.758-0.406-1.109 0.445-0.047 0.801-0.141t0.734-0.305 0.633-0.52 0.414-0.82 0.16-1.176q0-0.93-0.617-1.609 0.289-0.711-0.062-1.594-0.219-0.070-0.633 0.086t-0.719 0.344l-0.297 0.187q-0.727-0.203-1.5-0.203t-1.5 0.203q-0.125-0.086-0.332-0.211t-0.652-0.301-0.664-0.105q-0.352 0.883-0.062 1.594-0.617 0.68-0.617 1.609 0 0.664 0.16 1.172t0.41 0.82 0.629 0.523 0.734 0.305 0.801 0.141q-0.305 0.281-0.383 0.805-0.164 0.078-0.352 0.117t-0.445 0.039-0.512-0.168-0.434-0.488q-0.148-0.25-0.379-0.406t-0.387-0.187l-0.156-0.023q-0.164 0-0.227 0.035t-0.039 0.090 0.070 0.109 0.102 0.094l0.055 0.039q0.172 0.078 0.34 0.297t0.246 0.398l0.078 0.18q0.102 0.297 0.344 0.48t0.523 0.234 0.543 0.055 0.434-0.027l0.18-0.031q0 0.297 0.004 0.691t0.004 0.426q0 0.141-0.102 0.234t-0.312 0.055q-1.812-0.602-2.957-2.168t-1.145-3.527q0-1.633 0.805-3.012t2.184-2.184 3.012-0.805zM2.273 9.617q0.023-0.055-0.055-0.094-0.078-0.023-0.102 0.016-0.023 0.055 0.055 0.094 0.070 0.047 0.102-0.016zM2.516 9.883q0.055-0.039-0.016-0.125-0.078-0.070-0.125-0.023-0.055 0.039 0.016 0.125 0.078 0.078 0.125 0.023zM2.75 10.234q0.070-0.055 0-0.148-0.062-0.102-0.133-0.047-0.070 0.039 0 0.141t0.133 0.055zM3.078 10.562q0.062-0.062-0.031-0.148-0.094-0.094-0.156-0.023-0.070 0.062 0.031 0.148 0.094 0.094 0.156 0.023zM3.523 10.758q0.023-0.086-0.102-0.125-0.117-0.031-0.148 0.055t0.102 0.117q0.117 0.047 0.148-0.047zM4.016 10.797q0-0.102-0.133-0.086-0.125 0-0.125 0.086 0 0.102 0.133 0.086 0.125 0 0.125-0.086zM4.469 10.719q-0.016-0.086-0.141-0.070-0.125 0.023-0.109 0.117t0.141 0.062 0.109-0.109z"></path></symbol><symbol id="icon-medium" viewBox="0 0 1000 1000"><path d="M336.5,240.2v641.5c0,9.1-2.3,16.9-6.8,23.2s-11.2,9.6-20,9.6c-6.2,0-12.2-1.5-18-4.4L37.3,782.7c-7.7-3.6-14.1-9.8-19.4-18.3S10,747.4,10,739V115.5c0-7.3,1.8-13.5,5.5-18.6c3.6-5.1,8.9-7.7,15.9-7.7c5.1,0,13.1,2.7,24.1,8.2l279.5,140C335.9,238.6,336.5,239.5,336.5,240.2L336.5,240.2z M371.5,295.5l292,473.6l-292-145.5V295.5z M990,305.3v576.4c0,9.1-2.6,16.5-7.7,22.1c-5.1,5.7-12,8.5-20.8,8.5s-17.3-2.4-25.7-7.1L694.7,784.9L990,305.3z M988.4,239.7c0,1.1-46.8,77.6-140.3,229.4C754.6,621,699.8,709.8,683.8,735.7L470.5,389l177.2-288.2c6.2-10.2,15.7-15.3,28.4-15.3c5.1,0,9.8,1.1,14.2,3.3l295.9,147.7C987.6,237.1,988.4,238.2,988.4,239.7L988.4,239.7z"/></symbol><symbol id="icon-instagram" viewBox="0 0 489.84 489.84"><path d="M249.62,50.46c65.4,0,73.14.25,99,1.43C372.47,53,385.44,57,394.07,60.32a75.88,75.88,0,0,1,28.16,18.32,75.88,75.88,0,0,1,18.32,28.16c3.35,8.63,7.34,21.6,8.43,45.48,1.18,25.83,1.43,33.57,1.43,99s-0.25,73.14-1.43,99c-1.09,23.88-5.08,36.85-8.43,45.48a81.11,81.11,0,0,1-46.48,46.48c-8.63,3.35-21.6,7.34-45.48,8.43-25.82,1.18-33.57,1.43-99,1.43s-73.15-.25-99-1.43c-23.88-1.09-36.85-5.08-45.48-8.43A75.88,75.88,0,0,1,77,423.86,75.88,75.88,0,0,1,58.69,395.7c-3.35-8.63-7.34-21.6-8.43-45.48-1.18-25.83-1.43-33.57-1.43-99s0.25-73.14,1.43-99c1.09-23.88,5.08-36.85,8.43-45.48A75.88,75.88,0,0,1,77,78.64a75.88,75.88,0,0,1,28.16-18.32c8.63-3.35,21.6-7.34,45.48-8.43,25.83-1.18,33.57-1.43,99-1.43m0-44.13c-66.52,0-74.86.28-101,1.47s-43.87,5.33-59.45,11.38A120.06,120.06,0,0,0,45.81,47.44,120.06,120.06,0,0,0,17.56,90.82C11.5,106.4,7.36,124.2,6.17,150.27s-1.47,34.46-1.47,101,0.28,74.86,1.47,101,5.33,43.87,11.38,59.45a120.06,120.06,0,0,0,28.25,43.38,120.06,120.06,0,0,0,43.38,28.25c15.58,6.05,33.38,10.19,59.45,11.38s34.46,1.47,101,1.47,74.86-.28,101-1.47,43.87-5.33,59.45-11.38a125.24,125.24,0,0,0,71.63-71.63c6.05-15.58,10.19-33.38,11.38-59.45s1.47-34.46,1.47-101-0.28-74.86-1.47-101-5.33-43.87-11.38-59.45a120.06,120.06,0,0,0-28.25-43.38,120.06,120.06,0,0,0-43.38-28.25C394.47,13.13,376.67,9,350.6,7.8s-34.46-1.47-101-1.47h0Z" transform="translate(-4.7 -6.33)" /><path d="M249.62,125.48A125.77,125.77,0,1,0,375.39,251.25,125.77,125.77,0,0,0,249.62,125.48Zm0,207.41a81.64,81.64,0,1,1,81.64-81.64A81.64,81.64,0,0,1,249.62,332.89Z" transform="translate(-4.7 -6.33)"/><circle cx="375.66" cy="114.18" r="29.39" /></symbol><symbol id="icon-linkedin" viewBox="0 0 12 14"><path d="M2.727 4.883v7.742h-2.578v-7.742h2.578zM2.891 2.492q0.008 0.57-0.395 0.953t-1.059 0.383h-0.016q-0.641 0-1.031-0.383t-0.391-0.953q0-0.578 0.402-0.957t1.051-0.379 1.039 0.379 0.398 0.957zM12 8.187v4.437h-2.57v-4.141q0-0.82-0.316-1.285t-0.988-0.465q-0.492 0-0.824 0.27t-0.496 0.668q-0.086 0.234-0.086 0.633v4.32h-2.57q0.016-3.117 0.016-5.055t-0.008-2.313l-0.008-0.375h2.57v1.125h-0.016q0.156-0.25 0.32-0.438t0.441-0.406 0.68-0.34 0.895-0.121q1.336 0 2.148 0.887t0.813 2.598z"></path></symbol><symbol id="icon-heart" viewBox="0 0 34 30"><path d="M17,29.7 L16.4,29.2 C3.5,18.7 0,15 0,9 C0,4 4,0 9,0 C13.1,0 15.4,2.3 17,4.1 C18.6,2.3 20.9,0 25,0 C30,0 34,4 34,9 C34,15 30.5,18.7 17.6,29.2 L17,29.7 Z M9,2 C5.1,2 2,5.1 2,9 C2,14.1 5.2,17.5 17,27.1 C28.8,17.5 32,14.1 32,9 C32,5.1 28.9,2 25,2 C21.5,2 19.6,4.1 18.1,5.8 L17,7.1 L15.9,5.8 C14.4,4.1 12.5,2 9,2 Z" id="Shape"></path></symbol></defs></svg>
+
+        <header class="bar-header">
+    <a id="menu">
+        <svg id="open" class="icon-menu"><use xlink:href="#icon-menu"></use></svg>
+    </a>
+    <a id="search" class="dosearch">
+        <svg class="icon-search"><use xlink:href="#icon-search"></use></svg>
+    </a>
+    <h1 class="logo">
+        <a href="/">
+            DrakeJin
+        </a>
+    </h1>
+</header>
+
+<div id="mask" class="overlay"></div>
+
+<aside id="sidebar">
+    <nav id="navigation">
+      <h2>Menu</h2>
+      <ul>
+        
+          <li><a href="http://blog.drakejin.me/">홈</a></li>
+        
+          <li><a href="http://blog.drakejin.me/about">블로그 소개</a></li>
+        
+          <li><a href="http://blog.drakejin.me/me">나</a></li>
+        
+          <li><a href="http://blog.drakejin.me/contact">질문하기</a></li>
+        
+        <li><a class="feed" href="http://blog.drakejin.me/feed.xml" title="Atom/RSS feed">Feed</a></li>
+      </ul>
+    </nav>
+</aside>
+
+<div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search">
+        <svg class="icon-remove-sign"><use xlink:href="#icon-close"></use></svg>
+        <ul class="search-results search-list"></ul>
+    </div>
+</div>
+
+
+        <section class="post">
+
+            <article role="article" id="post" class="post-content" itemprop="articleBody">
+                <p itemprop="post-info" class="post-info">
+                    
+                        <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                        <time itemprop="datePublished" datetime="2017-12-16T00:00:00+09:00" class="date">
+                            
+
+
+December 16, 2017
+
+                        </time>
+                    
+                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
+                    <span>9 min to read</span>
+                </p>
+                <h1 class="post-title" itemprop="name">ReactJS의 Virtual DOM과 Repaint, Reflow</h1>
+                <p itemprop="description" class="subtitle">Virtual DOM의 동작 원리와 Virtual DOM이 repaint와 reflow연산을 줄이기 위한 노력에 대해 알아보자</p>
+
+                
+                    <img src="https://i.imgur.com/yRH0zfw.png" alt="Imagem de capa" class="post-cover">
+                
+
+                <h3 id="주의">주의</h3>
+
+<p>이 블로그의 내용은 대단히 주관적인 내용이 가득합니다.
+그리고 <code class="highlighter-rouge">양질의 글</code>을 읽었지만 <code class="highlighter-rouge">똥글</code>이 나오는건 제 미숙함 때문입니다. 
+그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다.
+또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다.
+(- -)(_ _)</p>
+
+<h1 id="react는-왜-존재하는가">React는 왜 존재하는가?</h1>
+
+<p>큰 SPA(Single Page Application) 또는 Dynamic UI 의 웹 페이지를 만들기 위해서</p>
+
+<blockquote>
+  <p><strong>We built React to solve one problem: building large applications with data that changes over time.</strong>
+출처 : https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md</p>
+</blockquote>
+
+<p>**SPA: Single Page Application : 페이지 전환없이 서비스를 이용할 수 있는 애플리케이션 UI를 말한다. Dynamic UI의 성격이 강하다.</p>
+
+<h3 id="그럼-그-이전에는-큰-어플리케이션은-어떻게-만들었을까">그럼 그 이전에는 큰 어플리케이션은 어떻게 만들었을까?</h3>
+
+<p>일반적으로 모든 웹페이지에서 서버와 통신하며 요청을 주고 받으면, 받은 데이터를 DOM 객체에 속성값, text들을 변화시키거나 새로 만들거나 제거하게 되로록 짰었다.
+그리고 이 때 코드는 계속해서 DOM객체의 CRUD코드를 반복해서 코드를 짜 주어야 했다. 
+그와 동시에 DOM객체에 대해 연산을 연속적으로 하게 됨에 따라 repaint, reflow 연산이 빈번해져 브라우저가 컴퓨터의 자원을 많이 소모하게 된다.
+따라서 이전의 일반 DOM객체를 사용하여 SPA모델의 웹 어플리케이션을 만들경우에는 많은 개발 부채를 불러오게 된다.</p>
+
+<p>페이스북의 React는 이 방법을 가상의 DOM 객체(Virtual DOM)를 이용해 이 문제를 해결하였다.</p>
+
+<p><strong>reflow 와 repaint</strong>: 밑에 자세히 설명하도록 하겠지만 
+지금은 ‘<code class="highlighter-rouge">브라우저 레이아웃 렌더링</code> 중에 
+연산할 때 리소스를 가장 많이 잡아먹는 연산’ 이 정도만 알아두면 좋다.</p>
+
+<h1 id="그렇다면-dom하고-virtual-dom은-뭘까">그렇다면 DOM하고 Virtual DOM은 뭘까?</h1>
+
+<h3 id="dom">DOM</h3>
+
+<p>여기서 말하는 <code class="highlighter-rouge">DOM</code>(Document Object Model)은 HTML,JS,CSS로 생성되는 것들을 말한다.
+우리가 자주 보는 <code class="highlighter-rouge">&lt;div&gt;</code>, <code class="highlighter-rouge">&lt;input&gt;</code>, <code class="highlighter-rouge">&lt;a&gt;</code> 등의 것들이다.</p>
+
+<p><em>이 글에서는 DOM을 <code class="highlighter-rouge">일반 DOM</code> 또는 <code class="highlighter-rouge">regular DOM</code>이라는 단어로 표기할것이다.</em></p>
+
+<h3 id="virtualdom">VirtualDOM</h3>
+
+<p>regular DOM의 추상화 개념을 활용한 새로운 또 다른 DOM 이다. 
+이것은 빈번한 repaint와 reflow문제를 보안하였으며, Dynamic UI를 만들기 위해 적합한 기능들이 내장되어 있다.
+그러므로 VirtualDOM은 SPA모델의 웹 어플리케이션 에서는 regular DOM 보다 최적의 성능을 발휘한다.</p>
+
+<h3 id="dom과-virtual-dom-비교">DOM과 Virtual DOM 비교</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">구분</th>
+      <th style="text-align: center">regular DOM</th>
+      <th style="text-align: center">Virtual DOM</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">성격</td>
+      <td style="text-align: center">정적</td>
+      <td style="text-align: center">동적</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">생명주기</td>
+      <td style="text-align: center">부재</td>
+      <td style="text-align: center">존재</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">성능:동적 웹</td>
+      <td style="text-align: center">Defeat</td>
+      <td style="text-align: center">Win</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">성능:정적 웹</td>
+      <td style="text-align: center">Win</td>
+      <td style="text-align: center">Defeat</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">EventElement</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">regular DOM하고 다름</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">추상화</td>
+      <td style="text-align: center">-</td>
+      <td style="text-align: center">regular DOM에서 추상화 해옴</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>부가적인 내용:<a href="https://github.com/FEDevelopers/tech.description/wiki/%EA%B0%80%EC%83%81-%EB%8F%94%EA%B3%BC-%EB%8F%94%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90">https://github.com/FEDevelopers/tech.description/wiki/%EA%B0%80%EC%83%81-%EB%8F%94%EA%B3%BC-%EB%8F%94%EC%9D%98-%EC%B0%A8%EC%9D%B4%EC%A0%90</a></p>
+
+<h3 id="dom은-느리기만한-애물단지">DOM은 느리기만한 애물단지..?</h3>
+
+<p>우선 DOM이 느리다라는 표현은 옳지 않다.
+맨 위에 언급되었듯이 React의 존재는 대규모 SPA(또는 Dynamic UI)의 웹 페이지를 만들기 위해이며,
+만약 Dynamic UI의 웹 애플리케이션이 아니라 소개페이지같은 이전의 트랜드 웹 애플리케이션이라면 당연히 regular(일반) DOM이 더 성능이 좋다.</p>
+
+<p>즉, <strong>상황에 따라 다르다</strong>는것이다.</p>
+
+<p>그런데, 왜 DOM에 대한 문제점을 설파할까?</p>
+
+<p>현재의 regular DOM은 트랜드에 맞지 않는 성격을 갖고있기 때문이다. <strong>regular DOM은 정적이다.</strong>
+(WEB 1.0)웹의 발전에 대한 게시글을 읽다보면 알고 있겠지만 초기에 웹은 정적이었고,
+(WEB 2.0)서비스 로직이 들어가게 되면서 서버와 클라이언트는 대화를 할 수 있게 되었다.
+(WEB 3.0)그리고 지금은 Client Machine하고 사용자가 대화를 한다.
+초기 정적인 웹페이지에 맞게 설계된 regular DOM은 정적인 성격을 가진채 동적인 웹 어플리케이션에 사용되기 때문에 성능상에 문제가 발생하게 된다.</p>
+
+<p>요즘 DOM이 사용되고 있는 트렌드(DOM이 애니메이션마냥 휘황찬란하게 바뀌는 상황)에서 현재의 DOM객체에 문제가 있기 때문이다. 
+그 부분은 바로 <code class="highlighter-rouge">브라우저 레이아웃 엔진</code>에서 발생하며, repaint와 reflow연산작업의 빈번한 발생으로 UI/UX렌더링에 비교적 많은 리소스를 먹게되기 때문이다.</p>
+
+<p>하지만 정확히 알기위해서는 반드시 이 <a href="https://velopert.com/3236">링크:(velopert blog)https://velopert.com/3236</a>를 참조해보는것을 추천한다.</p>
+
+<h1 id="repaint-와-reflow-는-무엇">Repaint 와 Reflow 는 무엇?</h1>
+
+<p>먼저 코드로 언제 repaint와 reflow가 발생하는지 알아보자.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">style</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">style</span><span class="p">;</span> <span class="c1">// 캐싱</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">padding</span> <span class="o">=</span> <span class="s2">"20px"</span><span class="p">;</span> <span class="c1">// reflow, repaint</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">border</span> <span class="o">=</span> <span class="s2">"10px solid red"</span><span class="p">;</span> <span class="c1">// reflow, repaint</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">color</span> <span class="o">=</span> <span class="s2">"blue"</span><span class="p">;</span> <span class="c1">// repaint (레이아웃이변경되진않았기때문에 reflow 안함)</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">backgroundColor</span> <span class="o">=</span> <span class="s2">"#ffa"</span><span class="p">;</span> <span class="c1">// repaint</span>
+<span class="nx">style</span><span class="p">.</span><span class="nx">fontSize</span> <span class="o">=</span> <span class="s2">"1em"</span><span class="p">;</span> <span class="c1">// reflow, repaint!</span>
+
+<span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createTextNode</span><span class="p">(</span><span class="s1">'hello world!'</span><span class="p">));</span> <span class="c1">// reflow, repaint</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p><code class="highlighter-rouge">repaint</code>는 색상이 변경되거나 글자의 내용이 바뀌었을 때 발생되는 연산이다.
+<code class="highlighter-rouge">reflow</code>는 하나의 DOM객체의 크기나 위치가 변경되엇 을 때(레이아웃의 변경작업), 다른 DOM객체들의 위치와 크기가 함께 변경하는것을 말한다.</p>
+</blockquote>
+
+<p><strong>*주의:</strong> 
+사실 브라우저는 생박보다 멍청하지 않다.
+위에 코드로 설명해놓은 구간의 한줄 한줄 마다 repaint와 reflow가 발생하는것은 아니다. 
+실제로는 style에 대한 작업이 더 없고 다른 연산으로 들어갈 때 <code class="highlighter-rouge">Batched DOM Update</code>가 발생하여 style변경에 대한 작업을 일괄적으로 처리하게 된다.
+즉, 매 한 줄 마다 reapint, reflow연산을 하지 않는다는 것이다.</p>
+
+<p>하지만 그 중에 한줄 한줄 강제로 reflow연산을 발생시키는 동작들이 부분있다.
+그것은 바로 <code class="highlighter-rouge">Forced Reflow</code>라고 부르며 연산으로는 아래링크를 참조하길 바란다.</p>
+
+<p><a href="https://gist.github.com/paulirish/5d52fb081b3570c81e3a">https://gist.github.com/paulirish/5d52fb081b3570c81e3a</a></p>
+
+<h3 id="브라우저-레이아웃-엔진의-동작flow">브라우저 레이아웃 엔진의 동작flow</h3>
+
+<p>우선 repaint와 reflow이 발생하는 구간이 어디인지 살펴보자</p>
+
+<p><img src="https://i.imgur.com/0XdloJi.png" alt="browser layout engine" /></p>
+
+<h3 id="브라우저-레이아웃-엔진에-대한-성능튜닝-10가지">브라우저 레이아웃 엔진에 대한 성능튜닝 10가지</h3>
+
+<p>반드시 링크의 내용을 읽어보길 바란다.</p>
+
+<p>출처 : <a href="https://www.sitepoint.com/10-ways-minimize-reflows-improve-performance/">https://www.sitepoint.com/10-ways-minimize-reflows-improve-performance</a></p>
+
+<ol>
+  <li><strong>배스트 프렉티스를 사용하라</strong> 인라인태그 쓰지말기 table layout일 경우에는 <code class="highlighter-rouge">table-layout:fixed</code>를 사용하기</li>
+  <li><strong>숫자로 css규칙을 정하는걸 최소화 하라</strong> The fewer rules you use, the quicker the reflow. You should also avoid complex CSS selectors where possible.</li>
+  <li><strong>DOM 트리의 depth를 최소화 하라</strong></li>
+  <li><strong>돔 트리에서 클래스의 변경을 최소화 하라</strong></li>
+  <li><strong>Flow에 관련된 복잡한 애니메이션은 최소화하라</strong></li>
+  <li><strong>DOM 객체를 안보이게 할거라면 제거하지말고 <code class="highlighter-rouge">display:none</code>을 이용하라</strong></li>
+  <li><strong><code class="highlighter-rouge">Batched DOM Update</code>를 이용하라</strong></li>
+  <li><strong>영향받는 엘리먼트의 개수를 제한하라</strong></li>
+  <li><strong>매끄러운 퍼포먼스를 전과 후를 비교하라</strong></li>
+  <li><strong>repaint 이슈를 브라우저 툴을 이용하여 분석하라</strong> Chrome의 timeline기능을 이용하여 <code class="highlighter-rouge">Paint</code> 및 <code class="highlighter-rouge">Repaint</code>를 확인하자</li>
+</ol>
+
+<h1 id="virtual-dom의-알고리즘">Virtual DOM의 알고리즘</h1>
+
+<p>Virtual DOM의 특징은 앞서 언급했듯이 reflow 와 repaint를 줄여 Dynamic UI 웹 애플리케이션 일 때에 <code class="highlighter-rouge">브라우저 레이아웃 엔진</code>에 성능에 최적화를 시켜준다고 했다.
+어떻게 이런 특징을 가질 수 있었을까? 조화(Reconciliation), 그리고 Smart Diffing Algorithm 이 바로 그 기능을 돕는다.</p>
+
+<h3 id="smart-diffing-algorithm-그리고-조화조정reconciliation">Smart Diffing Algorithm, 그리고 조화,조정(Reconciliation)</h3>
+
+<p>render가 되었을 때 이 알고리즘이 등장하며, 이 알고리즘은 <strong>render 되는 순간에 reflow와 repaint의 영향을 최소화 하여 어떻게 성능향상을 할 수 있을까?</strong>에서 사작되었다.
+render를 할 때마다 render를 할 때마다 render메서드 안에 선언해놓은 JSX태그들이 모두 새로 그려진다면 그만큼의 repaint와 reflow연산이 발생하게 된다.
+하지만 이 알고리즘은 이전과 새로 그려질 태그들의 내용을 비교하여 변경된 부분만 새로 그려 repaint와 reflow연산을 줄여준다.
+그렇다면, 이 알고리즘들은 무엇이며 react.js에서는 어떻게 동작하고 있을까?</p>
+
+<h3 id="react-diffing-process">React Diffing Process</h3>
+
+<p><strong>Diffing Process</strong>
+<img src="https://i.imgur.com/QRtqIui.png" alt="diffing process" /></p>
+
+<p>Smart Diffing Algorithm은 렌더링되어 사용되고 있는 실제 regular DOM Tree와 React에서 쓰는 in-momery 안에있는 Virtual DOM Tree를 비교하는 알고리즘이다. 
+최소한의 연산으로 수정작업이 요구되는 실제 돔 객체를 찾아서 수정 및 변경작업을 한다.
+smart diffing algorithm은 Virtaul DOM Tree와 regular DOM Tree를 맵핑되어있고 어떤 DOM Node가 다른지 찾는다.
+기존의 regular DOM Tree에서 탐색 알고리즘은 big-O(n^3)였지만 react 에서의 탐색 알고리즘은 big-O(n)이기 때문에 타 virtualDOM 보다 빠르다고 할 수 있다.
+그리고 성능은 기존 트리비교(he state of the art algorithms을 이용)는 O(n^3)이라면 리엑트의 트리비교 알고리즘(Heuristic을 이용)은 O(n)의 비교를 한다.</p>
+
+<p><strong>Reconciliation Process</strong></p>
+
+<p>Component render() — updating the Virtual DOM, running the diffing algorithm and finally updating the DOM
+<img src="https://i.imgur.com/hy9Are6.png" alt="Reconciliation Process" /></p>
+
+<p>위 문서에서 빨간 점선은 모든 조하 단계는 현재노드에서 다음 자식 노드들애게 반복될것이다 위의 플로우차트는 Virtual DOM이 실제 DOM객체에 대하여 update가 발생하였을 때를 그렸다.
+그리고 이 문서에서 말하는 Reconcile은 서로 다른 두 DOM Tree를 합쳐 하나의 실제로 반영될 DOM Tree를 만들어 내는 과정이다.</p>
+
+<p><em>만약 위 그림에서 알려지지 않은 부분도 있지만 가급적 많은 부분을 그리려고 노력했다.</em></p>
+
+<h3 id="참고문헌">참고문헌</h3>
+<ol>
+  <li>Reconciliation에 대한 알고리즘 설명이 자세함: https://medium.com/@gethylgeorge/how-virtual-dom-and-diffing-works-in-react-6fc805f9f84e</li>
+  <li>Browser Layout Engine에 대한 설명 - Mozila: https://developer.mozilla.org/en-US/docs/Mozilla/Introduction_to_Layout_in_Mozilla</li>
+  <li>Browser Layout Engine에 대한 설명 - Others: http://taligarsiel.com/Projects/howbrowserswork1.htm#Parsing_general</li>
+  <li>D2의 React 적용하기 전에 읽어둘것: http://d2.naver.com/helloworld/9297403</li>
+  <li>다른 Dynamic UI를 다루는 javascript framework가 궁금하다면? : http://teropa.info/blog/2015/03/02/change-and-its-detection-in-javascript-frameworks.html</li>
+</ol>
+
+<h3 id="react에서-virtual-dom의-중요성">React에서 Virtual DOM의 중요성</h3>
+
+<blockquote>
+  <p>https://velopert.com/3236 복붙</p>
+
+  <p>업데이트: ugwe43to874nf4 라는 레딧유저님이 Virtual DOM 의 중요성을 더 알려주었습니다.</p>
+
+  <p>DOM 조작의 실제 문제는 각 조작이 레이아웃 변화, 트리 변화와 렌더링을 일으킨다는겁니다. 그래서, 예를 들어 여러분이 30개의 노드를 하나 하나 수정하면, 그 뜻은 30번의 (잠재적인) 레이아웃 재계산과 30번의 (잠재적인) 리렌더링을 초래한다는 것이죠.</p>
+
+  <p>Virtual DOM 은 그냥 뭐 엄청 새로운것도 아니고, 그냥 DOM 차원에서의 <a href="http://cfile29.uf.tistory.com/image/234C904E58D2899A1F294A">더블 버퍼링</a>이랑 다름이 없는거에요. 변화가 일어나면 그걸 오프라인 DOM 트리에 적용시키죠. 이 DOM 트리는 렌더링도 되지 않기때문에 연산 비용이 적어요. 연산이 끝나고나면 그 최종적인 변화를 실제 DOM 에 던져주는거에요. 딱 한번만 한는거에요. 모든 변화를 하나로 묶어서. 그러면, 레이아웃 계산과 리렌더링의 규모는 커지겠지만, 다시 한번 강조하자면 딱 한번만 하는거에요. 바로 이렇게, 하나로 묶어서 적용시키는것이, 연산의 횟수를 줄이는거구요.</p>
+
+  <p>사실, 이 과정은 Virtual DOM 이 없이도 이뤄질수 있어요. 그냥, 변화가 있을 때, 그 변화를 묶어서 <a href="https://developer.mozilla.org/en-US/docs/Web/API/DocumentFragment">DOM fragment</a> 에 적용한 다음에 기존 DOM 에 던져주면 돼요.</p>
+
+  <p>그러면, Virtual DOM 이 해결 하려고 하는건 무엇이냐? 그 DOM fragment를 관리하는 과정을 수동으로 하나하나 작업 할 필요 없이, 자동화하고 추상화하는거에요. 그 뿐만 아니라, 만약에 이 작업을 여러분들이 직접 한다면, 기존 값 중 어떤게 바뀌었고 어떤게 바뀌지 않았는지 계속 파악하고 있어야하는데 (그렇지 않으면 수정 할 필요가 없는 DOM 트리도 업데이트를 하게 될 수도 있으니까요), 이것도 Virtual DOM 이 이걸 자동으로 해주는거에요. 어떤게 바뀌었는지 , 어떤게 바뀌지 않았는지 알아내주죠.</p>
+
+  <p>마지막으로, DOM 관리를 Virtual DOM 이 하도록 함으로써, 컴포넌트가 DOM 조작 요청을 할 때 다른 컴포넌트들과 상호작용을 하지 않아도 되고, 특정 DOM 을 조작할 것 이라던지, 이미 조작했다던지에 대한 정보를 공유 할 필요가 없습니다. 즉, 각 변화들의 동기화 작업을 거치지 않으면서도 모든 작업을 하나로 묶어줄 수 있다irtual DOM 의 중요성을 더 알려주었습니다.</p>
+</blockquote>
+
+<h3 id="조화-비교알고리즘의-동작">조화 비교알고리즘의 동작</h3>
+
+<ol>
+  <li>엘리먼트 타입이 다를경우</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderA</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">div</span> <span class="o">/&gt;</span>
+<span class="c1">// 이후</span>
+<span class="nx">renderB</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="o">/&gt;</span>
+<span class="c1">// Result : div를 제거하고 span태그를 추가한다.</span>
+</code></pre></div></div>
+
+<ol>
+  <li>엘리먼트 타입이 같을경우</li>
+</ol>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">renderA</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">a</span><span class="o">=</span><span class="s2">"1"</span><span class="o">/&gt;</span>
+<span class="c1">// 이후</span>
+<span class="nx">renderB</span><span class="p">:</span> <span class="o">&lt;</span><span class="nx">Counter</span> <span class="nx">a</span><span class="o">=</span><span class="s2">"2"</span><span class="o">/&gt;</span>
+<span class="c1">// Result : 컴포넌트가 사라지지 않고, 속성(props)값만 변경 </span>
+</code></pre></div></div>
+
+<ol>
+  <li>리스트를 렌더링 할 때</li>
+</ol>
+
+<p>다르게 생겼으면 내부비교하지 않고 새로 그린다. 그게 아니라면 위의 내용과 같다.(리스트 렌더링 시에는 property에 key를 이용해서 렌더링 성능을 최적화 할 수 있다.)</p>
+
+<h1 id="정리">정리</h1>
+
+<p>react는 대규모 어플리케이션을 만들기 위해 만들어졌다. react는 <code class="highlighter-rouge">Virtual DOM</code> 을 이용하여 
+<code class="highlighter-rouge">repaint</code>와 <code class="highlighter-rouge">reflow</code>의 과정을 최소화 하려 노력하였으며, 
+이러한 노력은 <code class="highlighter-rouge">조화비교알고리즘</code>이 큰 역할을 했다.</p>
+
+<p>Virtual DOM의 DOM Tree는 In-Memory에 있으며, 
+Virtual DOM은 DOM fragment를 관리하는 과정을 자동화하고 추상화한다.</p>
+
+<p><code class="highlighter-rouge">조화비교알고리즘</code>은 virtual DOM과 Real DOM의 차이를 비교하여 수정해야하는 부분만 수정하며 
+연산이 끝나면 수정이 완성된 DOM Tree를 <code class="highlighter-rouge">브라우저 레이아웃 엔진</code>에 건내주어
+한번의 reflow와 repaint과정이 되도록 한다. 이 과정이 <code class="highlighter-rouge">reflow</code>, <code class="highlighter-rouge">repaint</code>과정의 최소화라 본다.</p>
+
+<p>끝으로 오타 및 틀린 부분 있으면 과감하게 지적 부탁드립니다. 수정하겠습니다.</p>
+
+<h1 id="react에-대해서-깊이-있게-알아보려면">React에 대해서 깊이 있게 알아보려면..</h1>
+
+<ul>
+  <li>https://velopert.com/ 민준님의 재미있는 이슈나 글들이 많습니다.</li>
+  <li>제가 링크 남겨놓은 페이지 가급적 살펴봐주셨으면 합니다.</li>
+</ul>
+
+<hr />
+<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
+
+            </article>
+
+            <div class="progress-bar" data-minutes="9">
+                <span class="time-completed"></span>
+                <span class="time-remaining"></span>
+                <div class="bar">
+                    <span class="completed" style="width:0%;"></span>
+                    <span class="remaining" style="width:100%;"></span>
+                </div>
+            </div>
+
+            <section class="share">
+    <h3>Share</h3>
+    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;ReactJS의 Virtual DOM과 Repaint, Reflow&quot;%20http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/%20via%20&#64;&hashtags=javascript,react,virtualDOM,"
+    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
+        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
+    </a>
+    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/"
+    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
+        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
+    </a>
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/"
+    onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
+        <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
+    </a>
+</section>
+
+            <section class="author" itemprop="author">
+  <div class="details" itemscope itemtype="http://schema.org/Person">
+    <img itemprop="image" class="img-rounded" src="https://avatars2.githubusercontent.com/u/10516961?s=460&v=4" alt="">
+    <p class="def">Author</p>
+    <h3 class="name">
+      <a itemprop="name" href="https://github.com/drake-jin">DrakeJin</a>
+    </h3>
+    <p class="desc">재미없으면 하기 싫어욧.</p>
+    <p>
+      
+      <a itemprop="github" href="https://github.com/drake-jin" title="Github">
+        <svg><use xlink:href="#icon-github"></use></svg>
+      </a>
+      
+      
+      <a itemprop="facebook" href="https://www.facebook.com/drakejin" title="Facebook">
+        <svg><use xlink:href="#icon-facebook"></use></svg>
+      </a>
+      
+      
+      
+      <a itemprop="medium" href="https://medium.com/@dydwls121200" title="Twitter">
+        <svg><use xlink:href="#icon-medium"></use></svg>
+      </a>
+      
+      
+      
+      <a itemprop="linkedin" href="https://www.linkedin.com/in/drakejin" title="LinkedIn">
+        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      </a>
+      
+    </p>
+  </div>
+</section>
+
+            <section class="comments">
+    <h3>Comments</h3>
+    <div id="disqus_thread"></div>
+</section>
+<script type="text/javascript">
+    var disqus_loaded = false;
+
+    function load_disqus()
+    {
+        disqus_loaded = true;
+        var disqus_shortname = 'blog-drakejin-me';
+        var disqus_title = '';
+        var disqus_url = '/React-VirtualDOM-And-Repaint-Reflow/';
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        var ldr = document.getElementById('disqus_loader');
+    };
+    window.onscroll = function(e) {
+        if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+            //hit bottom of page
+            if (disqus_loaded==false)
+                load_disqus()
+        }
+    };
+</script>
+
+            <footer>
+    <p>
+      
+      <a itemprop="github" href="https://github.com/drake-jin" title="Github">
+        <svg><use xlink:href="#icon-github"></use></svg>
+      </a>
+      
+      
+      <a itemprop="facebook" href="https://www.facebook.com/drakejin" title="Facebook">
+        <svg><use xlink:href="#icon-facebook"></use></svg>
+      </a>
+      
+      
+      
+      <a itemprop="medium" href="https://medium.com/@dydwls121200" title="Twitter">
+        <svg><use xlink:href="#icon-medium"></use></svg>
+      </a>
+      
+      
+      
+      <a itemprop="linkedin" href="https://www.linkedin.com/in/drakejin" title="LinkedIn">
+        <svg><use xlink:href="#icon-linkedin"></use></svg>
+      </a>
+      
+    </p>
+    <ul>
+        
+          <li><a href="http://blog.drakejin.me/">홈</a></li>
+        
+          <li><a href="http://blog.drakejin.me/about">블로그 소개</a></li>
+        
+          <li><a href="http://blog.drakejin.me/me">나</a></li>
+        
+          <li><a href="http://blog.drakejin.me/contact">질문하기</a></li>
+        
+        <li><a class="feed" href="http://blog.drakejin.me/feed.xml" title="Atom/RSS feed">Feed</a></li>
+    </ul>
+    <p><span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
+</footer>
+<script src="/assets/js/main.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-90708702-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  
+
+
+        </section>
+    </body>
+</html>
