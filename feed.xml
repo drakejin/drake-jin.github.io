@@ -5,9 +5,25 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 01 Jan 2018 22:47:55 +0900</pubDate>
-    <lastBuildDate>Mon, 01 Jan 2018 22:47:55 +0900</lastBuildDate>
+    <pubDate>Tue, 02 Jan 2018 01:10:22 +0900</pubDate>
+    <lastBuildDate>Tue, 02 Jan 2018 01:10:22 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>2018 Prolog</title>
+        <description>&lt;h1 id=&quot;2017년에-한-것들&quot;&gt;2017년에 한 것들&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;1월 전에 있던 SI 회사 그만 두었다.&lt;/li&gt; &lt;li&gt;1월~5월 취업보다 자기 만족용 공부만 했었다. 그런데 정말 쉬지는 않았다.&lt;/li&gt; &lt;li&gt;6월 스타트업에 들어왔다. 1인 개발자로.&lt;/li&gt; &lt;li&gt;6월 ~ 12월 php는 그냥 이유없이 싫어했는데 내가 그걸 만지고 있다. 얼른 바꿀것이다. 코드가 엉망이다&lt;/li&gt; &lt;li&gt;7월 일본여행을 다녀왔다 8박 9일 여행은 역시 혼자 다녀와야 한다.&lt;/li&gt; &lt;li&gt;8월 회사의 코드를 다른 회사의 코드로 대체하고 리뉴얼하고 로직도 변경하고 서버 스트럭쳐도 바꿨다.&lt;/li&gt; &lt;li&gt;8월 개발자를 처음 면접을 보고 뽑아보았다.&lt;/li&gt; &lt;li&gt;9월 챗봇api 를 서버리스로 만들었다. 회사 사이드 프로젝트로 크롤러를 만들었다.&lt;/li&gt; &lt;li&gt;10월 무탈하게 별 일 없이 지나간거 같은데.. 밤을 가장 많이 샌거같다. 뭘 했었지…?&lt;/li&gt; &lt;li&gt;11월 북딜 인수인계 작업과 크롤러를 만들기...</description>
+        <pubDate>Mon, 01 Jan 2018 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/2018-Prolog/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/2018-Prolog/</guid>
+        
+        <category>css</category>
+        
+        <category>flex</category>
+        
+        
+        <category>css</category>
+        
+      </item>
     
       <item>
         <title>ES5 사용자 ES8을 만나다. Cheat Sheet</title>
