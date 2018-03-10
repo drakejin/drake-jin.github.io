@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>My Opinion - UnitTest | DrakeJin</title>
-    <meta name="description" content="Why I've been attracted by UnitTest. Let's know that.">
+    <title>처음 겪은 마이그레이션 전략-intro | DrakeJin</title>
+    <meta name="description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@">
-    <meta name="twitter:title" content="My Opinion - UnitTest | DrakeJin">
-    <meta name="twitter:description" content="Why I've been attracted by UnitTest. Let's know that.">
+    <meta name="twitter:title" content="처음 겪은 마이그레이션 전략-intro | DrakeJin">
+    <meta name="twitter:description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
     
-    <meta property="twitter:image:src" content="https://i.imgur.com/MENyp1l.jpg">
+    <meta property="twitter:image:src" content="https://i.imgur.com/EKnqkCJ.png">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://blog.drakejin.me/MyOpinion-UnitTest/">
-    <meta property="og:title" content="My Opinion - UnitTest | DrakeJin">
+    <meta property="og:url" content="http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-1/">
+    <meta property="og:title" content="처음 겪은 마이그레이션 전략-intro | DrakeJin">
     
-    <meta property="og:image" content="https://i.imgur.com/MENyp1l.jpg">
+    <meta property="og:image" content="https://i.imgur.com/EKnqkCJ.png">
     
-    <meta property="og:description" content="Why I've been attracted by UnitTest. Let's know that.">
+    <meta property="og:description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
     <meta property="og:site_name" content="DrakeJin">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="My Opinion - UnitTest | DrakeJin"/>
-    <meta itemprop="description" content="Why I've been attracted by UnitTest. Let's know that.">
+    <meta itemprop="name" content="처음 겪은 마이그레이션 전략-intro | DrakeJin"/>
+    <meta itemprop="description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
     <meta itemprop="image" content="http://blog.drakejin.me/assets/img/blog-image.png"/>
 
     <!-- Favicon -->
@@ -60,7 +60,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://blog.drakejin.me/MyOpinion-UnitTest/">
+    <link rel="canonical" href="http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-1/">
     <link rel="alternate" type="application/rss+xml" title="DrakeJin" href="http://blog.drakejin.me/feed.xml" />
 </head>
 
@@ -121,66 +121,88 @@
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p itemprop="post-info" class="post-info">
                     
-                        <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
-                        <time itemprop="datePublished" datetime="2018-03-09T00:00:00+09:00" class="date">
-                            
-
-
-Mark 9, 2018
-
-                        </time>
-                    
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
                     <span>2 min to read</span>
                 </p>
-                <h1 class="post-title" itemprop="name">My Opinion - UnitTest</h1>
-                <p itemprop="description" class="subtitle">Why I've been attracted by UnitTest. Let's know that.</p>
+                <h1 class="post-title" itemprop="name">처음 겪은 마이그레이션 전략-intro</h1>
+                <p itemprop="description" class="subtitle">처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다</p>
 
                 
-                    <img src="https://i.imgur.com/MENyp1l.jpg" alt="Imagem de capa" class="post-cover">
+                    <img src="https://i.imgur.com/EKnqkCJ.png" alt="Imagem de capa" class="post-cover">
                 
 
-                <h3 id="caution">Caution</h3>
+                <h1 id="1-아키텍쳐-파악">1. 아키텍쳐 파악</h1>
 
-<p>All of words are just my personal opinions. It’s not a correct answer.
-So, If you have any advice, Leave a comment. I will appreciate of that and accept. Seriously I swear.</p>
+<p>소스코드 및 전해들은 이야기로 파악한 아키텍쳐</p>
 
-<h1 id="why-i-didnt-use-unit-test">Why I didn’t use Unit Test</h1>
+<p><img src="https://i.imgur.com/VKGt9no.png" alt="레거시 인프라스트럭쳐" /></p>
 
-<h4 id="i-need-more-time-to-use-that-within-production">I need more time to use that within production.</h4>
+<h2 id="서버">서버</h2>
+<ul>
+  <li>
+    <p><strong>Api Server:</strong> api 서버는 같은 서버 스펙으로 이중화 해서 사용되었다 들었으며, 로드 벨런서의 라운드로빈방식으로 번갈아 요청이 오고 간다고 한다. stateless서버 이기 때문에 세션의 유지가 필요없으며 header에 해싱토큰이 오고간다. 또한 로드밸런서 셋팅 관련해서 api 서버가 죽어도 unhealthy State로 들어가게되면 로드벨런서가 뻗어버리고 다시 올리는데 약 1분~5분정도의 시간이 걸려 nginx를 두어서 항상 healthy상태로 쓴다고 한다.</p>
+  </li>
+  <li>
+    <p><strong>Admin Server, WebServer, Scheduler, (Sphinx) :</strong> 관리자페이지, 소개페이지가 올라가 있으며 이 둘의 활용빈도가 높지 않기때문에 스핑크스(검색엔진)와 스케줄러를 서버에 두어 사용하고 있다. 검색엔진의 인덱싱은 매 시간마다 인덱싱하도록 /etc/crontab에 명령어가 돌도록 셋팅해놓았다. 관리자페이지 소개페이지가 같은서버에 있으며 포트도 둘다 80으로 접속가능하게 되어야 하므로 nginx를 가동시켜서 호스트네임으로 두 서버 프로그램으로 요청을 분리시킨다. 스케줄러는 많은 RAM을 차지 하진 않으나 비교적 높은 CPU를 차지하는 반면, Sphinx는 높은 RAM을 차지하는대신 낮은 CPU 점유율로 같이 사용하도록 만들었다고 한다.</p>
+  </li>
+  <li>
+    <p><strong>SkTelink, Kakao BizTalk :</strong>
+Third Part회사의 서비스를 북딜 뿐만 아니라 기존에 쓰고 있던 타 서비스와의 연동을 위해 벼롣의 인스턴스로 빼 놓은 상태 Third Part회사에서 요구하는 **Agent 프로그램은 다른 인스턴스에서 다 함께 돌아가고 있다.</p>
+  </li>
+</ul>
 
-<blockquote>
-  <p>“How to prove your work is fine?”</p>
-</blockquote>
+<p><strong>** Agent 프로그램:</strong> 이 프로그램은 Batch의 성격을 나타내고있으며, DB에 값을넣어 주면 배치프로그램이 DB에 값을 읽고 Third Part 회사의 API서버로 요청을 보낸다.(어떤곳은 소캣통신이기도 함), 프로그램 설치나 DB Schema는 Third Part회사에서 프로그램과 설치방법까지 가이드라인이 적힌 문서로 주며, 서비스 이용 계약이 체결되어야 그 회사의 Agent 프로그램을 받아올 수 있다.</p>
 
-<p>It’s the start point of this post.</p>
+<ul>
+  <li>
+    <p><strong>S3 Bucket:</strong> HTTPS를 사용하고있다고 했었는데 소스코드를 사용해보니 HTTPS를 사용하고 있던건 아님.</p>
+  </li>
+  <li>
+    <p><strong>Database:</strong> MariaDB사용, 하지만 마이그레이션 받을때에는 MySQL로 받을 예정.</p>
+  </li>
+</ul>
 
-<p>That’s my senior’s words. I shocked about those cause’ I never thought about that. My boss is not an engineer and just wanna see the results. So, I don’t need to offer proof of my work. Actually, When I heard TDD, BDD and Unit Test, I just think that I should have to learn that. That’s why the job market wants to take engineers who can write using Unit Test codes. It’s just all what I know about those.</p>
+<h2 id="클라이언트">클라이언트</h2>
 
-<p>My situation is in the workplace what I have a responsibility of CTO or Head of Developer Team. Yeah, I’m working on Start-up Team. That meant I have the right to order something, decide something and plan something. How pressure of it!  I’m just freshman If I were in any company! Anyway, That meant my boss grant me the rights.</p>
+<ul>
+  <li><strong>안드로이드 :</strong> 자바 소스로 되어있으며, url은 서버 소스만 바라보고 있다.
+나머지는 third party들은 api 키만 등록해서 쓰고있다.</li>
+  <li><strong>iOS :</strong> 자바 소스로 되어있으며, url은 서버 소스만 바라보고 있다.
+나머지는 third party들은 api 키만 등록해서 쓰고있다.</li>
+  <li><strong>웹, 어드민 웹:</strong> 일반 DOM객체를 사용하는 웹페이지이며 spring boot의 templates 또는 thymleaf를 쓴다.</li>
+</ul>
 
-<p>I was the first developer when I joined this team. So, I should do everything about IT. Moreover, installing Wi-Fi is my work. At that time, My team was so busy and have tough schedules. The business cycle wasn’t waiting for me. The plans for service function had been changed. So, I had to deploy many times each day. That’s why I couldn’t choose to use Unit Test.</p>
+<h2 id="third-party">Third party</h2>
 
-<h1 id="why-are-we-have-to-do-the-unit-test">Why are we have to do the Unit Test</h1>
+<ul>
+  <li>Firebase: 분석 및 API관리</li>
+  <li>Google Analytics : 분석</li>
+  <li>Facebook Event : 분석</li>
+  <li>Google GCM : 푸쉬</li>
+  <li>Apple APNS : 푸쉬</li>
+  <li>SendBird : 챗팅</li>
+  <li>Google Login : 로그인</li>
+  <li>Facebook Login : 로그인</li>
+  <li>Gabia DNS : Domain 주소</li>
+</ul>
 
-<h3 id="1-how-to-prove-your-work-is-fine">1. “How to prove your work is fine?”</h3>
+<h1 id="작업-순서링크">작업 순서[링크]</h1>
 
-<p>These codes will be documentation for the developer or their head of a team.</p>
+<ol>
+  <li>마이그레이션 인트로 <a href="/처음_겪은_서비스_마이그레이션_작업-intro">Link</a></li>
+  <li>전해들은 정보들을 토대로 아키텍쳐 파악 <a href="/처음_겪은_서비스_마이그레이션_작업-1">Link</a></li>
+  <li>서드파티(facebook login, google analytics, firebase, playstore, android player… 등등.. 또는 sms, kakao BizMsg .. 등등 약 9개 정도 된 듯) 권한 및 계정 가져오기 <a href="/처음_겪은_서비스_마이그레이션_작업-2">Link</a></li>
+  <li>운영 서버 설계 <a href="/처음_겪은_서비스_마이그레이션_작업-3">Link</a></li>
+  <li>마이그레이션 전략 구상 <a href="/처음_겪은_서비스_마이그레이션_작업-4">Link</a></li>
+  <li>테스트 환경 구축 <a href="/처음_겪은_서비스_마이그레이션_작업-5">Link</a></li>
+  <li>마이그레이션 <a href="/처음_겪은_서비스_마이그레이션_작업-6">Link</a></li>
+  <li>운영 서버 배포 <a href="/처음_겪은_서비스_마이그레이션_작업-7">Link</a></li>
+  <li>후속작업… <a href="/처음_겪은_서비스_마이그레이션_작업-8">Link</a></li>
+</ol>
 
-<h3 id="2-it-will-help-to-focus-on-your-task-correctly">2. “It will help to focus on your task correctly.”</h3>
+<hr />
 
-<p>If you were a beginner, I think You’re in confuse of order many tasks on a project. Then, Your commit history might be messed up by chaos classifying task. Those are meant that you couldn’t regulate your works. But, UnitTest can help to arrange and focus on your tasks.</p>
-
-<h3 id="3-i-know-it-cant-have-100-percent-coverage-but-its-able-to-cover-what-i-do">3. “I know it can’t have 100 percent coverage. But, It’s able to cover what I do.”</h3>
-
-<p>I know it can’t have 100 percent coverage.
-  But, It’s able to cover what I do.
-  All of the codes can’t avoid of coupling.
-  If you changed any code, It will affect the others.
-  UnitTest can check the others what those have any problem.</p>
-
-<p>That’s why I learn about UnitTest.</p>
-
+<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
 
             </article>
 
@@ -195,15 +217,15 @@ So, If you have any advice, Leave a comment. I will appreciate of that and accep
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;attractive opinion - UnitTest&quot;%20http://blog.drakejin.me/MyOpinion-UnitTest/%20via%20&#64;&hashtags=unittest,react,"
+    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;처음 겪은 서비스 인수인계(마이그레이션)&quot;%20http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-1/%20via%20&#64;&hashtags="
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/MyOpinion-UnitTest/"
+    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-1/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/MyOpinion-UnitTest/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-1/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -256,7 +278,7 @@ So, If you have any advice, Leave a comment. I will appreciate of that and accep
         disqus_loaded = true;
         var disqus_shortname = 'blog-drakejin-me';
         var disqus_title = '';
-        var disqus_url = '/MyOpinion-UnitTest/';
+        var disqus_url = '/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-1/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
