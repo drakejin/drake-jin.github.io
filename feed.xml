@@ -5,13 +5,13 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 00:21:50 +0900</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 00:21:50 +0900</lastBuildDate>
+    <pubDate>Wed, 09 May 2018 00:27:03 +0900</pubDate>
+    <lastBuildDate>Wed, 09 May 2018 00:27:03 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Docker에 대해 알아보자(이론편)</title>
-        <description>&lt;h3 id=&quot;이전-포스트입니다&quot;&gt;이전 포스트입니다.&lt;/h3&gt; &lt;p&gt;2017년 4월 2일에 작성된 문서를 재 가공한 포스트입니다. 해당 포스트를 작성했었을 때에는 자위용에 불과해서 자위용포스트는 전부 지워버렸습니다.&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;세상을 재미있게 만들기 위하여!!&lt;/p&gt; &lt;/blockquote&gt; &lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;docker를-써야하는-이유&quot;&gt;Docker를 써야하는 이유&lt;/h1&gt; &lt;blockquote&gt; &lt;p&gt;Docker는 반 가상화보다 경량화된 방식. 게스트 OS를 설치하지 않음. Docker이미지에 서버 운영을 위한 프로그램과 라이브러리를 격리해서 설치할 수 있다. 하드웨어를 가상화하는 계층(Hyper-V)이 없기 때문에 메모리...</description>
+        <description>아니!!!! 내가 README.md 보라고 slack에다가 refer. 걸어줬잖아! docker-compose -f docker-compose.dev.yml up --build -d 이게 어렵냐고!! 그리고 개발 프로그램 무식하게 직접 설치할꺼야? elk, oracle DB, tensorflow 기타 등등이 다 5분안에 설치 가능한데?!</description>
         <pubDate>Wed, 09 May 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/Docker-araboza-1/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/Docker-araboza-1/</guid>
@@ -29,7 +29,7 @@
     
       <item>
         <title>서버리스 튜토리얼 with lambda project</title>
-        <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;serverless-란&quot;&gt;serverless 란?&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://aws.amazon.com/ko/serverless&quot;&gt;출처: AWS serverless&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;https://ko.wikipedia.org/wiki/%EC%84%9C%EB%B2%84%EB%A6%AC%EC%8A%A4_%EC%BB%B4%ED%93%A8%ED%8C%85&quot;&gt;출처: 위키: 서버리스 컴퓨팅&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;li&gt;&lt;strong&gt;&lt;a href=&quot;http://bcho.tistory.com/948&quot;&gt;출차: 조대협님의 블로그: 마이크로 서비스 아키텍쳐 (MSA의 이해)&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt; &lt;/ul&gt; &lt;p&gt;서버리스 컴퓨팅을 사용하면 &lt;strong&gt;서버를 고려하지 않고&lt;/strong&gt; 애플리케이션과 서비스를 구축하고 실행할 수 있습니다. 서버리스 애플리케이션에서는 &lt;strong&gt;사용자가 서버를 프로비저닝, 확장 및 관리할 필요가 없습니다.&lt;/strong&gt; 거의 모든 유형의 애플리케이션 또는 백엔드 서비스를 서버리스로 구축할 수 있으며,...</description>
+        <description>ㅠㅠ 서버좀 그만 터트리고 싶다.. lambda쓰면 서버 덜 터지겠지..? lambda 프로젝트를 이용한 serverless 프로젝트...</description>
         <pubDate>Sat, 05 May 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/Serverless-1/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/Serverless-1/</guid>
@@ -47,7 +47,7 @@
     
       <item>
         <title>Google Search Enging 에 대해서 알아보자-1</title>
-        <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;Intro&lt;/h1&gt; &lt;p&gt;개발직군 관점에서 바라보았을 때, SEO를 구축하고 관리하기 위한 내용을 다룹니다.&lt;/p&gt; &lt;h1 id=&quot;seo란&quot;&gt;SEO란?&lt;/h1&gt; &lt;p&gt;Search Engine Optiomization 검색 엔진 최적화라고 한다. 말 그대로 웹 서비스를 검색창에 노출시키기위한 최적의 상태로 만들어주는 작업을 SEO라 한다.&lt;/p&gt; &lt;h1 id=&quot;검색엔진-종류&quot;&gt;검색엔진 종류&lt;/h1&gt; &lt;ol&gt; &lt;li&gt;로봇형 검색엔진: 크롤러, 스파이더라고 불리는 프로그램이 링크를 타고 모든 사이트의 자료수집하는 형태의 검색엔진. (구글, 빙, 바이두, 얀덱스)&lt;/li&gt; &lt;li&gt;디렉토리형(카테고리 검색):...</description>
+        <description>SEO meta[title, keyword, description] 끝 아냐?</description>
         <pubDate>Thu, 29 Mar 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/Google-Search-Engine-1/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/Google-Search-Engine-1/</guid>
@@ -63,7 +63,7 @@
     
       <item>
         <title>My Opinion - UnitTest</title>
-        <description>&lt;h3 id=&quot;caution&quot;&gt;Caution&lt;/h3&gt; &lt;p&gt;All of words are just my personal opinions. It’s not a correct answer. So, If you have any advice, Leave a comment. I will appreciate of that and accept. Seriously I swear.&lt;/p&gt; &lt;h1 id=&quot;why-i-didnt-use-unit-test&quot;&gt;Why I didn’t use Unit Test&lt;/h1&gt; &lt;h4 id=&quot;i-need-more-time-to-use-that-within-production&quot;&gt;I need more time to use that within production.&lt;/h4&gt; &lt;blockquote&gt; &lt;p&gt;“How to prove your work is fine?”&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;It’s the start point of this post.&lt;/p&gt; &lt;p&gt;That’s my senior’s words. I shocked about those cause’ I never thought about that. My boss is not an engineer and just wanna see the results. So, I don’t need to offer proof...</description>
+        <description>Why I've been attracted by UnitTest. Let's know that.</description>
         <pubDate>Fri, 09 Mar 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/MyOpinion-UnitTest/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/MyOpinion-UnitTest/</guid>
@@ -79,7 +79,7 @@
     
       <item>
         <title>블록체인에 대해 알아보자 - 시작하기</title>
-        <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;intro&lt;/h1&gt; &lt;p&gt;블록체인에 대해 알아보자! 라고 생각하게 된 계기는 회사에서 어떤 내용으로 투자를 받을 수 있을까 고민하던 도중에 ‘블록체인을 활용해서 서비스를 해보자’에 대한 내용이 우세해서 투자를 받기위해 문서를 만들어야 하고 그 문서를 만들기 위해 나는 공부를 해야했다. 의도는 아름답지 않았지만, 이전에도 블록체인이 뭐길래 그렇게 말이 많은걸까에 대해서는 궁금했기 때문에 ‘얼씨구 좋다. 공부나 하자’라는 생각이다.&lt;/p&gt; &lt;p&gt;내가 지식을...</description>
+        <description>블록체인은 가상화폐를 위한 기술일까? 가상화폐하면 왜 블록체인이 떠오르고 블록체인 하니 왜 가상화폐가 떠오를까? 왜 블록체인이 떠오르는걸까? 에 대해서 고민을 해보았습니다.</description>
         <pubDate>Sun, 18 Feb 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/Blockchain-Start/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/Blockchain-Start/</guid>
@@ -93,7 +93,7 @@
     
       <item>
         <title>2018 Prolog</title>
-        <description>&lt;h1 id=&quot;2017년에-한-것들&quot;&gt;2017년에 한 것들&lt;/h1&gt; &lt;ul&gt; &lt;li&gt;1월 전에 있던 SI 회사 그만 두었다.&lt;/li&gt; &lt;li&gt;1월~5월 취업보다 자기 만족용 공부만 했었다. 그런데 정말 쉬지는 않았다.&lt;/li&gt; &lt;li&gt;6월 스타트업에 들어왔다. 1인 개발자로.&lt;/li&gt; &lt;li&gt;6월 ~ 12월 php는 그냥 이유없이 싫어했는데 내가 그걸 만지고 있다. 얼른 바꿀것이다. 코드가 엉망이다&lt;/li&gt; &lt;li&gt;7월 일본여행을 다녀왔다 8박 9일 여행은 역시 혼자 다녀와야 한다.&lt;/li&gt; &lt;li&gt;8월 회사의 코드를 다른 회사의 코드로 대체하고 리뉴얼하고 로직도 변경하고 서버 스트럭쳐도 바꿨다.&lt;/li&gt; &lt;li&gt;8월 개발자를 처음 면접을 보고 뽑아보았다.&lt;/li&gt; &lt;li&gt;9월 챗봇api 를 서버리스로 만들었다. 회사 사이드 프로젝트로 크롤러를 만들었다.&lt;/li&gt; &lt;li&gt;10월 무탈하게 별 일 없이 지나간거 같은데.. 밤을 가장 많이 샌거같다. 뭘 했었지…?&lt;/li&gt; &lt;li&gt;11월 북딜 인수인계 작업과 크롤러를 만들기...</description>
+        <description>2018을 맞이하는 ..</description>
         <pubDate>Mon, 01 Jan 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/2018-Prolog/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/2018-Prolog/</guid>
@@ -109,7 +109,7 @@
     
       <item>
         <title>ES5 사용자 ES8을 만나다. Cheat Sheet</title>
-        <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;intro&lt;/h1&gt; &lt;p&gt;내가 쓸때는 ES5 문법 밖에 없었는데… 정신차리고 보니 ES8을 모르고서 개발문서를 읽기가 힘들어 졌다. 지어 예제 코드를 문법모르고 사용하는 일도 부지기수로 늘어나게 되었다. 사실 자바스크립트도 jQuey만 열심히 돌려봤지 프로토타입따위 만져본적 없고 남이 만들어준것만 써봤다. 하지만 어느날 나는 react를 해야했고, &lt;code class=&quot;highlighter-rouge&quot;&gt;객체지향프로그래밍&lt;/code&gt;과 &lt;code class=&quot;highlighter-rouge&quot;&gt;MVC 패턴&lt;/code&gt;이 우주최고의 패턴인줄만 알았는데 &lt;code class=&quot;highlighter-rouge&quot;&gt;함수형프로그래밍&lt;/code&gt;프로그래밍이 나오고 &lt;code class=&quot;highlighter-rouge&quot;&gt;Flux 패턴&lt;/code&gt;이 나왔다....</description>
+        <description>자바스크립트 기술이 획일화 되고 nodejs가 많이 쓰이면 그 때 가서 공부해야겠다라고 생각했지만. 그러기엔 너무 패러다임이 빨리 성장한다...</description>
         <pubDate>Mon, 25 Dec 2017 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/ES5-User-Meet-ES8/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/ES5-User-Meet-ES8/</guid>
@@ -125,7 +125,7 @@
     
       <item>
         <title>flex 에 대해서 알아보자</title>
-        <description>&lt;h1 id=&quot;주의&quot;&gt;주의&lt;/h1&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용으로써, 양질의 글을 읽었지만 똥글이 나오는건 제가 미숙하기 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 읽고 검토해서 반영하도록 하겠습니다. 감사하겠습니다.&lt;/p&gt; &lt;h1 id=&quot;intro&quot;&gt;intro&lt;/h1&gt; &lt;p&gt;http://flexboxfroggy.com/#ko&lt;/p&gt; &lt;p&gt;읽기전에 위 링크에 있는 튜토리얼을 먼저 하고나서 글을 보면 좋을것 같다. &lt;a href=&quot;https://teamtreehouse.com&quot;&gt;treehouse&lt;/a&gt;에서 만든 튜토리얼로 flex를 이해하는데 이걸로 잠깐 써보면 어느정도 감이 잡히지 않을까 싶다.&lt;/p&gt; &lt;h1 id=&quot;왜-flex를-쓸까&quot;&gt;왜 flex를 쓸까?&lt;/h1&gt; &lt;p&gt;float: left, right를 하고 픽셀을 퍼센트로 고정시키거나 display:inline-block으로 mobile web 처럼 보이는 UI/UX를 구현할 수 있다. 하지만, flex를 이용해서 UI를 짜면 더 &lt;code class=&quot;highlighter-rouge&quot;&gt;쉽다&lt;/code&gt;. 심지어 반응형웹에도 쉽게 만들어낼 수 있는 마법의 속성이다.&lt;/p&gt; &lt;p&gt;일반적으로 flex 이전의 것들은 텍스트 중심의 block들을 제어하기위한 속성들이지만,...</description>
+        <description>flex 를 이용해 편하게 블록들을 배치해보자</description>
         <pubDate>Sun, 17 Dec 2017 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/Css-Flex/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/Css-Flex/</guid>
@@ -141,7 +141,7 @@
     
       <item>
         <title>ReactJS의 Virtual DOM과 Repaint, Reflow</title>
-        <description>&lt;h3 id=&quot;주의&quot;&gt;주의&lt;/h3&gt; &lt;p&gt;이 블로그의 내용은 대단히 주관적인 내용이 가득합니다. 그리고 &lt;code class=&quot;highlighter-rouge&quot;&gt;양질의 글&lt;/code&gt;을 읽었지만 &lt;code class=&quot;highlighter-rouge&quot;&gt;똥글&lt;/code&gt;이 나오는건 제 미숙함 때문입니다. 그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다. 또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다. (- -)(_ _)&lt;/p&gt; &lt;h1 id=&quot;react는-왜-존재하는가&quot;&gt;React는 왜 존재하는가?&lt;/h1&gt; &lt;p&gt;큰 SPA(Single Page Application) 또는 Dynamic UI 의 웹 페이지를 만들기 위해서&lt;/p&gt; &lt;blockquote&gt; &lt;p&gt;&lt;strong&gt;We built React to solve one problem: building large applications with data that changes over time.&lt;/strong&gt; 출처 : https://github.com/mikrofusion/react/blob/38818189a518fe307681915995177f748e2115ba/docs/docs/01-why-react.md&lt;/p&gt; &lt;/blockquote&gt; &lt;p&gt;**SPA: Single Page Application : 페이지 전환없이 서비스를 이용할 수 있는 애플리케이션 UI를 말한다. Dynamic UI의 성격이 강하다.&lt;/p&gt; &lt;h3...</description>
+        <description>Virtual DOM의 동작 원리와 Virtual DOM이 repaint와 reflow연산을 줄이기 위한 노력에 대해 알아보자</description>
         <pubDate>Sat, 16 Dec 2017 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/React-VirtualDOM-And-Repaint-Reflow/</guid>
