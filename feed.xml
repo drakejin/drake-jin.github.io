@@ -5,13 +5,13 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Wed, 09 May 2018 02:06:23 +0900</pubDate>
-    <lastBuildDate>Wed, 09 May 2018 02:06:23 +0900</lastBuildDate>
+    <pubDate>Fri, 11 May 2018 01:07:30 +0900</pubDate>
+    <lastBuildDate>Fri, 11 May 2018 01:07:30 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
     
       <item>
         <title>Docker에 대해 알아보자(이론편)</title>
-        <description>아니!!!! 내가 README.md 보라고 slack에다가 refer. 걸어줬잖아! docker-compose -f docker-compose.dev.yml up --build -d 이게 어렵냐고!! 그리고 개발 프로그램 무식하게 직접 설치할꺼야? elk, oracle DB, tensorflow 기타 등등이 다 5분안에 설치 가능한데?!</description>
+        <description>아니!!!! 내가 README.md 보라고 slack에다가 refer. 걸어줬잖아! docker-compose -f docker-compose.dev.yml up --build -d 이게 어렵냐고!! 그리고 개발 프로그램 골치아프게 직접 설치하지말자. elk, oracle DB, tensorflow 기타 등등 설치난이도 환경구축 귀찮은거 5분 안에 끝내자.</description>
         <pubDate>Wed, 09 May 2018 00:00:00 +0900</pubDate>
         <link>http://blog.drakejin.me/Docker-araboza-1/</link>
         <guid isPermaLink="true">http://blog.drakejin.me/Docker-araboza-1/</guid>
@@ -154,6 +154,78 @@
         
         
         <category>reactjs</category>
+        
+      </item>
+    
+      <item>
+        <title>Go 언어를 쓰기전에(마무리편)</title>
+        <description></description>
+        <pubDate>Sat, 27 May 2017 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/Study-Go-4/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/Study-Go-4/</guid>
+        
+        <category>go</category>
+        
+        <category>golang</category>
+        
+        <category>gopher</category>
+        
+        
+        <category>go</category>
+        
+      </item>
+    
+      <item>
+        <title>Go 언어를 쓰기전에(놀이편)</title>
+        <description></description>
+        <pubDate>Fri, 26 May 2017 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/Study-Go-3/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/Study-Go-3/</guid>
+        
+        <category>go</category>
+        
+        <category>golang</category>
+        
+        <category>gopher</category>
+        
+        
+        <category>go</category>
+        
+      </item>
+    
+      <item>
+        <title>Go 언어를 쓰기전에(설치편)</title>
+        <description></description>
+        <pubDate>Sat, 20 May 2017 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/Study-Go-2/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/Study-Go-2/</guid>
+        
+        <category>go</category>
+        
+        <category>golang</category>
+        
+        <category>gopher</category>
+        
+        
+        <category>go</category>
+        
+      </item>
+    
+      <item>
+        <title>Go 언어를 쓰기전에(시작편)</title>
+        <description></description>
+        <pubDate>Fri, 19 May 2017 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/Study-Go-1/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/Study-Go-1/</guid>
+        
+        <category>go</category>
+        
+        <category>golang</category>
+        
+        <category>gopher</category>
+        
+        
+        <category>go</category>
         
       </item>
     
