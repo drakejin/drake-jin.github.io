@@ -5,30 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>처음 겪은 마이그레이션 전략-intro | DrakeJin</title>
-    <meta name="description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
+    <title>Go 언어를 쓰기전에(놀이편) | DrakeJin</title>
+    <meta name="description" content="세상을 재미있게 만들기 위한 기술">
 
     <!-- Social: Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@">
-    <meta name="twitter:title" content="처음 겪은 마이그레이션 전략-intro | DrakeJin">
-    <meta name="twitter:description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
+    <meta name="twitter:title" content="Go 언어를 쓰기전에(놀이편) | DrakeJin">
+    <meta name="twitter:description" content="세상을 재미있게 만들기 위한 기술">
     
-    <meta property="twitter:image:src" content="https://i.imgur.com/EKnqkCJ.png">
+    <meta property="twitter:image:src" content="">
     
 
     <!-- Social: Facebook / Open Graph -->
-    <meta property="og:url" content="http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-intro/">
-    <meta property="og:title" content="처음 겪은 마이그레이션 전략-intro | DrakeJin">
+    <meta property="og:url" content="http://blog.drakejin.me/Study-Go-3/">
+    <meta property="og:title" content="Go 언어를 쓰기전에(놀이편) | DrakeJin">
     
-    <meta property="og:image" content="https://i.imgur.com/EKnqkCJ.png">
+    <meta property="og:image" content="">
     
-    <meta property="og:description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
+    <meta property="og:description" content="세상을 재미있게 만들기 위한 기술">
     <meta property="og:site_name" content="DrakeJin">
 
     <!-- Social: Google+ / Schema.org  -->
-    <meta itemprop="name" content="처음 겪은 마이그레이션 전략-intro | DrakeJin"/>
-    <meta itemprop="description" content="처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다">
+    <meta itemprop="name" content="Go 언어를 쓰기전에(놀이편) | DrakeJin"/>
+    <meta itemprop="description" content="세상을 재미있게 만들기 위한 기술">
     <meta itemprop="image" content="http://blog.drakejin.me/assets/img/blog-image.png"/>
 
     <!-- Favicon -->
@@ -60,7 +60,7 @@
     <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700" rel="stylesheet">
 
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="canonical" href="http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-intro/">
+    <link rel="canonical" href="http://blog.drakejin.me/Study-Go-3/">
     <link rel="alternate" type="application/rss+xml" title="DrakeJin" href="http://blog.drakejin.me/feed.xml" />
 </head>
 
@@ -121,146 +121,160 @@
             <article role="article" id="post" class="post-content" itemprop="articleBody">
                 <p itemprop="post-info" class="post-info">
                     
+                        <svg id="date" class="icon-calendar"><use xlink:href="#icon-calendar"></use></svg>
+                        <time itemprop="datePublished" datetime="2017-05-26T00:00:00+09:00" class="date">
+                            
+
+
+May 26, 2017
+
+                        </time>
+                    
                     <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>3 min to read</span>
+                    <span>2 min to read</span>
                 </p>
-                <h1 class="post-title" itemprop="name">처음 겪은 마이그레이션 전략-intro</h1>
-                <p itemprop="description" class="subtitle">처음 있었던 서비스 인수인계, 도메인 URL을 활용해서 마이그레이션 작업을 수행하다</p>
+                <h1 class="post-title" itemprop="name">Go 언어를 쓰기전에(놀이편)</h1>
+                <p itemprop="description" class="subtitle"></p>
 
                 
-                    <img src="https://i.imgur.com/EKnqkCJ.png" alt="Imagem de capa" class="post-cover">
+                    <img src="" alt="Imagem de capa" class="post-cover">
                 
 
-                <h1 id="summary">Summary</h1>
+                <h3 id="이전-포스트입니다">이전 포스트입니다.</h3>
 
-<p>회사에서 <code class="highlighter-rouge">북딜</code>이란 서비스를 샀다. 그럼과 동시에 <code class="highlighter-rouge">북딜</code>의 서버를 우리 회사의 인프라로 가져와야한다.
-하지만, <code class="highlighter-rouge">북딜</code>서버를 인스턴스 째로 가져오고 싶지만 해당 인스턴스 안에 보안관련한 api키들이 가득하니 그렇게 할 수는 없다고 한다.</p>
-
-<blockquote>
-  <p>즉 보안관련된 정보는 받아볼 수 없기때문에 직접 받아볼 수 있는것들은 소스코드뿐, 구술로 들은 아키텍쳐들의 내용..</p>
-</blockquote>
-
-<p>이 포스팅의 마이그레이션 작업의 중요점것 바로</p>
+<p>2017년 4월 2일에 작성된 문서를 재 가공한 포스트입니다. 해당 포스트를 작성했었을 때에는 자위용에 불과해서 자위용포스트는 전부 지워버렸습니다.</p>
 
 <blockquote>
-  <p>DNS를 활용하여 url을 교체하는 마이그레이션 작업.</p>
+  <p>세상을 재미있게 만들기 위하여!!</p>
 </blockquote>
 
-<h2 id="상황">상황</h2>
+<h3 id="주의">주의</h3>
 
-<h4 id="초기-인수인계-상황">초기 인수인계 상황</h4>
+<p>이 블로그의 내용은 대단히 주관적인 내용이 가득합니다.
+그리고 <code class="highlighter-rouge">양질의 글</code>을 읽었지만 <code class="highlighter-rouge">똥글</code>이 나오는건 제 미숙함 때문입니다. 
+그럼에도 불구하고 피드백 많이 주신다면 자세히 조사하여 반영하도록 하겠습니다.
+또한.. 가능한 링크로 올려놓은 자료들은 반드시 열어보시기 바랍니다. 분명 도움이 될 것입니다.
+(- -)(_ _)</p>
 
-<ol>
-  <li>인수인계를 우리측 경영자와 건내주는 CEO 둘이서 이야기를 하며 인수인계 절차를 밟고 있음</li>
-  <li>인수인계 해줄 개발자가 있지만 퇴사하고 다른 회사에 있는 상태</li>
-  <li>직접 작업해 줄 수 있는건 인수해오는 회사의 개발에 관련된 질의응답 그리고 요청</li>
-</ol>
-
-<h4 id="얻을-수-있는-리소스">얻을 수 있는 리소스</h4>
-
-<ol>
-  <li><strong>Android의 소스코드:</strong> 플래이 스토어에 배포되어있던 녀석이 아님]</li>
-  <li><strong>iOS의 소스코드:</strong> 다행히 앱 스토어에 배포되어있던 녀석]</li>
-  <li><strong>API Server:</strong> 소스코드속성에 대한 모든 설정값이 비어있음[protocol을 붙여야하는지, 어떤 형태의 값이 들어가는지 모름][shall script 코드를 짠걸로 실행하고 배포하는것 같았음][하지만 pm2가 더 나을꺼라 판단]</li>
-  <li><strong>Web Server:</strong> 소스코드(소개페이지이며, 서비스DB에 접근을 하지만 정말 인트로 소개페이지 뿐임)</li>
-  <li><strong>Web Admin Server:</strong> 소스코드(관리페이지이며, 라이브러리 의존성을 내가 해결하지 못해서 올리지 못하였다)</li>
-  <li><strong>Scheduler 소스코드:</strong> 소스코드(배치 프로그램이며, 통계의 결과 및 SMS, Email, SNS(kakatalk)의 푸쉬 및 알림서비스를 제공하는 용도)</li>
-  <li><strong>External API(kakaotalk):</strong> 소스코드(Third Party 회사와 연동하여 카카오톡의 알림톡을 보낼 수 있도록 하는 서버)</li>
-  <li>구두로 전해들은 아키텍쳐에 대한 내용…</li>
-</ol>
-
-<p><em>위 모든 소스들의 설정값은 다 비어있다. 하지만 소스코드들을 살펴보고 주석에 조금씩 흔적들이 남아있었다.</em></p>
-
-<h2 id="작업-순서">작업 순서</h2>
-
-<ol>
-  <li>마이그레이션 인트로 <a href="/처음_겪은_서비스_마이그레이션_작업-intro">Link</a></li>
-  <li>전해들은 정보들을 토대로 아키텍쳐 파악 <a href="/처음_겪은_서비스_마이그레이션_작업-1">Link</a></li>
-  <li>서드파티(facebook login, google analytics, firebase, playstore, android player… 등등.. 또는 sms, kakao BizMsg .. 등등 약 9개 정도 된 듯) 권한 및 계정 가져오기 <a href="/처음_겪은_서비스_마이그레이션_작업-2">Link</a></li>
-  <li>운영 서버 설계 <a href="/처음_겪은_서비스_마이그레이션_작업-3">Link</a></li>
-  <li>마이그레이션 전략 구상 <a href="/처음_겪은_서비스_마이그레이션_작업-4">Link</a></li>
-  <li>테스트 환경 구축 <a href="/처음_겪은_서비스_마이그레이션_작업-5">Link</a></li>
-  <li>마이그레이션 <a href="/처음_겪은_서비스_마이그레이션_작업-6">Link</a></li>
-  <li>운영 서버 배포 <a href="/처음_겪은_서비스_마이그레이션_작업-7">Link</a></li>
-  <li>후속작업… <a href="/처음_겪은_서비스_마이그레이션_작업-8">Link</a></li>
-</ol>
-
-<p><em>마이그레이션 전략이 다른 회사들은 어떻게 되는지 모르겠다.. 서적들이나 인터넷의 다른 자료들은 어떻게 마이그레이션을 진행하는지 모르겠지만 가능한 내가 처한 상황에서 가장 이상적인 방법으로 실천하려했다…. (결과는 <strong>성공적</strong>)..</em></p>
-
-<p>문서는 이 순서대로 가며, 실제 작업 진행 또한 이러한 순서대로 했다.</p>
-
-<h1 id="2-서드파티-및-서비스-권한-획득">2. 서드파티, 및 서비스 권한 획득</h1>
-
-<ol>
-  <li>Apple Store에 올라가 있는 서비스 양도 받기</li>
-  <li>Play Store에 올라가 있는 서비스 양도 받기
-    <ul>
-      <li>루트계정(어드민) 이것이 즉 개발자 계정임 이 계정으로 받아야 한다.</li>
-    </ul>
-  </li>
-  <li>페이스북
-    <ul>
-      <li>대쉬보드에 관리자 권한으로 부여할 사람 초대하고 부여한 사람이 나가면 양도 끝</li>
-    </ul>
-  </li>
-  <li>구글 애널리틱스
-    <ul>
-      <li>관리-&gt;사용자관리 에서 관리자 권한으로 부여할 사람 초대하고 부여한 사람이 나가면 양도 끝</li>
-    </ul>
-  </li>
-  <li>파이어베이스, API dashboard(Google Login 및 GCM 포함)
-    <ul>
-      <li>관리-&gt;사용자관리 에서 관리자 권한으로 부여할 사람 초대하고 부여한 사람이 나가면 양도</li>
-    </ul>
-  </li>
-  <li>샌드버드
-    <ul>
-      <li>고객지원과 통화하며 … api키를 그대로 쓰는 상태로 API의 권한을 받고싶다.. 라고 컨택해야함. 샌드버드 특성상 본사가 실리콘벨리에있어 작업 처리에 조금 늦는 감이 있다.</li>
-    </ul>
-  </li>
-  <li>SMS(SKTelink)</li>
-  <li>Kakao Message(BizTalk)
-    <ul>
-      <li>7번과 8번은 여러 서류가 필요한데…. 상담사분깨 대놓고 신입 커밍아웃했다. 상담사분이 뭐가 필요한지 알려주는데 하나도 못알아 들었다. 그래서 결국.</li>
-    </ul>
-
-    <blockquote>
-      <p>“저 개발자이며 이 쪽 분야에 대해 하나도 모릅니다. 하지만 필요하신 문서가 뭔지 알려주시면 스스로 검색해서 찾아보도록 하겠습니다. 그 문서들은 어떻게 준비 하면 되나요?…..”</p>
-    </blockquote>
-  </li>
-</ol>
-
-<p><strong>** 위 작업에 중요한 점:</strong> 안드로이드, iOS 배포를 새로 하지 않으려고 권한을 받으려고 하는것. 안드로이드, iOS 를 .. 새로 배포하게 될 경우… 이전에 바라보던 서버와, 새로 바라보는 서버. 두개를 켜야하는데.. 이전에 바라보던 서버를 제어하지 못하는 상황이므로.. 위 방법은 위험하고 여러 불편함을 감내 해야한다는 생각을 하게됨</p>
-
-<p><strong>** 7,8 항목에서 중요한 점:</strong> 이 두 서드파티 회사들은 2개의 장비에서 하나의 발급받은 ID를 사용하지 못하기 때문에 인수인계가 끝나자마자 <strong>이전에 사용하고 있던 장비(서버)가 접근을 하지 못하도록 Agent프로그램의 접근을 막아버린다.</strong></p>
-
+<h1 id="마라톤-코딩">마라톤 코딩</h1>
 <ul>
-  <li>
-    <p>비즈톡에서는 기존에 쓰던 ip주소를 지우고, 새로 말씀드린 ip 주소로 바꿔버려서 이전에 사용하던 API서버의 BizTalk Agent프로그램이 죽었었다. 이 때에는 화이트 리스트에 “추가” 해달라 해야한다. “대체”가 아니라..</p>
-  </li>
-  <li>
-    <p>SKtelink에서는 인수인계 작업이 끝나면서 기존에 사용하던 번호를 제거시켜버렸다.
-발신자 번호를 항상 넣어주어야 하는데, 발신자 번호가 사라지게 되면서 SkTelink의 Agent프로그램이 또 사망했다.</p>
-  </li>
+  <li>소스 정보 <a href="https://gobyexample.com/">gobyexample.com</a></li>
+  <li>email : mmcgrana@gmail.com</li>
+  <li>twitter :http://twitter.com/mmcgrana</li>
+  <li>git : https://github.com/mmcgrana</li>
+  <li>한줄평 : 잘생김. 훈훈하게 생김.</li>
 </ul>
 
-<p><strong>즉.. 마이그레이션 작업 3일 남기고 두 서버가 제 기능을 못하고 죽어버리게 되었다.</strong></p>
+<p>일단 컴파일이 된다면 대강 한페이지의 코드를 작성하는대 지장없다는 소리다.
+그러면… 질릴때까지 예제만 주구장창 쳐보다가 지칠때쯤 다시 이론으로 돌아가보도록 하자.</p>
 
-<p>이 사실을 전혀 인지하지 못하다가 고객 피드백을 받고서야 알았다.</p>
+<ul>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/1.Hello_World.go">1.Hello World.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/2.Values.go">2.Values.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/3.Variables.go">3.Variables.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/4.Constants.go">4.Constants.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/5.For.go">5.For.go</a></li>
+  <li>2017-05-20 맛보기만 함…</li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/6.If_Else.go">6.If/Else.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/7.Switch.go">7.Switch.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/8.Arrays.go">8.Arrays.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/9.Slices.go">9.Slices.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/10.Maps.go">10.Maps.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/11.Range.go">11.Range.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/12.Functions.go">12.Functions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/13.Multiple_Return_Values.go">13.Multiple_Return_Values.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/14.Variadic_Functions.go">14.Variadic_Functions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/15.Closures.go">15.Closures.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/16.Recursion.go">16.Recursion.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/17.Pointers.go">17.Pointers.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/18.Structs.go">18.Structs.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/19.Methods.go">19.Methods.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/20.Interfaces.go">20.Interfaces.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/21.Errors.go">21.Errors.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/22.Goroutines.go">22.Goroutines.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/23.Channels.go">23.Channels.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/24.Channel_Buffering.go">24.Channel_Buffering.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/25.Channel_Syncronization.go">25.Channel Synchronization.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/26.Channel_Directions.go">26.Channel Directions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/27.Select.go">27.Select.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/28.Timeouts.go">28.Timeouts.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/29.Non_Blocking_Channel_Operation.go">29.Non-Blocking_Channel_Operations.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/30.Closing_Channels.go">30.Closing Channels.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/31.Range_Over_Channels.go">31.Range over Channels.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/32.Timers.go">32.Timers.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/33.Tickers.go">33.Tickers.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/34.Worker_Pools.go">34.Worker Pools.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/35.Rate_Limiting.go">35.Rate Limiting.go</a></li>
+  <li>2017-05-21 36~35 까지 옮겨 치는데 6시간 걸림.</li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/36.Atomic_Counters.go">36.Atomic Counters.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/37.Mutexes.go">37.Mutexes.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/38.Stateful_Goroutines.go">38.Stateful Goroutines.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/39.Sorting.go">39.Sorting.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/40.Sorting_By_Functions.go">40.Sorting by Functions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/41.Panic.go">41.Panic.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/42.Defer.go">42.Defer.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/43.Collection_Functions.go">43.Collection Functions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/44.String_Functions.go">44.String Functions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/45.String_Formatting.go">45.String Formatting.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/46.Regular_Expression.go">46.Regular Expressions.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/47.JSON.go">47.JSON.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/48.Time.go">48.Time.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/49.Epoch.go">49.Epoch.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/50.Time_Formatting_Parsing.go">50.Time Formatting / Parsing.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/51.Random_Numbers.go">51.Random Numbers.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/52.Number_Parsing.go">52.Number Parsing.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/53.URL_Parsing.go">53.URL Parsing.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/54.SHA1_Hashes.go">54.SHA1 Hashes.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/55.Base64_Encoding.go">55.Base64 Encoding.go</a></li>
+  <li>2017-05-23 36~55 까지 옮겨 치는데 7시간 걸림</li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/56.Reading_Files.go">56.Reading Files.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/57.Writing_Files.go">57.Writing Files.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/58.Line_Filters.go">58.Line Filters.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/59.Command_Line_Arguments.go">59.Command-Line Arguments.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/60.Command_Line_Flag.go">60.Command-Line Flags.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/61.Environment_Variables.go">61.Environment Variables.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/62.Spawning_Processes.go">62.Spawning Processes.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/63.Execing_Processes.go">63.Exec’ing Processes.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/64.Signals.go">64.Signals.go</a></li>
+  <li><a href="https://github.com/drake-jin/go-study/blob/master/ch02/gobyexample/65.Exit.go">65.Exit.go</a></li>
+  <li>2017-05-24 56~65 까지 3시간 걸림</li>
+</ul>
 
-<blockquote>
-  <p>정말 멘탈이 나가버리는줄 알았다.</p>
-</blockquote>
+<h2 id="예제를-이해하기위해-알고-있어야하는-사전-지식들">예제를 이해하기위해 알고 있어야하는 사전 지식들.</h2>
+<ul>
+  <li><a href="https://blog.golang.org/go-slices-usage-and-internals">exam 9 - slice and array are different</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Associative_array">exam 10 - Associative data type</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Variadic_function">exam 10 - Variadic Functions</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Anonymous_function">exam 15 - Anonymous Functions</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Closure_(computer_science)">exam 15 - Closures</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Recursion_(computer_science)">exam 16 - Recursion Functions</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Pointer_(computer_programming)">exam 17 - Pointers</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Rate_limiting">exam 35 - Rate_Limiting</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Mutual_exclusion">exam 37 - Mutexes</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Regular_expression">exam 46 - Regular Expressions</a></li>
+  <li><a href="http://blog.golang.org/2011/01/json-and-go.html">exam 47 - JSON and GO</a></li>
+  <li><a href="http://golang.org/pkg/encoding/json/">exam 47 - JSON package docs</a></li>
+  <li><a href="http://en.wikipedia.org/wiki/Unix_time">exam 49 - UNIX Epoch</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">exam 51 - Pseudorandom number generator</a></li>
+  <li><a href="http://golang.org/pkg/math/rand/">exam 51 - math/rand package</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/SHA-1">exam 54 - SHA-1</a></li>
+  <li><a href="https://git-scm.com/">exam 54 - Git Revision Control System</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Cryptographic_hash_function">exam 54 - Hash Strength</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Command-line_interface#Arguments">exam 59 - Command line arguments </a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Command-line_interface#Command-line_option">exam 60 - Command line Flags</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Environment_variable">exam 61 - Environment Variables</a></li>
+  <li><a href="http://pygments.org/">exam 62 - pygments.org</a></li>
+  <li><a href="https://github.com/mmcgrana/gobyexample/blob/master/tools/generate.go">exam 62 - generator.go</a></li>
+  <li><a href="https://gobyexample.com/spawning-processes">exam 63 - Spawning_Process</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Exec_(system_call)">exam 63 - exec(system call)</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Unix_signal">exam 64 - signals</a></li>
+  <li>2017-05-25 example 까지 8시간 걸림</li>
+</ul>
 
-<h1 id="4-마이그레이션-전략">4. 마이그레이션 전략</h1>
-
-<hr />
-
-<p>Want to see something else added? <a href="https://github.com/poole/poole/issues/new">Open an issue.</a></p>
 
             </article>
 
-            <div class="progress-bar" data-minutes="3">
+            <div class="progress-bar" data-minutes="2">
                 <span class="time-completed"></span>
                 <span class="time-remaining"></span>
                 <div class="bar">
@@ -271,15 +285,15 @@
 
             <section class="share">
     <h3>Share</h3>
-    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;처음 겪은 서비스 인수인계(마이그레이션)&quot;%20http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-intro/%20via%20&#64;&hashtags="
+    <a aria-label="Compartilhar no Twitter" href="https://twitter.com/intent/tweet?text=&quot;Go 언어를 쓰기전에(놀이편)&quot;%20http://blog.drakejin.me/Study-Go-3/%20via%20&#64;&hashtags=go,golang,gopher,"
     onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
         <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
     </a>
-    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-intro/"
+    <a aria-label="Compartilhar no Facebook"href="https://www.facebook.com/sharer/sharer.php?u=http://blog.drakejin.me/Study-Go-3/"
     onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
         <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
     </a>
-    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-intro/"
+    <a aria-label="Share on Google Plus" href="https://plus.google.com/share?url=http://blog.drakejin.me/Study-Go-3/"
     onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;" title="Share on Google+">
         <svg class="icon icon-google-plus"><use xlink:href="#icon-google-plus"></use></svg>
     </a>
@@ -332,7 +346,7 @@
         disqus_loaded = true;
         var disqus_shortname = 'blog-drakejin-me';
         var disqus_title = '';
-        var disqus_url = '/old/2017-12-09-%EC%B2%98%EC%9D%8C_%EA%B2%AA%EC%9D%80_%EC%84%9C%EB%B9%84%EC%8A%A4_%EB%A7%88%EC%9D%B4%EA%B7%B8%EB%A0%88%EC%9D%B4%EC%85%98_%EC%9E%91%EC%97%85-intro/';
+        var disqus_url = '/Study-Go-3/';
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
         (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
