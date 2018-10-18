@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "DynamoDB에 대해서 알아보자 - 1",
+      "tags"     : "dynamodb, nosql, aws, and serverless",
+      "categories" : "dynamodb",
+      "url"      : "/dynamodb-1/",
+      "date"     : "10/18/2018"
+    } ,
+  
+    {
       "title"    : "서버리스에 대해 알아보기 전에...(2/2)",
       "tags"     : "lambda, serverless, and monorithic",
       "categories" : "serverless",

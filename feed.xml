@@ -5,9 +5,29 @@
     <description>세상을 재미있게 만들기 위한 기술</description>
     <link>http://blog.drakejin.me/</link>
     <atom:link href="http://blog.drakejin.me/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Fri, 19 Oct 2018 02:58:44 +0900</pubDate>
-    <lastBuildDate>Fri, 19 Oct 2018 02:58:44 +0900</lastBuildDate>
+    <pubDate>Fri, 19 Oct 2018 03:00:48 +0900</pubDate>
+    <lastBuildDate>Fri, 19 Oct 2018 03:00:48 +0900</lastBuildDate>
     <generator>Jekyll v3.6.2</generator>
+    
+      <item>
+        <title>DynamoDB에 대해서 알아보자 - 1</title>
+        <description>AWS의 full-managed 제품에 심취해있는 drakejin. 이번에는 DynamoDB에 대해서 파해쳐보자!</description>
+        <pubDate>Thu, 18 Oct 2018 00:00:00 +0900</pubDate>
+        <link>http://blog.drakejin.me/dynamodb-1/</link>
+        <guid isPermaLink="true">http://blog.drakejin.me/dynamodb-1/</guid>
+        
+        <category>dynamodb</category>
+        
+        <category>nosql</category>
+        
+        <category>aws</category>
+        
+        <category>serverless</category>
+        
+        
+        <category>dynamodb</category>
+        
+      </item>
     
       <item>
         <title>서버리스에 대해 알아보기 전에...(2/2)</title>
