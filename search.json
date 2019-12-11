@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "2017년도의 DrakeJin의 자기소개",
+      "tags"     : "drakejin",
+      "categories" : "drakejin",
+      "url"      : "/2017-drakejin/",
+      "date"     : "12/11/2019"
+    } ,
+  
+    {
       "title"    : "DynamoDB에 대해서 알아보자 - 2",
       "tags"     : "dynamodb, nosql, aws, and serverless",
       "categories" : "dynamodb",
@@ -84,7 +92,7 @@
       "title"    : "flex 에 대해서 알아보자",
       "tags"     : "css and flex",
       "categories" : "css",
-      "url"      : "/Css-Flex/",
+      "url"      : "/css-flex/",
       "date"     : "12/17/2017"
     } ,
   

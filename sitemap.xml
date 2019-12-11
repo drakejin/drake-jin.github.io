@@ -123,6 +123,10 @@
     
     
         <url>
+            <loc>http://blog.drakejin.me/2017-drakejin/</loc>
+        </url>
+  
+        <url>
             <loc>http://blog.drakejin.me/dynamodb-2/</loc>
         </url>
   
@@ -163,7 +167,7 @@
         </url>
   
         <url>
-            <loc>http://blog.drakejin.me/Css-Flex/</loc>
+            <loc>http://blog.drakejin.me/css-flex/</loc>
         </url>
   
         <url>
